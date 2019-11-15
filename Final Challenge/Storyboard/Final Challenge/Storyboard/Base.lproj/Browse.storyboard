@@ -10,14 +10,14 @@
         <!--Browse-->
         <scene sceneID="zBl-EN-HQ6">
             <objects>
-                <viewController id="szJ-Dr-16Y" sceneMemberID="viewController">
+                <viewController id="szJ-Dr-16Y" customClass="BrowseViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cmo-ka-ieV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UMv-ee-Dfj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Browse" id="E8k-AR-5h8"/>
+                    <tabBarItem key="tabBarItem" title="Browse" id="E8k-AR-5h8" customClass="Browse"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKa-II-dGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
