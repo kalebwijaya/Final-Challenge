@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5114A05C238189280056121B /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A05B238189280056121B /* Orders.swift */; };
+		5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */; };
+		5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */; };
+		51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F22381D04200376021 /* OrderDetailsViewController.swift */; };
+		51A917F52381D06C00376021 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F42381D06C00376021 /* OrderDetails.swift */; };
 		51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */; };
 		51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */; };
 		51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */; };
@@ -42,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5114A05B238189280056121B /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
+		5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCollectionViewCell.xib; sourceTree = "<group>"; };
+		51A917F22381D04200376021 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		51A917F42381D06C00376021 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		51CD07ED237E9EEA00F251D9 /* Final Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51A917F12381D01700376021 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				51CD0832237EA67600F251D9 /* OrdersViewController.swift */,
+				51A917F22381D04200376021 /* OrderDetailsViewController.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		51CD07E4237E9EEA00F251D9 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +168,8 @@
 		51CD0823237E9F7D00F251D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */,
+				5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				51CD0834237EA68500F251D9 /* BrowseViewController.swift */,
-				51CD0832237EA67600F251D9 /* OrdersViewController.swift */,
+				51A917F12381D01700376021 /* Orders */,
 				51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -185,6 +206,8 @@
 		51CD0831237EA27D00F251D9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5114A05B238189280056121B /* Orders.swift */,
+				51A917F42381D06C00376021 /* OrderDetails.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -296,6 +319,7 @@
 				51CD082D237EA0E400F251D9 /* Profile.storyboard in Resources */,
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
+				5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
 				51CD0828237EA0C200F251D9 /* Browse.storyboard in Resources */,
 				51CD07F8237E9EEA00F251D9 /* Main.storyboard in Resources */,
@@ -325,10 +349,14 @@
 			files = (
 				51CD07FB237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
+				5114A05C238189280056121B /* Orders.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
+				5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */,
+				51A917F52381D06C00376021 /* OrderDetails.swift in Sources */,
 				51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
 				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
+				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				51CD0835237EA68500F251D9 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
