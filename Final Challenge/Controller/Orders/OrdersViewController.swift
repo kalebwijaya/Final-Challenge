@@ -13,7 +13,7 @@ class OrdersViewController: UIViewController {
     @IBOutlet weak var orderCollectionView: UICollectionView!
     
     var history = [History]()
-    let url = URL(string: "http://localhost:3000/history")
+    let url = URL(string: "http://10.60.40.42:3000/history")
     
     let cellIdentifier = "OrdersCollectionViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
@@ -38,10 +38,14 @@ class OrdersViewController: UIViewController {
             }
             do {
                 let result = try JSONDecoder().decode(HistoryResult.self, from: data)
-                self.history = result.data
-                print("JSON Get")
-                DispatchQueue.main.async {
-                    self.orderCollectionView.reloadData()
+                if(result.errorCode == "200"){
+                    self.history = result.data
+                    print("JSON Get")
+                    DispatchQueue.main.async {
+                        self.orderCollectionView.reloadData()
+                    }
+                }else if(result.errorCode == "400"){
+                    print(result.errorMessage)
                 }
             } catch {
                 print("Error After Getting JSON")
