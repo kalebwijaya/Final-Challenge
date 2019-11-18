@@ -21,7 +21,20 @@
 		51CD082D237EA0E400F251D9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CD082B237EA0E400F251D9 /* Profile.storyboard */; };
 		51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD082F237EA22E00F251D9 /* AnimUtils.swift */; };
 		51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0832237EA67600F251D9 /* OrdersViewController.swift */; };
-		51CD0835237EA68500F251D9 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0834237EA68500F251D9 /* BrowseViewController.swift */; };
+		B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */; };
+		B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */; };
+		B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00328D62382769C007C9B0A /* BrowseViewController.swift */; };
+		B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4A238261C3008FE79F /* BrowseModel.swift */; };
+		B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4C238261DB008FE79F /* BrowseView.swift */; };
+		B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B7423828FF100D82B59 /* BrowseResponses.swift */; };
+		B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B7623828FFC00D82B59 /* BrowseData.swift */; };
+		B0FA6B7E2382CD7400D82B59 /* CourtListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B7D2382CD7400D82B59 /* CourtListViewController.swift */; };
+		B0FA6B822382CD8C00D82B59 /* CourtListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B812382CD8C00D82B59 /* CourtListModel.swift */; };
+		B0FA6B842382CDCC00D82B59 /* CourtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B832382CDCC00D82B59 /* CourtListView.swift */; };
+		B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */; };
+		B0FA6B882382DCEA00D82B59 /* CourtListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B872382DCEA00D82B59 /* CourtListResult.swift */; };
+		B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B892382DCFC00D82B59 /* CourtListData.swift */; };
+		B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +76,20 @@
 		51CD082F237EA22E00F251D9 /* AnimUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimUtils.swift; sourceTree = "<group>"; };
 		51CD0832237EA67600F251D9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		51CD0834237EA68500F251D9 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewCell.swift; sourceTree = "<group>"; };
+		B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseTableViewCell.xib; sourceTree = "<group>"; };
+		B00328D62382769C007C9B0A /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		B0493D4A238261C3008FE79F /* BrowseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseModel.swift; sourceTree = "<group>"; };
+		B0493D4C238261DB008FE79F /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		B0FA6B7423828FF100D82B59 /* BrowseResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseResponses.swift; sourceTree = "<group>"; };
+		B0FA6B7623828FFC00D82B59 /* BrowseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseData.swift; sourceTree = "<group>"; };
+		B0FA6B7D2382CD7400D82B59 /* CourtListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListViewController.swift; sourceTree = "<group>"; };
+		B0FA6B812382CD8C00D82B59 /* CourtListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListModel.swift; sourceTree = "<group>"; };
+		B0FA6B832382CDCC00D82B59 /* CourtListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListView.swift; sourceTree = "<group>"; };
+		B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourtList.storyboard; sourceTree = "<group>"; };
+		B0FA6B872382DCEA00D82B59 /* CourtListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListResult.swift; sourceTree = "<group>"; };
+		B0FA6B892382DCFC00D82B59 /* CourtListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListData.swift; sourceTree = "<group>"; };
+		B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListParam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +140,8 @@
 		51CD07EF237E9EEA00F251D9 /* Final Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				B0FA6B792382CCBE00D82B59 /* CourtList */,
+				B0493D4423826131008FE79F /* Browse */,
 				51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */,
 				51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */,
 				51CD0825237E9FA400F251D9 /* Storyboard */,
@@ -167,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
-				51CD0826237EA0C200F251D9 /* Browse.storyboard */,
 				51CD0829237EA0D800F251D9 /* Orders.storyboard */,
 				51CD082B237EA0E400F251D9 /* Profile.storyboard */,
 			);
@@ -187,6 +215,83 @@
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B0493D4423826131008FE79F /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				B0493D4723826185008FE79F /* Controller */,
+				B0493D4623826171008FE79F /* View */,
+				B0493D452382616A008FE79F /* Model */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		B0493D452382616A008FE79F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0493D4A238261C3008FE79F /* BrowseModel.swift */,
+				B0FA6B7423828FF100D82B59 /* BrowseResponses.swift */,
+				B0FA6B7623828FFC00D82B59 /* BrowseData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0493D4623826171008FE79F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51CD0826237EA0C200F251D9 /* Browse.storyboard */,
+				B0493D4C238261DB008FE79F /* BrowseView.swift */,
+				B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */,
+				B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0493D4723826185008FE79F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B00328D62382769C007C9B0A /* BrowseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0FA6B792382CCBE00D82B59 /* CourtList */ = {
+			isa = PBXGroup;
+			children = (
+				B0FA6B7C2382CCDD00D82B59 /* Controller */,
+				B0FA6B7B2382CCD700D82B59 /* View */,
+				B0FA6B7A2382CCD000D82B59 /* Model */,
+			);
+			path = CourtList;
+			sourceTree = "<group>";
+		};
+		B0FA6B7A2382CCD000D82B59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0FA6B812382CD8C00D82B59 /* CourtListModel.swift */,
+				B0FA6B872382DCEA00D82B59 /* CourtListResult.swift */,
+				B0FA6B892382DCFC00D82B59 /* CourtListData.swift */,
+				B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0FA6B7B2382CCD700D82B59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0FA6B832382CDCC00D82B59 /* CourtListView.swift */,
+				B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0FA6B7C2382CCDD00D82B59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0FA6B7D2382CD7400D82B59 /* CourtListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +402,8 @@
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
+				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
+				B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */,
 				51CD0828237EA0C200F251D9 /* Browse.storyboard in Resources */,
 				51CD07F8237E9EEA00F251D9 /* Main.storyboard in Resources */,
 			);
@@ -323,13 +430,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FA6B842382CDCC00D82B59 /* CourtListView.swift in Sources */,
 				51CD07FB237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld in Sources */,
+				B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */,
+				B0FA6B822382CD8C00D82B59 /* CourtListModel.swift in Sources */,
+				B0FA6B7E2382CD7400D82B59 /* CourtListViewController.swift in Sources */,
+				B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */,
+				B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */,
+				B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
+				B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */,
+				B0FA6B882382DCEA00D82B59 /* CourtListResult.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
+				B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */,
+				B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */,
+				B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */,
 				51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
 				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
-				51CD0835237EA68500F251D9 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BLQPCH7T63;
+				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = "Final Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -537,7 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BLQPCH7T63;
+				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = "Final Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

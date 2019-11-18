@@ -1,20 +1,22 @@
 //
-//  BrowseViewController.swift
+//  CourtListViewController.swift
 //  Final Challenge
 //
-//  Created by Kaleb Wijaya on 15/11/19.
+//  Created by Steven on 11/18/19.
 //  Copyright © 2019 Kaleb Wijaya. All rights reserved.
 //
 
 import UIKit
 
-class BrowseViewController: UIViewController {
+class CourtListViewController: UIViewController {
 
+    var getSportTypeID: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
+    
 
     /*
     // MARK: - Navigation
