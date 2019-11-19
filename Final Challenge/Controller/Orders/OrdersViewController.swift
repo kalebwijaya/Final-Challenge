@@ -13,7 +13,7 @@ class OrdersViewController: UIViewController {
     @IBOutlet weak var orderCollectionView: UICollectionView!
     
     var history = [History]()
-    let url = URL(string: "http://10.60.40.42:3000/history")
+    let url = URL(string: "http://10.60.50.34:3000/history")
     
     let cellIdentifier = "OrdersCollectionViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!

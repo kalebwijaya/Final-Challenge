@@ -4,7 +4,7 @@
 //
 //  Created by Kaleb Wijaya on 18/11/19.
 //  Copyright © 2019 Kaleb Wijaya. All rights reserved.
-//
+// 
 
 import UIKit
 
@@ -24,7 +24,7 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var firstCourtPrice: UILabel!
     
     var orderDetails:OrderDetails!
-    let url = URL(string: "http://10.60.40.42:3000/bookingDetails")
+    let url = URL(string: "http://10.60.50.34:3000/bookingDetails")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +97,6 @@ class OrderDetailsViewController: UIViewController {
                     totalPrice += self.moreThanOneCourt(index: index)
                 }
             }
-            
             self.totalPrice.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: totalPrice))!
         }
         
@@ -112,6 +111,7 @@ class OrderDetailsViewController: UIViewController {
                 }
             }
         }
+        
     }
     
     func calculationCourtTime(index:Int) -> Int{
@@ -159,6 +159,6 @@ class OrderDetailsViewController: UIViewController {
         orderView.addSubview(courtTotalPrice)
         
         return courtTotalPriceInt
-    }
+    }  
 
 }
