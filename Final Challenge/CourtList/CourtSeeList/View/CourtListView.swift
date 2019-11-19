@@ -10,6 +10,8 @@ import UIKit
 
 class CourtListView: UIView {
 
+    @IBOutlet weak var userLocationAdress: UILabel!
+    @IBOutlet weak var courtListTableView: UITableView!
     override class func awakeFromNib() {
         
     }

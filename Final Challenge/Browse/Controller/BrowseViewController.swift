@@ -12,7 +12,7 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://10.60.40.42:3000/browseCategory")
+    let url = URL(string: "http://10.60.50.34:3000/browseCategory")
 
     
     override func viewDidLoad() {
@@ -20,9 +20,14 @@ class BrowseViewController: UIViewController {
 
 
         // Do any additional setup after loading the view.
+        setNavigation()
         initialization()
         browseNavigationBarTitle()
         fetchData()
+    }
+    
+    private func setNavigation(){
+        self.navigationItem.title = ""
     }
     
     private func initialization(){
@@ -84,12 +89,10 @@ extension BrowseViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
-        returnedView.backgroundColor = .white
 
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.size.width, height: 45))
-        label.text = "Kategori Lapangan"
+        label.text = "Court Category"
         label.font = UIFont.boldSystemFont(ofSize: 26.0)
-        label.textColor = .black
         returnedView.addSubview(label)
 
         return returnedView

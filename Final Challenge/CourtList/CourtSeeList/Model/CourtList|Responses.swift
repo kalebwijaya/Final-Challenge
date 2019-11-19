@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CourtListResult: Codable {
+class CourtListResponses: Codable {
     let errorCode, errorMessage, sportTypeID: String
     let data: [CourtListData]
 
