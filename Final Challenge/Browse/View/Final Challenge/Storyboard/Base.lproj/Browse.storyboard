@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h8N-U1-m9h">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Browse View Controller-->
+        <scene sceneID="zBl-EN-HQ6">
+            <objects>
+                <viewController id="szJ-Dr-16Y" customClass="BrowseViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cmo-ka-ieV" customClass="BrowseView" customModule="Final_Challenge" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="grf-TI-dUy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="grf-TI-dUy" firstAttribute="leading" secondItem="UMv-ee-Dfj" secondAttribute="leading" id="64Z-jc-Oaf"/>
+                            <constraint firstItem="UMv-ee-Dfj" firstAttribute="trailing" secondItem="grf-TI-dUy" secondAttribute="trailing" id="lzx-KO-gJ8"/>
+                            <constraint firstItem="UMv-ee-Dfj" firstAttribute="bottom" secondItem="grf-TI-dUy" secondAttribute="bottom" id="vBn-1L-yUn"/>
+                            <constraint firstItem="grf-TI-dUy" firstAttribute="top" secondItem="UMv-ee-Dfj" secondAttribute="top" id="vtS-j6-LaQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UMv-ee-Dfj"/>
+                        <connections>
+                            <outlet property="browserTableView" destination="grf-TI-dUy" id="yGI-SB-EdX"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="yia-Cm-AUe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="browseView" destination="Cmo-ka-ieV" id="d7F-EI-XaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKa-II-dGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1315.9420289855072" y="770.75892857142856"/>
+        </scene>
+        <!--Browse-->
+        <scene sceneID="qaR-Am-4ED">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h8N-U1-m9h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Browse" id="E8k-AR-5h8" customClass="Browse"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGK-Ka-v9r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="szJ-Dr-16Y" kind="relationship" relationship="rootViewController" id="Bwf-UH-maQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLe-qX-cLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405.79710144927537" y="770.75892857142856"/>
+        </scene>
+    </scenes>
+</document>
