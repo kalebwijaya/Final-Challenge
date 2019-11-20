@@ -12,7 +12,7 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://10.60.40.42:3000/browseCategory")
+    let url = URL(string: "http://10.60.50.34:3000/browseCategory")
 
     
     override func viewDidLoad() {

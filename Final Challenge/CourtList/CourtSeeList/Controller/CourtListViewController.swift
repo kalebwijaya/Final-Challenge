@@ -20,7 +20,7 @@ class CourtListViewController: UIViewController {
     var latitude: String?
     var courtListModel = CourtListModel()
     
-    let getCourtListUrl = URL(string: "http://10.60.40.42:3000/sportCenterList")
+    let getCourtListUrl = URL(string: "http://10.60.50.34:3000/sportCenterList")
 
     var getUserData: CourtListParam!
     var getCourtData = [CourtListData]()
