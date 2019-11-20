@@ -25,7 +25,7 @@ class CourtDetailsViewController: UIViewController {
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsBooking!
-    let url = URL(string: "http://10.60.50.34:3000/courtDetails")
+    let url = URL(string: "http://10.60.40.42:3000/courtDetails")
     
     override func viewDidLoad() {
         super.viewDidLoad()
