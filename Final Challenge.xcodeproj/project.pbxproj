@@ -10,6 +10,7 @@
 		5114A05C238189280056121B /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A05B238189280056121B /* Orders.swift */; };
 		5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */; };
 		5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */; };
+		51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51275CCB2385303000927DB7 /* OrdersDetails.storyboard */; };
 		515E73082383ED1800ED494D /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515E73072383ED1800ED494D /* Booking.storyboard */; };
 		51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F22381D04200376021 /* OrderDetailsViewController.swift */; };
 		51A917F52381D06C00376021 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F42381D06C00376021 /* OrderDetails.swift */; };
@@ -72,6 +73,7 @@
 		5114A05B238189280056121B /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCollectionViewCell.xib; sourceTree = "<group>"; };
+		51275CCB2385303000927DB7 /* OrdersDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrdersDetails.storyboard; sourceTree = "<group>"; };
 		515E73072383ED1800ED494D /* Booking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		51A917F22381D04200376021 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		51A917F42381D06C00376021 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
@@ -98,7 +100,6 @@
 		51CD0829237EA0D800F251D9 /* Orders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		51CD082F237EA22E00F251D9 /* AnimUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimUtils.swift; sourceTree = "<group>"; };
 		51CD0832237EA67600F251D9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
-		51CD0834237EA68500F251D9 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseTableViewCell.xib; sourceTree = "<group>"; };
 		B00328D62382769C007C9B0A /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -145,13 +146,129 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		51A917F12381D01700376021 /* Orders */ = {
+		51275CCE2385305000927DB7 /* BrowseHome */ = {
+			isa = PBXGroup;
+			children = (
+				B0493D4723826185008FE79F /* Controller */,
+				B0493D4623826171008FE79F /* View */,
+				B0493D452382616A008FE79F /* Model */,
+			);
+			path = BrowseHome;
+			sourceTree = "<group>";
+		};
+		51275CCF2385305C00927DB7 /* CourtDetails */ = {
+			isa = PBXGroup;
+			children = (
+				51275CD22385307600927DB7 /* Controller */,
+				51275CD12385307100927DB7 /* View */,
+				51275CD02385306C00927DB7 /* Model */,
+			);
+			path = CourtDetails;
+			sourceTree = "<group>";
+		};
+		51275CD02385306C00927DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51BE03632383FA55004A241D /* CourtDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51275CD12385307100927DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				515E73072383ED1800ED494D /* Booking.storyboard */,
+				51BE035F2383F6D8004A241D /* ImageSlide.swift */,
+				51BE03612383F6F0004A241D /* ImageSlide.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51275CD22385307600927DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				51BE035B2383F61F004A241D /* CourtDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		51275CD3238530BA00927DB7 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				51275CD4238530C600927DB7 /* OrdersLIst */,
+				51275CD82385312C00927DB7 /* OrdersDetails */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		51275CD4238530C600927DB7 /* OrdersLIst */ = {
+			isa = PBXGroup;
+			children = (
+				51275CD7238530D800927DB7 /* Controller */,
+				51275CD6238530D500927DB7 /* View */,
+				51275CD5238530CE00927DB7 /* Model */,
+			);
+			path = OrdersLIst;
+			sourceTree = "<group>";
+		};
+		51275CD5238530CE00927DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5114A05B238189280056121B /* Orders.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51275CD6238530D500927DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51CD0829237EA0D800F251D9 /* Orders.storyboard */,
+				5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */,
+				5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51275CD7238530D800927DB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				51CD0832237EA67600F251D9 /* OrdersViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		51275CD82385312C00927DB7 /* OrdersDetails */ = {
+			isa = PBXGroup;
+			children = (
+				51275CDB2385314400927DB7 /* Controller */,
+				51275CDA2385313D00927DB7 /* View */,
+				51275CD92385313900927DB7 /* Model */,
+			);
+			path = OrdersDetails;
+			sourceTree = "<group>";
+		};
+		51275CD92385313900927DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51A917F42381D06C00376021 /* OrderDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51275CDA2385313D00927DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51275CCB2385303000927DB7 /* OrdersDetails.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51275CDB2385314400927DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				51A917F22381D04200376021 /* OrderDetailsViewController.swift */,
 			);
-			path = Orders;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		51CD07E4237E9EEA00F251D9 = {
@@ -177,14 +294,13 @@
 		51CD07EF237E9EEA00F251D9 /* Final Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
 				B0FA6B792382CCBE00D82B59 /* CourtList */,
 				B0493D4423826131008FE79F /* Browse */,
+				51275CD3238530BA00927DB7 /* Orders */,
 				51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */,
 				51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */,
-				51CD0825237E9FA400F251D9 /* Storyboard */,
 				51CD0824237E9F9100F251D9 /* Controller */,
-				51CD0823237E9F7D00F251D9 /* Model */,
-				51CD0831237EA27D00F251D9 /* Helper */,
 				51CD082E237EA20D00F251D9 /* Anim */,
 				51CD07FC237E9EEB00F251D9 /* Assets.xcassets */,
 				51CD07FE237E9EEB00F251D9 /* LaunchScreen.storyboard */,
@@ -212,36 +328,12 @@
 			path = "Final ChallengeUITests";
 			sourceTree = "<group>";
 		};
-		51CD0823237E9F7D00F251D9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */,
-				5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */,
-				51BE035F2383F6D8004A241D /* ImageSlide.swift */,
-				51BE03612383F6F0004A241D /* ImageSlide.xib */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		51CD0824237E9F9100F251D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				51CD0834237EA68500F251D9 /* BrowseViewController.swift */,
-				51A917F12381D01700376021 /* Orders */,
 				51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */,
-				51BE035B2383F61F004A241D /* CourtDetailsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		51CD0825237E9FA400F251D9 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
-				51CD0829237EA0D800F251D9 /* Orders.storyboard */,
-				515E73072383ED1800ED494D /* Booking.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		51CD082E237EA20D00F251D9 /* Anim */ = {
@@ -252,22 +344,11 @@
 			path = Anim;
 			sourceTree = "<group>";
 		};
-		51CD0831237EA27D00F251D9 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				5114A05B238189280056121B /* Orders.swift */,
-				51A917F42381D06C00376021 /* OrderDetails.swift */,
-				51BE03632383FA55004A241D /* CourtDetails.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		B0493D4423826131008FE79F /* Browse */ = {
 			isa = PBXGroup;
 			children = (
-				B0493D4723826185008FE79F /* Controller */,
-				B0493D4623826171008FE79F /* View */,
-				B0493D452382616A008FE79F /* Model */,
+				51275CCE2385305000927DB7 /* BrowseHome */,
+				51275CCF2385305C00927DB7 /* CourtDetails */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -493,6 +574,7 @@
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
 				51BE03622383F6F0004A241D /* ImageSlide.xib in Resources */,
 				5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */,
+				51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
 				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
 				B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */,
@@ -553,7 +635,6 @@
 				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				51BE035C2383F61F004A241D /* CourtDetailsViewController.swift in Sources */,
-				51CD0835237EA68500F251D9 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="azr-ye-gog">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Booking List-->
+        <scene sceneID="zUX-oT-YI1">
+            <objects>
+                <viewController title="Booking List" id="lSI-Ua-NrM" customClass="OrdersViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="71m-FB-L0K" colorLabel="IBBuiltInLabel-Yellow">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BeF-Dy-FCX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tR1-CN-tot">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="leading" secondItem="bfQ-zU-tEN" secondAttribute="leading" id="0o5-sR-WFh"/>
+                            <constraint firstItem="bfQ-zU-tEN" firstAttribute="trailing" secondItem="BeF-Dy-FCX" secondAttribute="trailing" id="Dod-h2-G3F"/>
+                            <constraint firstItem="bfQ-zU-tEN" firstAttribute="bottom" secondItem="BeF-Dy-FCX" secondAttribute="bottom" id="Kzv-2c-cc1"/>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="top" secondItem="bfQ-zU-tEN" secondAttribute="top" id="fgi-Av-0sh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfQ-zU-tEN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Booking List" id="pfS-WC-Aam"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="orderCollectionView" destination="BeF-Dy-FCX" id="5ey-Ez-tym"/>
+                        <segue destination="Uq7-uW-Tnz" kind="show" identifier="toBookingDetails" id="PEn-ge-uav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k85-Pt-hUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2067" y="771"/>
+        </scene>
+        <!--Orders-->
+        <scene sceneID="Cki-lM-Wkg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="azr-ye-gog" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Orders" id="fma-l6-xNe"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0DI-G1-W6V">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lSI-Ua-NrM" kind="relationship" relationship="rootViewController" id="Wle-TS-kcS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jzT-OY-ZR6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182.608695652174" y="770.75892857142856"/>
+        </scene>
+        <!--OrdersDetails-->
+        <scene sceneID="dut-pg-QuI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OrdersDetails" id="Uq7-uW-Tnz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bi9-mE-V8h"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1U-6v-J0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.9275362318845" y="770.75892857142856"/>
+        </scene>
+    </scenes>
+</document>
