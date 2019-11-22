@@ -35,7 +35,6 @@ class CourtDetailsViewController: UIViewController {
         view.bringSubviewToFront(imagePageController)
         view.bringSubviewToFront(bookNowBtn)
         setNeedsStatusBarAppearanceUpdate()
-        // Do any additional setup after loading the view.
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -71,11 +70,9 @@ class CourtDetailsViewController: UIViewController {
         self.setupSlideScrollView(images: self.images)
         self.imagePageController.numberOfPages = self.images.count
         self.imagePageController.currentPage = 0
+        
         sportCenterName.text = courtDetails.sportCenterName
-        let lineView = UIView(frame: CGRect(x: 16, y: sportCenterName.frame.maxY+10, width: self.view.frame.size.width-32, height: 1.0))
-        lineView.layer.borderWidth = 1.0
-        lineView.layer.borderColor = UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1).cgColor
-        self.view.addSubview(lineView)
+        
         courtMinPrice.text = "Rp. " + courtDetails.sportMinPrice
         courtStatus.text = courtDetails.sportCenterStatus
         if(courtDetails.sportCenterStatus == "Open"){
@@ -83,14 +80,16 @@ class CourtDetailsViewController: UIViewController {
         }else{
             courtStatus.textColor = UIColor(red: 0.98, green: 0.48, blue: 0.42, alpha: 1)
         }
+        courtOpenTime.text = courtDetails.sportCenterOpenTime + " - " + courtDetails.sportCenterCloseTime
+        
         generateAddress()
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(courtDetails.sportCenterLat)!), longitude: CLLocationDegrees(Double(courtDetails.sportCenterLong)!))
         courtMap.addAnnotation(annotation)
     }
     
+    //Sudah Pindah
     func generateAddress(){
-        courtOpenTime.text = courtDetails.sportCenterOpenTime + " - " + courtDetails.sportCenterCloseTime
         addressLabel.text = courtDetails.sportCenterAddress
         addressLabel.numberOfLines = 0
         let maximumLabelSize: CGSize = CGSize(width: 338, height: 9999)
@@ -107,6 +106,7 @@ class CourtDetailsViewController: UIViewController {
         self.view.addSubview(lineView)
     }
     
+    //Sudah Pindah :D
     func setupSlideScrollView(images : [ImageSlide]) {
         imageCarousel.frame = CGRect(x: 0, y: 0, width: imageCarousel.frame.width, height: imageCarousel.frame.height)
         imageCarousel.contentSize = CGSize(width: imageCarousel.frame.width * CGFloat(images.count), height: imageCarousel.frame.height)
@@ -118,6 +118,7 @@ class CourtDetailsViewController: UIViewController {
         }
     }
     
+     //Sudah Pindah :D
     func setGradientBackground() {
         var gradient: CAGradientLayer!
         gradient = CAGradientLayer()
@@ -127,6 +128,7 @@ class CourtDetailsViewController: UIViewController {
         gradientBar.layer.mask = gradient
     }
     
+     //Sudah Pindah :D
     func addImage(){
         for n in 0 ..< courtDetails.sportCenterImage.count {
             let slide:ImageSlide = Bundle.main.loadNibNamed("ImageSlide", owner: self, options: nil)?.first as! ImageSlide
@@ -147,6 +149,7 @@ class CourtDetailsViewController: UIViewController {
     }
 }
 
+ //Sudah Pindah :D
 extension CourtDetailsViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)

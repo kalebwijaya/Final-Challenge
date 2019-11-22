@@ -12,7 +12,7 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://10.60.50.34:3000/browseCategory")
+    let url = URL(string: "http://e6e905d2.ngrok.io/api/browse-category")
 
     
     override func viewDidLoad() {
@@ -119,7 +119,7 @@ extension BrowseViewController: UITableViewDataSource{
         let storyboard = UIStoryboard(name: "CourtList", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtList") as! CourtListViewController
     
-        vc.getSportTypeID = getID
+        vc.getSportTypeID = "\(getID)"
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
