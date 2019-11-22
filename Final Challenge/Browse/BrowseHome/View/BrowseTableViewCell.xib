@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" secondItem="4TG-ab-8cG" secondAttribute="height" multiplier="16:9" id="P2e-ly-9m8"/>
                                 </constraints>
                             </imageView>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjN-8J-yE2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjN-8J-yE2">
                                 <rect key="frame" x="0.0" y="101" width="239" height="33.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dT-eE-Yih">
@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.6819149256" green="0.5885465741" blue="0.34895616769999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="4dT-eE-Yih" firstAttribute="leading" secondItem="LjN-8J-yE2" secondAttribute="leading" id="ITK-dL-y2t"/>
                                     <constraint firstAttribute="trailing" secondItem="4dT-eE-Yih" secondAttribute="trailing" id="UXP-om-EXY"/>
@@ -72,6 +72,7 @@
                 <outlet property="containerView" destination="H2p-sc-9uM" id="fiY-N9-TLm"/>
                 <outlet property="sportImage" destination="4TG-ab-8cG" id="j6w-Si-FqR"/>
                 <outlet property="sportTypeLbl" destination="4dT-eE-Yih" id="43T-wh-1ED"/>
+                <outlet property="textBackground" destination="LjN-8J-yE2" id="lpN-GI-DBp"/>
             </connections>
             <point key="canvasLocation" x="78.985507246376812" y="119.86607142857142"/>
         </tableViewCell>

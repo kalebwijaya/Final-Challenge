@@ -9,7 +9,8 @@
 import Foundation
 
 class BrowseData: Codable {
-    let sportTypeID, sportTypeName, sportTypeImage: String
+    let sportTypeID: Int
+    let sportTypeName, sportTypeImage: String
 
     enum CodingKeys: String, CodingKey {
         case sportTypeID = "sport_type_id"
@@ -17,7 +18,7 @@ class BrowseData: Codable {
         case sportTypeImage = "sport_type_image"
     }
 
-    init(sportTypeID: String, sportTypeName: String, sportTypeImage: String) {
+    init(sportTypeID: Int, sportTypeName: String, sportTypeImage: String) {
         self.sportTypeID = sportTypeID
         self.sportTypeName = sportTypeName
         self.sportTypeImage = sportTypeImage

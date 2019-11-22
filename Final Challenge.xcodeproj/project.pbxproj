@@ -38,6 +38,9 @@
 		B034E6E22383CFA900CD0F67 /* CourtListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B034E6E02383CFA900CD0F67 /* CourtListTableViewCell.xib */; };
 		B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4A238261C3008FE79F /* BrowseModel.swift */; };
 		B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4C238261DB008FE79F /* BrowseView.swift */; };
+		B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */; };
+		B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651A2386AECB00CD4C90 /* CourtSearchData.swift */; };
+		B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */; };
 		B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD28752384216E009347DB /* CourtSearchViewController.swift */; };
 		B0BD287A238421E9009347DB /* CourtSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BD2879238421E9009347DB /* CourtSearch.storyboard */; };
 		B0BD288423842572009347DB /* CourtSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD288323842572009347DB /* CourtSearchModel.swift */; };
@@ -107,6 +110,9 @@
 		B034E6E02383CFA900CD0F67 /* CourtListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourtListTableViewCell.xib; sourceTree = "<group>"; };
 		B0493D4A238261C3008FE79F /* BrowseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseModel.swift; sourceTree = "<group>"; };
 		B0493D4C238261DB008FE79F /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchResponses.swift; sourceTree = "<group>"; };
+		B074651A2386AECB00CD4C90 /* CourtSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchData.swift; sourceTree = "<group>"; };
+		B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchParam.swift; sourceTree = "<group>"; };
 		B0BD28752384216E009347DB /* CourtSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchViewController.swift; sourceTree = "<group>"; };
 		B0BD2879238421E9009347DB /* CourtSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourtSearch.storyboard; sourceTree = "<group>"; };
 		B0BD288323842572009347DB /* CourtSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchModel.swift; sourceTree = "<group>"; };
@@ -452,6 +458,9 @@
 			isa = PBXGroup;
 			children = (
 				B0BD288323842572009347DB /* CourtSearchModel.swift */,
+				B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */,
+				B074651A2386AECB00CD4C90 /* CourtSearchData.swift */,
+				B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,13 +617,16 @@
 			files = (
 				B0FA6B842382CDCC00D82B59 /* CourtListView.swift in Sources */,
 				B0BD288423842572009347DB /* CourtSearchModel.swift in Sources */,
+				B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */,
 				51BE03642383FA55004A241D /* CourtDetails.swift in Sources */,
 				51CD07FB237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld in Sources */,
+				B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */,
 				B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */,
 				B0FA6B822382CD8C00D82B59 /* CourtListModel.swift in Sources */,
 				B0FA6B7E2382CD7400D82B59 /* CourtListViewController.swift in Sources */,
 				B034E6E12383CFA900CD0F67 /* CourtListTableViewCell.swift in Sources */,
 				B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */,
+				B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */,
 				B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */,
 				B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */,
 				B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */,

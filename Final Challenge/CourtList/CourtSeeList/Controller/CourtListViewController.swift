@@ -9,9 +9,10 @@
 import UIKit
 import CoreLocation
 
+
 class CourtListViewController: UIViewController {
 
-    var getSportTypeID: String?
+    var getSportTypeID: Int?
     
     @IBOutlet var courtListView: CourtListView!
     let locationManager = CLLocationManager()
@@ -43,29 +44,37 @@ class CourtListViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "Category"
         
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
         self.title = "Court"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        navigationController?.navigationBar.prefersLargeTitles = true
         
+        
+        navigationItem.largeTitleDisplayMode = .automatic
+       
         setSearchBar()
     }
     
+    
     private func setSearchBar(){
         
-//        let storyboard = UIStoryboard(name: "CourtSearch", bundle: nil)
-//        let courtSearchTable = storyboard.instantiateViewController(identifier: "courtSearch") as! CourtSearchViewController
-//
-//        searchController = UISearchController(searchResultsController: courtSearchTable)
-//        searchController?.searchResultsUpdater = courtSearchTable
-//        let searchBar = searchController?.searchBar
-//        searchBar?.sizeToFit()
-//        searchBar?.placeholder = "Search Sport Center Name"
-//
-//        searchController?.searchBar.showsCancelButton = false
-//        searchController?.hidesNavigationBarDuringPresentation = false
-//        searchController?.dimsBackgroundDuringPresentation = true
-//        definesPresentationContext = true
+        let storyboard = UIStoryboard(name: "CourtSearch", bundle: nil)
+        let courtSearchTable = storyboard.instantiateViewController(identifier: "courtSearch") as! CourtSearchViewController
+        courtSearchTable.sportTypeID = getSportTypeID
         
+        searchController = UISearchController(searchResultsController: courtSearchTable)
+        //searchController?.searchBar.delegate = courtSearchTable
+        searchController?.searchResultsUpdater = courtSearchTable
+        
+        let searchBar = searchController?.searchBar
+        
+        searchBar?.sizeToFit()
+        searchBar?.placeholder = "Search Sport Center Name"
+
+        searchController?.searchBar.showsCancelButton = false
+        searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
         
     }
     
@@ -78,9 +87,9 @@ class CourtListViewController: UIViewController {
                 if (response.errorCode == "200"){
                     self.getSportID = response.sportTypeID
                     self.getCourtData = response.data
-                    print(self.getCourtData)
+                    
                     DispatchQueue.main.async {
-                    self.courtListView.courtListTableView.reloadData()
+                        self.courtListView.courtListTableView.reloadData()
                     }
                 }else if (response.errorCode == "400"){
                     print(response.errorMessage)
@@ -92,14 +101,17 @@ class CourtListViewController: UIViewController {
     }
     
     private func initialization(){
-        
+    
+    
         courtListView.courtListTableView.register(UINib(nibName: "CourtListTableViewCell", bundle: nil), forCellReuseIdentifier: "courtListCell")
+        
         courtListView.courtListTableView.delegate = self
         courtListView.courtListTableView.dataSource = self
         guard let sportID = getSportTypeID, let longitude = longitude, let latitude = latitude else{
             return
         }
-        print("NI ID SPORTNYA \(sportID)")
+        
+        
         getUserData = CourtListParam(sportTypeID: sportID, userLatitude: latitude, userLongitude: longitude)
         getData(userData: getUserData)
         
@@ -181,7 +193,10 @@ class CourtListViewController: UIViewController {
                 let pm = placemark[0]
                 
                 if pm.name != nil{
-                    self.courtListView.userLocationAdress.text = "\(pm.name)"
+                    guard let address = pm.name else{
+                        return
+                    }
+                    self.courtListView.userLocationAdress.text = address
                 }
             }
         }
@@ -227,8 +242,10 @@ extension CourtListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtListCell") as! CourtListTableViewCell
         
-        cell.sportCenterName.text = getCourtData[indexPath.row].sportCenterName
-        cell.sportCenterStartPrice.text = getCourtData[indexPath.row].sportMinPrice
+        
+        let textChangeColor: NSAttributedString = "from \(getCourtData[indexPath.row].sportCenterName)".attributedStringWithColor(["from"], color: UIColor.black)
+        
+        cell.sportCenterStartPrice.attributedText = textChangeColor
         
         //count distance from user location to sport center
 
@@ -237,8 +254,6 @@ extension CourtListViewController: UITableViewDataSource{
         }
         
         cell.sportCenterDistance.text = "\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away"
-        
-        print("\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away")
         
         cell.sportCenterImage.image = UIImage(named: "sport_center_image")
         return cell
@@ -254,7 +269,10 @@ extension CourtListViewController: UITableViewDataSource{
         let getDistance = "\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away"
         
         let storyboard = UIStoryboard(name: "CourtDetails", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "courtDetails")
+        let vc = storyboard.instantiateViewController(identifier: "courtDetails") as! CourtDetailsViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         //set value
     }
     

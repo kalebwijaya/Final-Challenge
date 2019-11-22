@@ -39,7 +39,7 @@ class CourtListModel{
                     completion(nil,error)
                 }
             }
-           }
+        }
            
            task.resume()
            

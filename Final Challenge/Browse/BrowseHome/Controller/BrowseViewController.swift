@@ -12,8 +12,9 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://10.60.50.34:3000/browseCategory")
+    let url = URL(string: "http://dcc2e6ce.ngrok.io/api/browse-category")
 
+    var browseModel = BrowseModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,18 @@ class BrowseViewController: UIViewController {
         // Do any additional setup after loading the view.
         setNavigation()
         initialization()
-        browseNavigationBarTitle()
-        fetchData()
+        
     }
     
     private func setNavigation(){
-        self.navigationItem.title = ""
+        self.title = "Court Category"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        setNavigation()
+        getData()
     }
     
     private func initialization(){
@@ -35,43 +42,27 @@ class BrowseViewController: UIViewController {
         browseView.browserTableView.register(UINib(nibName: "BrowseTableViewCell", bundle: nil), forCellReuseIdentifier: "browseCell")
         browseView.browserTableView.delegate = self
         browseView.browserTableView.dataSource = self
-        
-        
-        
+
     }
     
-    private func fetchData(){
+    private func getData(){
         guard let jsonUrl = url else{
             return
         }
         
-        URLSession.shared.dataTask(with: jsonUrl) {
-            (data , response , error ) in
-            guard let data = data , error == nil , response != nil else {
-                return
-            }
-            do{
-                let result = try JSONDecoder().decode(BrowseResponses.self, from: data)
-                if (result.errorCode == "200"){
-                    print("get data")
-                    self.browseData = result.data
+        browseModel.fetchData(url: jsonUrl) { (responses, error) in
+            if let response = responses {
+                if (response.errorCode == "200"){
+                   self.browseData = response.data
                     DispatchQueue.main.async {
                         self.browseView.browserTableView.reloadData()
                     }
-                }else if (result.errorCode == "400"){
-                    print(result.errorMessage)
+                }else if (response.errorCode == "400"){
+                    print(response.errorMessage)
                 }
-            }catch{
-                print("error parse data")
             }
-            
-        }.resume()
-    }
-    
-    private func browseNavigationBarTitle(){
-        let logo = UIImage(named: "logo.png")
-        let showLogo = UIImageView(image: logo)
-        self.navigationItem.titleView = showLogo
+        }
+        
     }
 
     /*
@@ -86,20 +77,6 @@ class BrowseViewController: UIViewController {
 
 }
 extension BrowseViewController: UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 45))
-
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.size.width, height: 45))
-        label.text = "Court Category"
-        label.font = UIFont.boldSystemFont(ofSize: 26.0)
-        returnedView.addSubview(label)
-
-        return returnedView
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 45
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return browseData.count

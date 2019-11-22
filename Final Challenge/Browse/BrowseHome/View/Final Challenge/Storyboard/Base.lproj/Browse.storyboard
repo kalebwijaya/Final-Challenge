@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Browse View Controller-->
+        <!--Court Category-->
         <scene sceneID="zBl-EN-HQ6">
             <objects>
                 <viewController id="szJ-Dr-16Y" customClass="BrowseViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                             <outlet property="browserTableView" destination="grf-TI-dUy" id="yGI-SB-EdX"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="yia-Cm-AUe"/>
+                    <navigationItem key="navigationItem" title="Court Category" id="yia-Cm-AUe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="browseView" destination="Cmo-ka-ieV" id="d7F-EI-XaW"/>

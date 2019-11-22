@@ -9,7 +9,7 @@
 import Foundation
 
 class CourtListParam : Codable{
-    var sportTypeID: String
+    var sportTypeID: Int
     var userLatitude: String
     var userLongitude: String
     
@@ -19,9 +19,10 @@ class CourtListParam : Codable{
         case userLongitude = "user_longitude"
     }
     
-    init(sportTypeID: String, userLatitude: String, userLongitude: String) {
+    init(sportTypeID: Int, userLatitude: String, userLongitude: String) {
         self.sportTypeID = sportTypeID
         self.userLatitude = userLatitude
         self.userLongitude = userLongitude
     }
 }
+
