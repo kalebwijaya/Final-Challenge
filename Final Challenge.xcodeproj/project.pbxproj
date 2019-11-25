@@ -49,6 +49,12 @@
 		B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651A2386AECB00CD4C90 /* CourtSearchData.swift */; };
 		B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */; };
 		B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EA9238BD3F10063BA1D /* CourtListResponses.swift */; };
+		B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EAB238BF2BE0063BA1D /* BookingData.swift */; };
+		B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EAD238BF2C60063BA1D /* BookingDataDetails.swift */; };
+		B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EAF238BF3EC0063BA1D /* BookingParam.swift */; };
+		B0A04EB2238BF4CE0063BA1D /* BookParamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB1238BF4CE0063BA1D /* BookParamDetail.swift */; };
+		B0A04EB4238BFCFB0063BA1D /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB3238BFCFB0063BA1D /* BookingModel.swift */; };
+		B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB5238BFDB10063BA1D /* BookingResponses.swift */; };
 		B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD28752384216E009347DB /* CourtSearchViewController.swift */; };
 		B0BD287A238421E9009347DB /* CourtSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BD2879238421E9009347DB /* CourtSearch.storyboard */; };
 		B0BD288423842572009347DB /* CourtSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD288323842572009347DB /* CourtSearchModel.swift */; };
@@ -128,6 +134,12 @@
 		B074651A2386AECB00CD4C90 /* CourtSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchData.swift; sourceTree = "<group>"; };
 		B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchParam.swift; sourceTree = "<group>"; };
 		B0A04EA9238BD3F10063BA1D /* CourtListResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListResponses.swift; sourceTree = "<group>"; };
+		B0A04EAB238BF2BE0063BA1D /* BookingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingData.swift; sourceTree = "<group>"; };
+		B0A04EAD238BF2C60063BA1D /* BookingDataDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataDetails.swift; sourceTree = "<group>"; };
+		B0A04EAF238BF3EC0063BA1D /* BookingParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingParam.swift; sourceTree = "<group>"; };
+		B0A04EB1238BF4CE0063BA1D /* BookParamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookParamDetail.swift; sourceTree = "<group>"; };
+		B0A04EB3238BFCFB0063BA1D /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
+		B0A04EB5238BFDB10063BA1D /* BookingResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingResponses.swift; sourceTree = "<group>"; };
 		B0BD28752384216E009347DB /* CourtSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchViewController.swift; sourceTree = "<group>"; };
 		B0BD2879238421E9009347DB /* CourtSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourtSearch.storyboard; sourceTree = "<group>"; };
 		B0BD288323842572009347DB /* CourtSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchModel.swift; sourceTree = "<group>"; };
@@ -379,6 +391,12 @@
 			isa = PBXGroup;
 			children = (
 				51D39E422387EB8D00B3BB24 /* Booking.swift */,
+				B0A04EAB238BF2BE0063BA1D /* BookingData.swift */,
+				B0A04EAD238BF2C60063BA1D /* BookingDataDetails.swift */,
+				B0A04EAF238BF3EC0063BA1D /* BookingParam.swift */,
+				B0A04EB1238BF4CE0063BA1D /* BookParamDetail.swift */,
+				B0A04EB3238BFCFB0063BA1D /* BookingModel.swift */,
+				B0A04EB5238BFDB10063BA1D /* BookingResponses.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,16 +704,20 @@
 				B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */,
 				B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */,
 				B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */,
+				B0A04EB2238BF4CE0063BA1D /* BookParamDetail.swift in Sources */,
 				B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */,
 				B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */,
+				B0A04EB4238BFCFB0063BA1D /* BookingModel.swift in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
 				B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
 				B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */,
 				B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */,
+				B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */,
 				B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */,
 				5114A05C238189280056121B /* Orders.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
+				B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */,
 				5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */,
 				51D39E402387EB7900B3BB24 /* TimeViewCell.swift in Sources */,
 				51A917F52381D06C00376021 /* OrderDetails.swift in Sources */,
@@ -703,6 +725,8 @@
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
 				51BE03602383F6D8004A241D /* ImageSlide.swift in Sources */,
 				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
+				B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */,
+				B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */,
 				51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */,

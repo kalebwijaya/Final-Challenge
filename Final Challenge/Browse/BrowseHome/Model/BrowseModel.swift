@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BrowseModel {
+class BrowseModel  {
     public func fetchData(url: URL, completion: @escaping (BrowseResponses?, Error?) -> Void){
         
         let session = URLSession(configuration: .default)

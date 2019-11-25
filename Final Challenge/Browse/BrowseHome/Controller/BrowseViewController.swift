@@ -96,7 +96,7 @@ extension BrowseViewController: UITableViewDataSource{
         let storyboard = UIStoryboard(name: "CourtList", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtList") as! CourtListViewController
     
-        vc.getSportTypeID = "\(getID)"
+        vc.getSportTypeID = getID
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
