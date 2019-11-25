@@ -22,6 +22,7 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var firstCourt: UILabel!
     @IBOutlet weak var firstCourtTotalPrice: UILabel!
     @IBOutlet weak var firstCourtPrice: UILabel!
+    @IBOutlet weak var statusImage: UIImageView!
     
     var orderDetails:OrderDetails!
     let url = URL(string: "http://10.60.50.34:3000/bookingDetails")
@@ -98,6 +99,14 @@ class OrderDetailsViewController: UIViewController {
                 }
             }
             self.totalPrice.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: totalPrice))!
+            
+            if(self.orderDetails.bookStatus == "Waiting List"){
+                self.statusImage.image = #imageLiteral(resourceName: "waitingStamp")
+            }else if(self.orderDetails.bookStatus == "Done"){
+                self.statusImage.image = #imageLiteral(resourceName: "bookedStamp")
+            }else{
+                self.statusImage.image = #imageLiteral(resourceName: "calncelledStamp")
+            }
         }
         
         if let imageURL = URL(string: orderDetails.sportCenterImageURL){
