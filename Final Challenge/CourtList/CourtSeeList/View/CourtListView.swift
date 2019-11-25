@@ -12,15 +12,37 @@ class CourtListView: UIView {
 
     @IBOutlet weak var userLocationAdress: UILabel!
     @IBOutlet weak var courtListTableView: UITableView!
-    override class func awakeFromNib() {
-        
-    }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var addressViewContainer: UIView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        courtListTableView.tableFooterView = UIView()
+        //setAddressContainerBorder()
+        setUserLocationBorder()
+    }
+    
+    private func setAddressContainerBorder(){
+        addressViewContainer.layer.cornerRadius = 10
+        addressViewContainer.layer.shadowColor = UIColor.gray.cgColor
+        addressViewContainer.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        addressViewContainer.layer.shadowRadius = 0.5
+        addressViewContainer.layer.shadowOpacity = 0.7
+
+//        addressViewContainer.backgroundColor = UIColor.clear
+//        addressViewContainer.layer.shadowOpacity = 1
+//        addressViewContainer.layer.shadowRadius = 2
+//        addressViewContainer.layer.shadowColor = UIColor(named: "Black")?.cgColor
+//        addressViewContainer.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        addressViewContainer.layer.cornerRadius = 10
+//        addressViewContainer.clipsToBounds = true
+//        addressViewContainer.layer.masksToBounds = true
+    }
+    
+    private func setUserLocationBorder(){
+        
+        userLocationAdress.layer.cornerRadius = 10
+        userLocationAdress.clipsToBounds = true
+        userLocationAdress.layer.masksToBounds = true
+    
+    }
 }

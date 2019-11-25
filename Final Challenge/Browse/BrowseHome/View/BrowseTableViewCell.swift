@@ -14,6 +14,7 @@ class BrowseTableViewCell: UITableViewCell {
     @IBOutlet weak var sportImage: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var clippingView: UIView!
+    @IBOutlet weak var textBackground: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,7 @@ class BrowseTableViewCell: UITableViewCell {
         
         setContainerBorder()
         setClippingBorder()
+        setBlurTextBackground()
     }
     private func setContainerBorder(){
         containerView.backgroundColor = UIColor.clear
@@ -44,6 +46,10 @@ class BrowseTableViewCell: UITableViewCell {
         sportImage.clipsToBounds = true
         sportImage.layer.masksToBounds = true
         
+    }
+    
+    private func setBlurTextBackground(){
+        textBackground.backgroundColor = #colorLiteral(red: 0.7006918788, green: 0.5842316747, blue: 0.3081508875, alpha: 1)
         
     }
 
