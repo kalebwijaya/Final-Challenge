@@ -9,6 +9,7 @@
 import Foundation
 
 class BrowseData: Codable {
+  
     let sportTypeID: Int
     let sportTypeName, sportTypeImage: String
 

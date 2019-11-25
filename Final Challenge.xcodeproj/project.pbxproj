@@ -11,7 +11,7 @@
 		5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */; };
 		5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */; };
 		51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51275CCB2385303000927DB7 /* OrdersDetails.storyboard */; };
-		515E73082383ED1800ED494D /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515E73072383ED1800ED494D /* Booking.storyboard */; };
+		515E73082383ED1800ED494D /* BookingCourtDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515E73072383ED1800ED494D /* BookingCourtDetails.storyboard */; };
 		51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F22381D04200376021 /* OrderDetailsViewController.swift */; };
 		51A917F52381D06C00376021 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A917F42381D06C00376021 /* OrderDetails.swift */; };
 		51BE035C2383F61F004A241D /* CourtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BE035B2383F61F004A241D /* CourtDetailsViewController.swift */; };
@@ -31,6 +31,13 @@
 		51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CD0829237EA0D800F251D9 /* Orders.storyboard */; };
 		51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD082F237EA22E00F251D9 /* AnimUtils.swift */; };
 		51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0832237EA67600F251D9 /* OrdersViewController.swift */; };
+		51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D39E342387C39400B3BB24 /* Booking.storyboard */; };
+		51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E382387DFFB00B3BB24 /* BookingViewController.swift */; };
+		51D39E3C2387E2DA00B3BB24 /* CourtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E3A2387E2DA00B3BB24 /* CourtTableViewCell.swift */; };
+		51D39E3D2387E2DA00B3BB24 /* CourtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D39E3B2387E2DA00B3BB24 /* CourtTableViewCell.xib */; };
+		51D39E402387EB7900B3BB24 /* TimeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E3E2387EB7900B3BB24 /* TimeViewCell.swift */; };
+		51D39E412387EB7900B3BB24 /* TimeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D39E3F2387EB7900B3BB24 /* TimeViewCell.xib */; };
+		51D39E432387EB8D00B3BB24 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E422387EB8D00B3BB24 /* Booking.swift */; };
 		B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */; };
 		B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */; };
 		B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00328D62382769C007C9B0A /* BrowseViewController.swift */; };
@@ -77,7 +84,7 @@
 		5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCollectionViewCell.xib; sourceTree = "<group>"; };
 		51275CCB2385303000927DB7 /* OrdersDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OrdersDetails.storyboard; sourceTree = "<group>"; };
-		515E73072383ED1800ED494D /* Booking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
+		515E73072383ED1800ED494D /* BookingCourtDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookingCourtDetails.storyboard; sourceTree = "<group>"; };
 		51A917F22381D04200376021 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		51A917F42381D06C00376021 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 		51BE035B2383F61F004A241D /* CourtDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtDetailsViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +110,13 @@
 		51CD0829237EA0D800F251D9 /* Orders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		51CD082F237EA22E00F251D9 /* AnimUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimUtils.swift; sourceTree = "<group>"; };
 		51CD0832237EA67600F251D9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		51D39E342387C39400B3BB24 /* Booking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
+		51D39E382387DFFB00B3BB24 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		51D39E3A2387E2DA00B3BB24 /* CourtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtTableViewCell.swift; sourceTree = "<group>"; };
+		51D39E3B2387E2DA00B3BB24 /* CourtTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourtTableViewCell.xib; sourceTree = "<group>"; };
+		51D39E3E2387EB7900B3BB24 /* TimeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewCell.swift; sourceTree = "<group>"; };
+		51D39E3F2387EB7900B3BB24 /* TimeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeViewCell.xib; sourceTree = "<group>"; };
+		51D39E422387EB8D00B3BB24 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		B00328D22382768C007C9B0A /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		B00328D32382768C007C9B0A /* BrowseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseTableViewCell.xib; sourceTree = "<group>"; };
 		B00328D62382769C007C9B0A /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +197,7 @@
 		51275CD12385307100927DB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				515E73072383ED1800ED494D /* Booking.storyboard */,
+				515E73072383ED1800ED494D /* BookingCourtDetails.storyboard */,
 				51BE035F2383F6D8004A241D /* ImageSlide.swift */,
 				51BE03612383F6F0004A241D /* ImageSlide.xib */,
 			);
@@ -303,6 +317,7 @@
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
 				B0FA6B792382CCBE00D82B59 /* CourtList */,
 				B0493D4423826131008FE79F /* Browse */,
+				51D39E302387C34200B3BB24 /* Booking */,
 				51275CD3238530BA00927DB7 /* Orders */,
 				51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */,
 				51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */,
@@ -348,6 +363,44 @@
 				51CD082F237EA22E00F251D9 /* AnimUtils.swift */,
 			);
 			path = Anim;
+			sourceTree = "<group>";
+		};
+		51D39E302387C34200B3BB24 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				51D39E332387C38500B3BB24 /* Controller */,
+				51D39E322387C38000B3BB24 /* View */,
+				51D39E312387C37800B3BB24 /* Model */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		51D39E312387C37800B3BB24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51D39E422387EB8D00B3BB24 /* Booking.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51D39E322387C38000B3BB24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51D39E342387C39400B3BB24 /* Booking.storyboard */,
+				51D39E3A2387E2DA00B3BB24 /* CourtTableViewCell.swift */,
+				51D39E3B2387E2DA00B3BB24 /* CourtTableViewCell.xib */,
+				51D39E3E2387EB7900B3BB24 /* TimeViewCell.swift */,
+				51D39E3F2387EB7900B3BB24 /* TimeViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51D39E332387C38500B3BB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				51D39E382387DFFB00B3BB24 /* BookingViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B0493D4423826131008FE79F /* Browse */ = {
@@ -579,14 +632,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
-				515E73082383ED1800ED494D /* Booking.storyboard in Resources */,
+				515E73082383ED1800ED494D /* BookingCourtDetails.storyboard in Resources */,
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
 				51BE03622383F6F0004A241D /* ImageSlide.xib in Resources */,
 				5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */,
 				51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
 				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
+				51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */,
 				B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */,
+				51D39E3D2387E2DA00B3BB24 /* CourtTableViewCell.xib in Resources */,
+				51D39E412387EB7900B3BB24 /* TimeViewCell.xib in Resources */,
 				B0BD287A238421E9009347DB /* CourtSearch.storyboard in Resources */,
 				51CD0828237EA0C200F251D9 /* Browse.storyboard in Resources */,
 				B034E6E22383CFA900CD0F67 /* CourtListTableViewCell.xib in Resources */,
@@ -616,6 +672,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FA6B842382CDCC00D82B59 /* CourtListView.swift in Sources */,
+				51D39E432387EB8D00B3BB24 /* Booking.swift in Sources */,
+				51D39E3C2387E2DA00B3BB24 /* CourtTableViewCell.swift in Sources */,
 				B0BD288423842572009347DB /* CourtSearchModel.swift in Sources */,
 				B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */,
 				51BE03642383FA55004A241D /* CourtDetails.swift in Sources */,
@@ -639,6 +697,7 @@
 				5114A05C238189280056121B /* Orders.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
 				5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */,
+				51D39E402387EB7900B3BB24 /* TimeViewCell.swift in Sources */,
 				51A917F52381D06C00376021 /* OrderDetails.swift in Sources */,
 				51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
@@ -646,6 +705,7 @@
 				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */,
+				51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */,
 				51BE035C2383F61F004A241D /* CourtDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
