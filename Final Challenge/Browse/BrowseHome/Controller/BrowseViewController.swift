@@ -12,7 +12,7 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://dcc2e6ce.ngrok.io/api/browse-category")
+    let url = URL(string: "http://83761bd6.ngrok.io/api/browse-category")
 
     var browseModel = BrowseModel()
     

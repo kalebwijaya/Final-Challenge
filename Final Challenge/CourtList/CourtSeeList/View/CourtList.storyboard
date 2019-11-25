@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-Pu-HxU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRn-de-fCP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRn-de-fCP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -43,6 +43,7 @@
                             <constraint firstItem="5Dd-Pu-HxU" firstAttribute="height" secondItem="otL-gG-8WY" secondAttribute="height" multiplier="0.06" id="BrI-KD-CVc"/>
                             <constraint firstItem="3i3-uA-Ef5" firstAttribute="trailing" secondItem="otL-gG-8WY" secondAttribute="trailing" id="NBo-7K-Eni"/>
                             <constraint firstItem="5Dd-Pu-HxU" firstAttribute="top" secondItem="otL-gG-8WY" secondAttribute="top" id="Vjj-gK-erg"/>
+                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="top" secondItem="5Dd-Pu-HxU" secondAttribute="bottom" id="YMl-dB-1QR"/>
                             <constraint firstItem="3i3-uA-Ef5" firstAttribute="top" secondItem="5Dd-Pu-HxU" secondAttribute="bottom" id="ZxX-Oa-MpU"/>
                             <constraint firstItem="3i3-uA-Ef5" firstAttribute="bottom" secondItem="otL-gG-8WY" secondAttribute="bottom" id="bO8-jJ-iUE"/>
                             <constraint firstItem="3i3-uA-Ef5" firstAttribute="leading" secondItem="otL-gG-8WY" secondAttribute="leading" id="edZ-u9-yjw"/>

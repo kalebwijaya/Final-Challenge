@@ -1,8 +1,8 @@
 //
-//  CourtListResult.swift
+//  CourtListResponses.swift
 //  Final Challenge
 //
-//  Created by Steven on 11/18/19.
+//  Created by Steven on 11/25/19.
 //  Copyright © 2019 Kaleb Wijaya. All rights reserved.
 //
 
@@ -26,5 +26,3 @@ class CourtListResponses: Codable {
         self.data = data
     }
 }
-
-

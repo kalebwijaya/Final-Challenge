@@ -22,7 +22,7 @@ class CourtSearchModel{
 //        do{
 //            let bodyParam = try encoder.encode(getUserData)
 //            request.httpBody = bodyParam
-//        }catch{
+//        }catch{x
 //            print(error)
 //        }
         let task = session.dataTask(with: request) {

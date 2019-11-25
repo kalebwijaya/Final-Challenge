@@ -21,7 +21,7 @@ class CourtListViewController: UIViewController {
     var latitude: String?
     var courtListModel = CourtListModel()
     
-    let getCourtListUrl = URL(string: "http://10.60.50.34:3000/sportCenterList")
+    let getCourtListUrl = URL(string: "http://83761bd6.ngrok.io/api/sport-center/list-courts")
 
     var getUserData: CourtListParam!
     var getCourtData = [CourtListData]()
@@ -32,7 +32,7 @@ class CourtListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the virew.
         
         setNavigation()
         setUserPermissionLocation()
@@ -101,8 +101,6 @@ class CourtListViewController: UIViewController {
     }
     
     private func initialization(){
-    
-    
         courtListView.courtListTableView.register(UINib(nibName: "CourtListTableViewCell", bundle: nil), forCellReuseIdentifier: "courtListCell")
         
         courtListView.courtListTableView.delegate = self
@@ -110,7 +108,6 @@ class CourtListViewController: UIViewController {
         guard let sportID = getSportTypeID, let longitude = longitude, let latitude = latitude else{
             return
         }
-        
         
         getUserData = CourtListParam(sportTypeID: sportID, userLatitude: latitude, userLongitude: longitude)
         getData(userData: getUserData)
@@ -242,8 +239,9 @@ extension CourtListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtListCell") as! CourtListTableViewCell
         
-        
         let textChangeColor: NSAttributedString = "from \(getCourtData[indexPath.row].sportCenterName)".attributedStringWithColor(["from"], color: UIColor.black)
+        
+        cell.sportCenterName.text = getCourtData[indexPath.row].sportCenterName
         
         cell.sportCenterStartPrice.attributedText = textChangeColor
         
@@ -253,9 +251,16 @@ extension CourtListViewController: UITableViewDataSource{
             return cell
         }
         
-        cell.sportCenterDistance.text = "\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away"
+        self.courtListModel.fetchImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.sportCenterImage.image = image
+            }
+        }
         
-        cell.sportCenterImage.image = UIImage(named: "sport_center_image")
+        cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
+        
+        cell.sportCenterImage.image = UIImage(named: "court_category")
         return cell
     }
     
@@ -266,7 +271,7 @@ extension CourtListViewController: UITableViewDataSource{
         }
         
         let getSportCenterID = getCourtData[indexPath.row].sportCenterID
-        let getDistance = "\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away"
+        let getDistance = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
         
         let storyboard = UIStoryboard(name: "CourtDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtDetails") as! CourtDetailsViewController
