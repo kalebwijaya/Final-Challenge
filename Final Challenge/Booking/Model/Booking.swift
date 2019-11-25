@@ -11,15 +11,15 @@ import Foundation
 // MARK: - BookingCourtResult
 class BookingCourtResult: Codable {
     let errorCode, errorMessage: String
-    let data: [BookingCourt]
-
+    let data: BookingCourt
+    
     enum CodingKeys: String, CodingKey {
         case errorCode = "error_code"
         case errorMessage = "error_message"
         case data
     }
 
-    init(errorCode: String, errorMessage: String, data: [BookingCourt]) {
+    init(errorCode: String, errorMessage: String, data: BookingCourt) {
         self.errorCode = errorCode
         self.errorMessage = errorMessage
         self.data = data

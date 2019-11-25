@@ -17,6 +17,7 @@ class CourtTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var courtDetails: UILabel!
     
+    var courtId:String = ""
     var courts = [BookingCourtDetails]()
     let cellIdentifier = "TimeViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
