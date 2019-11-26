@@ -15,21 +15,26 @@ class BookingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let datePickerKeyboard = UIDatePicker()
+    let dateFormatter = DateFormatter()
+    var dateString = ""
     var sportCenterName = ""
-    var bookingCourt:BookingCourt!
+    var bookingCourt:BookingCourt?
     var bookingModel = BookingModel()
     let cellIdentifier = "CourtTableViewCell"
-  
     let url = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/schedule")
     
     var getSportTypeID, getSportCenterID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = sportCenterName
+        dateString = dateFormatter.string(from: datePickerKeyboard.date)
         getData()
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        title = sportCenterName
+        tableView.delegate = self
+        tableView.dataSource = self
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
         datePicker.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
         self.datePicker.addGestureRecognizer(gesture)
@@ -53,18 +58,17 @@ class BookingViewController: UIViewController {
     }
     
     @objc func submitTapped(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
         dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
         dateFormatter.dateFormat = "YYYY-mm-dd"
+        dateString = dateFormatter.string(from: datePickerKeyboard.date)
+        getData()
         self.view.endEditing(true)
     }
     
     func getData(){
         guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
         
-        let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: "yyyy-mm-dd")
+        let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: dateString)
         bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
             if let result = result{
                 if(result.errorCode == "200"){
@@ -82,8 +86,8 @@ class BookingViewController: UIViewController {
     }
     
     func calcTotalTime() -> Int{
-        let startTime = bookingCourt.sportCenterOpenTime.prefix(2)
-        let endTime = bookingCourt.sportCenterClosedTime.prefix(2)
+        let startTime = bookingCourt!.sportCenterOpenTime.prefix(2)
+        let endTime = bookingCourt!.sportCenterClosedTime.prefix(2)
         let hours = Int(endTime)! - Int(startTime)!
         return Int(hours)
     }
@@ -92,16 +96,19 @@ class BookingViewController: UIViewController {
 
 extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bookingCourt.sportCenterDetail.count
+        guard let totalCourt = bookingCourt?.sportCenterDetail.count else {
+            return 0
+        }
+        return totalCourt
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourtTableViewCell
-        cell.courtName.text = bookingCourt.sportCenterDetail[indexPath.row].courtName
-        cell.courtDayPrice.text = "Rp. "+bookingCourt.sportCenterDetail[indexPath.row].courtPriceDay
-        cell.courtNightPrice.text = "Rp. "+bookingCourt.sportCenterDetail[indexPath.row].courtPriceNight
-        cell.courtId = bookingCourt.sportCenterDetail[indexPath.row].courtID
-        cell.getTotalTime(totalTime: calcTotalTime(), startTime: bookingCourt.sportCenterOpenTime)
+        cell.courtName.text = bookingCourt!.sportCenterDetail[indexPath.row].courtName
+        cell.courtDayPrice.text = "Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceDay
+        cell.courtNightPrice.text = "Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceNight
+        cell.courtId = bookingCourt!.sportCenterDetail[indexPath.row].courtID
+        cell.getTotalTime(totalTime: calcTotalTime(), startTime: bookingCourt!.sportCenterOpenTime)
         cell.collectionView.reloadData()
         return cell
     }

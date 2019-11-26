@@ -19,7 +19,6 @@
                         <outlet property="delegate" destination="27z-GU-X8W" id="Rjk-a8-YHr"/>
                         <segue destination="iVv-Z4-ral" kind="relationship" relationship="viewControllers" id="rrL-pq-1yn"/>
                         <segue destination="fyh-86-J8W" kind="relationship" relationship="viewControllers" id="8Tr-9g-tMp"/>
-                        <segue destination="7wJ-DT-Xkz" kind="relationship" relationship="viewControllers" id="vcy-6k-rhj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pme-82-YRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -46,16 +45,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opr-yu-d70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1314" y="453"/>
-        </scene>
-        <!--Booking-->
-        <scene sceneID="oDP-5H-2RB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Booking" id="7wJ-DT-Xkz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uAL-8M-Gad"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zyq-Z1-TwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1606" y="453"/>
         </scene>
     </scenes>
 </document>
