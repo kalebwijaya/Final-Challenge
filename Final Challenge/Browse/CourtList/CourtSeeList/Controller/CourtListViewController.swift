@@ -280,7 +280,7 @@ extension CourtListViewController: UITableViewDataSource{
         }
         vc.getSportTypeID = sportTypeID
         vc.getSportCenterID = "\(getCourtData[indexPath.row].sportCenterID)"
-        
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         
         //set value
