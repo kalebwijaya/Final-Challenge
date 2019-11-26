@@ -1,33 +1,14 @@
 //
-//  CourtDetails.swift
+//  CourtDetailsData.swift
 //  Final Challenge
 //
-//  Created by Kaleb Wijaya on 19/11/19.
+//  Created by Steven on 11/26/19.
 //  Copyright © 2019 Kaleb Wijaya. All rights reserved.
 //
 
 import Foundation
 
-// MARK: - CourtDetailsResult
-class CourtDetailsResult: Codable {
-    let errorCode, errorMessage: String
-    let data: CourtDetailsBooking
-
-    enum CodingKeys: String, CodingKey {
-        case errorCode = "error_code"
-        case errorMessage = "error_message"
-        case data
-    }
-
-    init(errorCode: String, errorMessage: String, data: CourtDetailsBooking) {
-        self.errorCode = errorCode
-        self.errorMessage = errorMessage
-        self.data = data
-    }
-}
-
-// MARK: - CourtDetailsBooking
-class CourtDetailsBooking: Codable {
+class CourtDetailsData: Codable {
     let sportCenterID, sportTypeID, sportCenterName, sportMinPrice: String
     let sportCenterAddress, sportCenterLat, sportCenterLong, sportCenterOpenTime: String
     let sportCenterCloseTime, sportCenterStatus: String
@@ -59,20 +40,5 @@ class CourtDetailsBooking: Codable {
         self.sportCenterCloseTime = sportCenterCloseTime
         self.sportCenterImage = sportCenterImage
         self.sportCenterStatus = sportCenterStatus
-    }
-}
-
-// MARK: - CourtDetailsImage
-class CourtDetailsImage: Codable {
-    let sportImageID, sportImageURL: String
-
-    enum CodingKeys: String, CodingKey {
-        case sportImageID = "sport_image_id"
-        case sportImageURL = "sport_image_url"
-    }
-
-    init(sportImageID: String, sportImageURL: String) {
-        self.sportImageID = sportImageID
-        self.sportImageURL = sportImageURL
     }
 }

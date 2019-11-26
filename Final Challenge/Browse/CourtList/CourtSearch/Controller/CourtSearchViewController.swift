@@ -15,7 +15,7 @@ class CourtSearchViewController: UITableViewController {
     var longitude: String?
     var latitude: String?
     var courtSearchModel = CourtSearchModel()
-    var url = URL(string: "http://10.60.50.34:3000/sportCenterList")
+    var url = URL(string: "\(BaseURL.baseURL)api/sport-center/search")
     var sportTypeID: Int?
     let locationManager = CLLocationManager()
     override func viewDidLoad() {

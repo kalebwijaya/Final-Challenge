@@ -18,7 +18,11 @@ class BookingViewController: UIViewController {
     var sportCenterName = ""
     var bookingCourt:BookingCourt!
     let cellIdentifier = "CourtTableViewCell"
-    let url = URL(string: "")
+    let url = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/schedule")
+    
+    var getSportTypeID, getSportCenterID: String?
+    var bookingModel = BookingModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,27 +61,23 @@ class BookingViewController: UIViewController {
     }
     
     func getData(){
-        guard let jsonUrl = url else {return}
-        URLSession.shared.dataTask(with: jsonUrl) {(data,response, error) in
-            guard let data = data, error == nil, response != nil else {
-                print("URL Error")
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(BookingCourtResult.self, from: data)
+        guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
+        
+        let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: "yyyy-mm-dd")
+        bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
+            if let result = result{
                 if(result.errorCode == "200"){
                     self.bookingCourt = result.data
-                    print("JSON Get")
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
                 }else if(result.errorCode == "400"){
                     print(result.errorMessage)
                 }
-            } catch {
-                print("Error After Getting JSON")
+            }else if let error = error {
+                print(error)
             }
-        }.resume()
+        }
     }
     
 }
