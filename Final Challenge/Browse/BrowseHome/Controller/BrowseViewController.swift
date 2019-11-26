@@ -38,7 +38,6 @@ class BrowseViewController: UIViewController {
     }
     
     private func initialization(){
-        
         browseView.browserTableView.register(UINib(nibName: "BrowseTableViewCell", bundle: nil), forCellReuseIdentifier: "browseCell")
         browseView.browserTableView.delegate = self
         browseView.browserTableView.dataSource = self

@@ -13,6 +13,7 @@ class OrdersViewController: UIViewController {
     @IBOutlet weak var orderCollectionView: UICollectionView!
     
     var history = [History]()
+    let orderModel = OrderModel()
     let url = URL(string: "http://10.60.50.34:3000/history")
     
     let cellIdentifier = "OrdersCollectionViewCell"
@@ -22,6 +23,10 @@ class OrdersViewController: UIViewController {
         super.viewDidLoad()
         getData()
         collectionViewSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
     }
     
     override func viewWillLayoutSubviews() {

@@ -33,6 +33,10 @@ class OrderDetailsViewController: UIViewController {
         getData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+    }
+    
     func setupView(){
         let rectShape = CAShapeLayer()
         rectShape.bounds = self.totalPriceView.frame

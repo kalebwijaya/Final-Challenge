@@ -17,8 +17,10 @@ class BookingViewController: UIViewController {
     let datePickerKeyboard = UIDatePicker()
     var sportCenterName = ""
     var bookingCourt:BookingCourt!
+    var bookingModel = BookingModel()
     let cellIdentifier = "CourtTableViewCell"
     let url = URL(string: "")
+    var dateString:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,8 @@ class BookingViewController: UIViewController {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
+        dateFormatter.dateFormat = "YYYY-mm-dd"
+        dateString = dateFormatter.string(from: datePickerKeyboard.date)
         self.view.endEditing(true)
     }
     
@@ -80,6 +84,13 @@ class BookingViewController: UIViewController {
         }.resume()
     }
     
+    func calcTotalTime() -> Int{
+        let startTime = bookingCourt.sportCenterOpenTime.prefix(2)
+        let endTime = bookingCourt.sportCenterClosedTime.prefix(2)
+        let hours = Int(endTime)! - Int(startTime)!
+        return Int(hours)
+    }
+    
 }
 
 extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
@@ -93,7 +104,7 @@ extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
         cell.courtDayPrice.text = "Rp. "+bookingCourt.sportCenterDetail[indexPath.row].courtPriceDay
         cell.courtNightPrice.text = "Rp. "+bookingCourt.sportCenterDetail[indexPath.row].courtPriceNight
         cell.courtId = bookingCourt.sportCenterDetail[indexPath.row].courtID
-        cell.courts = bookingCourt.sportCenterDetail
+        cell.getTotalTime(totalTime: calcTotalTime(), startTime: bookingCourt.sportCenterOpenTime)
         cell.collectionView.reloadData()
         return cell
     }
