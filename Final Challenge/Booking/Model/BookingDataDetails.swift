@@ -25,6 +25,6 @@ class BookingCourtDetails: Codable {
         self.courtName = courtName
         self.courtPriceDay = courtPriceDay
         self.courtPriceNight = courtPriceNight
-        self.courtUnavailableTime = courtUnavailableTime
+        self.courtUnavailableTime = courtAvailableTime
     }
 }

@@ -20,19 +20,17 @@ class CourtListViewController: UIViewController {
     var longitude: String?
     var latitude: String?
     var courtListModel = CourtListModel()
-    
-    let getCourtListUrl = URL(string: "http://83761bd6.ngrok.io/api/sport-center/list-courts")
+    let getCourtListUrl = URL(string: "\(BaseURL.baseURL)api/sport-center/list-courts")
 
     var getUserData: CourtListParam!
     var getCourtData = [CourtListData]()
     var getSportID: String?
-    
+    var sportTypeID: String?
+
     var searchController: UISearchController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the virew.
         
         setNavigation()
         setUserPermissionLocation()
@@ -87,7 +85,8 @@ class CourtListViewController: UIViewController {
                 if (response.errorCode == "200"){
                     self.getSportID = response.sportTypeID
                     self.getCourtData = response.data
-                    
+                    self.sportTypeID = response.sportTypeID
+
                     DispatchQueue.main.async {
                         self.courtListView.courtListTableView.reloadData()
                     }
@@ -239,7 +238,7 @@ extension CourtListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtListCell") as! CourtListTableViewCell
         
-        let textChangeColor: NSAttributedString = "from \(getCourtData[indexPath.row].sportCenterName)".attributedStringWithColor(["from"], color: UIColor.black)
+        let textChangeColor: NSAttributedString = "from \(getCourtData[indexPath.row].sportMinPrice)".attributedStringWithColor(["from"], color: UIColor.black)
         
         cell.sportCenterName.text = getCourtData[indexPath.row].sportCenterName
         
@@ -273,8 +272,14 @@ extension CourtListViewController: UITableViewDataSource{
         let getSportCenterID = getCourtData[indexPath.row].sportCenterID
         let getDistance = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
         
-        let storyboard = UIStoryboard(name: "CourtDetails", bundle: nil)
+        let storyboard = UIStoryboard(name: "BookingCourtDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtDetails") as! CourtDetailsViewController
+        
+        guard let sportTypeID = self.sportTypeID else{
+            return
+        }
+        vc.getSportTypeID = sportTypeID
+        vc.getSportCenterID = "\(getCourtData[indexPath.row].sportCenterID)"
         
         self.navigationController?.pushViewController(vc, animated: true)
         

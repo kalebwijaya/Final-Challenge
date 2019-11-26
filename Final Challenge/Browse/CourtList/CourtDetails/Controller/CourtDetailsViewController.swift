@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 class CourtDetailsViewController: UIViewController {
-
     @IBOutlet weak var imageCarousel: UIScrollView!
     @IBOutlet weak var imagePageController: UIPageControl!
     @IBOutlet weak var gradientBar: UIView!
@@ -24,8 +23,12 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var bookNowBtn: UIButton!
     
     var images:[ImageSlide] = []
-    var courtDetails:CourtDetailsBooking!
-    let url = URL(string: "http://10.60.50.34:3000/courtDetails")
+    var courtDetails:CourtDetailsData!
+    let url = URL(string: "\(BaseURL.baseURL)api/sport-center/detail")
+    var courtDetailParam: CourtDetailsParam!
+    var courtDetailModel = CourtDetailsModel()
+    var getSportTypeID: String?
+    var getSportCenterID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,27 +45,34 @@ class CourtDetailsViewController: UIViewController {
     }
     
     func getData(){
-        guard let jsonUrl = url else {return}
-        URLSession.shared.dataTask(with: jsonUrl) {(data,response, error) in
-            guard let data = data, error == nil, response != nil else {
-                print("URL Error")
+        
+        guard let jsonUrl = url,
+            let sportTypeID = getSportTypeID,
+            let sportCenterID = getSportCenterID
+            else {
                 return
-            }
-            do {
-                let result = try JSONDecoder().decode(CourtDetailsResult.self, from: data)
+                
+        }
+        
+        courtDetailParam = CourtDetailsParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID)
+        
+        courtDetailModel.getData(url: jsonUrl, setParam: courtDetailParam) { (result, error) in
+            
+            if let result = result{
                 if(result.errorCode == "200"){
                     self.courtDetails = result.data
-                    print("JSON Get")
                     DispatchQueue.main.async {
                         self.setAllData()
                     }
                 }else if(result.errorCode == "400"){
                     print(result.errorMessage)
                 }
-            } catch {
-                print("Error After Getting JSON")
+            }else if let error = error {
+                print(error)
             }
-        }.resume()
+            
+        }
+        
     }
     
     func setAllData(){
@@ -118,7 +128,6 @@ class CourtDetailsViewController: UIViewController {
         }
     }
     
-     //Sudah Pindah :D
     func setGradientBackground() {
         var gradient: CAGradientLayer!
         gradient = CAGradientLayer()
@@ -128,11 +137,11 @@ class CourtDetailsViewController: UIViewController {
         gradientBar.layer.mask = gradient
     }
     
-     //Sudah Pindah :D
+    //Sudah Pindah :D
     func addImage(){
         for n in 0 ..< courtDetails.sportCenterImage.count {
             let slide:ImageSlide = Bundle.main.loadNibNamed("ImageSlide", owner: self, options: nil)?.first as! ImageSlide
-           
+            
             if let imageURL = URL(string: courtDetails.sportCenterImage[n].sportImageURL){
                 DispatchQueue.global().async {
                     let data = try? Data(contentsOf: imageURL)
@@ -149,7 +158,6 @@ class CourtDetailsViewController: UIViewController {
     }
 }
 
- //Sudah Pindah :D
 extension CourtDetailsViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)

@@ -12,14 +12,12 @@ class BrowseViewController: UIViewController {
 
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
-    let url = URL(string: "http://83761bd6.ngrok.io/api/browse-category")
+    let url = URL(string: "\(BaseURL.baseURL)api/browse-category")
 
     var browseModel = BrowseModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         // Do any additional setup after loading the view.
         setNavigation()
         initialization()
