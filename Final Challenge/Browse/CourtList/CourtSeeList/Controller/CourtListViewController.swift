@@ -26,12 +26,11 @@ class CourtListViewController: UIViewController {
     var getCourtData = [CourtListData]()
     var getSportID: String?
     var sportTypeID: String?
+
     var searchController: UISearchController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the virew
         
         setNavigation()
         setUserPermissionLocation()
@@ -87,6 +86,7 @@ class CourtListViewController: UIViewController {
                     self.getSportID = response.sportTypeID
                     self.getCourtData = response.data
                     self.sportTypeID = response.sportTypeID
+
                     DispatchQueue.main.async {
                         self.courtListView.courtListTableView.reloadData()
                     }

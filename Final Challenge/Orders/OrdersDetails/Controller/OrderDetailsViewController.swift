@@ -24,12 +24,16 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var firstCourtPrice: UILabel!
     @IBOutlet weak var statusImage: UIImageView!
     
-    var orderDetails:OrderDetails!
+    var orderDetails:OrderDetailsData!
     let url = URL(string: "http://10.60.50.34:3000/bookingDetails")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         getData()
     }
     

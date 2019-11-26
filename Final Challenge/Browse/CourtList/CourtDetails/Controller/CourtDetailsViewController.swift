@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 
 class CourtDetailsViewController: UIViewController {
-    
     @IBOutlet weak var imageCarousel: UIScrollView!
     @IBOutlet weak var imagePageController: UIPageControl!
     @IBOutlet weak var gradientBar: UIView!
@@ -87,10 +86,7 @@ class CourtDetailsViewController: UIViewController {
             }
             
         }
-        
-        setButtonClickHandler()
-        
-    }
+        setButtonClickHandler()    }
     
     func setAllData(){
         self.addImage()
@@ -145,7 +141,6 @@ class CourtDetailsViewController: UIViewController {
         }
     }
     
-    //Sudah Pindah :D
     func setGradientBackground() {
         var gradient: CAGradientLayer!
         gradient = CAGradientLayer()
@@ -176,7 +171,6 @@ class CourtDetailsViewController: UIViewController {
     }
 }
 
-//Sudah Pindah :D
 extension CourtDetailsViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
