@@ -38,6 +38,20 @@ class CourtDetailsViewController: UIViewController {
         view.bringSubviewToFront(imagePageController)
         view.bringSubviewToFront(bookNowBtn)
         setNeedsStatusBarAppearanceUpdate()
+//        self.tabBarController?.tabBar.isHidden = true
+        
+    }
+    
+    func setButtonClickHandler(){
+        bookNowBtn.addTarget(self, action: #selector(buttonHandler), for: .touchUpInside)
+    }
+    
+    @objc func buttonHandler(sender: UIButton){
+        let storyBoard = UIStoryboard(name: "Booking", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "booking") as! BookingViewController
+        vc.getSportTypeID = self.getSportTypeID
+        vc.getSportCenterID = self.getSportCenterID
+        self.present(vc,animated: true,completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -72,8 +86,7 @@ class CourtDetailsViewController: UIViewController {
             }
             
         }
-        
-    }
+        setButtonClickHandler()    }
     
     func setAllData(){
         self.addImage()
