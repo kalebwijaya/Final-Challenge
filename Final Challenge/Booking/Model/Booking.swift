@@ -26,8 +26,4 @@ class BookingCourtResult: Codable {
     }
 }
 
-// MARK: - BookingCourt
-
-
-// MARK: - BookingCourtDetails
 

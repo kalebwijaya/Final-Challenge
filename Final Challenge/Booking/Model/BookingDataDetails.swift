@@ -20,7 +20,7 @@ class BookingCourtDetails: Codable {
         case courtUnavailableTime = "court_unavailable_time"
     }
 
-    init(courtID: String, courtName: String, courtPriceDay: String, courtPriceNight: String, courtAvailableTime: [String]) {
+    init(courtID: String, courtName: String, courtPriceDay: String, courtPriceNight: String, courtUnavailableTime: [String]) {
         self.courtID = courtID
         self.courtName = courtName
         self.courtPriceDay = courtPriceDay

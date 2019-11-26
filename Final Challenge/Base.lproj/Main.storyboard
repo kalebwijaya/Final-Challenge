@@ -45,7 +45,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opr-yu-d70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1330" y="453"/>
+            <point key="canvasLocation" x="1314" y="453"/>
         </scene>
         <!--Booking-->
         <scene sceneID="oDP-5H-2RB">
@@ -55,7 +55,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyq-Z1-TwN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="419"/>
+            <point key="canvasLocation" x="1606" y="453"/>
         </scene>
     </scenes>
 </document>

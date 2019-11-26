@@ -18,9 +18,14 @@ class CourtTableViewCell: UITableViewCell {
     @IBOutlet weak var courtDetails: UILabel!
     
     var courtId:String = ""
-    var courts = [BookingCourtDetails]()
+    var totalTime:[String] = []
     let cellIdentifier = "TimeViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
+    var firstTap:Bool = true
+    var starIndex:Int = 0
+    var endIndex:Int = 0
+    var startTime = ""
+    var endTime = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +37,14 @@ class CourtTableViewCell: UITableViewCell {
         setupCollectionViewCell()
     }
     
+    func getTotalTime(totalTime:Int, startTime:String){
+        var time = Int(startTime.prefix(2))!
+        for _ in 0 ..< totalTime {
+            let timeString = "\(time)".count == 1 ? ("0" + "\(time)") : "\(time)" + ":00"
+            self.totalTime.append(timeString)
+            time += 1
+        }
+    }
     
 }
 
@@ -66,13 +79,30 @@ extension CourtTableViewCell: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return courts.count
+        return totalTime.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! TimeViewCell
-        
+        cell.timeString = totalTime[indexPath.row]
+        cell.time.text = totalTime[indexPath.row]
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(firstTap){
+            let cell = collectionView.cellForItem(at: indexPath)
+            starIndex = indexPath.row
+            cell?.backgroundColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
+            firstTap = false
+        }else{
+            endIndex = indexPath.row
+            for n in starIndex ... endIndex {
+                let cell = collectionView.cellForItem(at: IndexPath(row: n, section: indexPath.section) )
+                cell?.backgroundColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
+            }
+        }
+    }
+    
 }
+
