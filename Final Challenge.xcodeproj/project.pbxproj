@@ -327,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
-				B0FA6B792382CCBE00D82B59 /* CourtList */,
 				B0493D4423826131008FE79F /* Browse */,
 				51D39E302387C34200B3BB24 /* Booking */,
 				51275CD3238530BA00927DB7 /* Orders */,
@@ -425,7 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				51275CCE2385305000927DB7 /* BrowseHome */,
-				51275CCF2385305C00927DB7 /* CourtDetails */,
+				B0FA6B792382CCBE00D82B59 /* CourtList */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -539,8 +538,9 @@
 		B0FA6B792382CCBE00D82B59 /* CourtList */ = {
 			isa = PBXGroup;
 			children = (
-				B0BD287B2384245D009347DB /* CourtSearch */,
+				51275CCF2385305C00927DB7 /* CourtDetails */,
 				B0BD287C238424BC009347DB /* CourtSeeList */,
+				B0BD287B2384245D009347DB /* CourtSearch */,
 			);
 			path = CourtList;
 			sourceTree = "<group>";
