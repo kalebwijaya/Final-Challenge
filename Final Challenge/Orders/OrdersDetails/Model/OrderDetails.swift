@@ -11,7 +11,7 @@ import Foundation
 // MARK: - OrderDetailsResult
 class OrderDetailsResult: Codable {
     let errorCode, errorMessage: String
-    let data: OrderDetails
+    let data: OrderDetailsData
     
     enum CodingKeys: String, CodingKey {
         case errorCode = "error_code"
@@ -19,7 +19,7 @@ class OrderDetailsResult: Codable {
         case data = "data"
     }
 
-    init(errorCode: String, errorMessage: String, data: OrderDetails) {
+    init(errorCode: String, errorMessage: String, data: OrderDetailsData) {
         self.errorCode = errorCode
         self.errorMessage = errorMessage
         self.data = data

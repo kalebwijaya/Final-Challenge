@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - CourtDetails
-class CourtDetails :Codable{
+class CourtDetailsDataDetails :Codable{
     let courtName, bookStartTime, bookEndTime, courtPrice: String
     
     enum CodingKeys: String, CodingKey {

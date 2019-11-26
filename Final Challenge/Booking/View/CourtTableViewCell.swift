@@ -101,6 +101,7 @@ extension CourtTableViewCell: UICollectionViewDataSource, UICollectionViewDelega
                 let cell = collectionView.cellForItem(at: IndexPath(row: n, section: indexPath.section) )
                 cell?.backgroundColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
             }
+            firstTap = true
         }
     }
     
