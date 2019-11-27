@@ -18,6 +18,10 @@ class TimeViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 0.585175693, green: 0.5851898789, blue: 0.5851822495, alpha: 1)
+        layer.cornerRadius = 4
+        
     }
 
 }
