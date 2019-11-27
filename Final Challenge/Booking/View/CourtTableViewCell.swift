@@ -17,7 +17,7 @@ class CourtTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var courtDetails: UILabel!
     
-    var courtId:String = ""
+    var courtId:Double = 0
     var totalTime:[String] = []
     let cellIdentifier = "TimeViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
@@ -40,7 +40,7 @@ class CourtTableViewCell: UITableViewCell {
     func getTotalTime(totalTime:Int, startTime:String){
         var time = Int(startTime.prefix(2))!
         for _ in 0 ..< totalTime {
-            let timeString = "\(time)".count == 1 ? ("0" + "\(time)") : "\(time)" + ":00"
+            let timeString = "\(time)".count == 1 ? ("0" + "\(time)"+":00") : "\(time)" + ":00"
             self.totalTime.append(timeString)
             time += 1
         }
