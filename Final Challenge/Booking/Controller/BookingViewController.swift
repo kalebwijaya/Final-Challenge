@@ -13,15 +13,22 @@ class BookingViewController: UIViewController {
     @IBOutlet weak var datePicker: UIView!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     let datePickerKeyboard = UIDatePicker()
     let dateFormatter = DateFormatter()
+    var tableCellHeight = 0
+    var totalPrice = 0
+    var totalPricePerCourt = [Int:Int]()
     var dateString = ""
     var sportCenterName = ""
+    let userID = "1423556093315144139"
     var bookingCourt:BookingCourt?
     var bookingModel = BookingModel()
     let cellIdentifier = "CourtTableViewCell"
     let url = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/schedule")
+    let urlBook = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/book")
+    var bookParamDetail = [Int:BookParamDetail]()
     
     var getSportTypeID, getSportCenterID: String?
     
@@ -32,9 +39,6 @@ class BookingViewController: UIViewController {
         title = sportCenterName
         tableView.delegate = self
         tableView.dataSource = self
-        datePicker.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
-        self.datePicker.addGestureRecognizer(gesture)
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
     }
@@ -44,7 +48,10 @@ class BookingViewController: UIViewController {
     }
     
     func setDatePicker(){
+        datePicker.isUserInteractionEnabled = true
         datePickerKeyboard.datePickerMode = .date
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
+        self.datePicker.addGestureRecognizer(gesture)
         dateField.inputView = datePickerKeyboard
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -60,7 +67,6 @@ class BookingViewController: UIViewController {
     
     @objc func submitTapped(){
         dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
-        dateFormatter.dateFormat = "YYYY-MM-dd"
         dateString = dateFormatter.string(from: datePickerKeyboard.date)
         getData()
         self.view.endEditing(true)
@@ -92,30 +98,33 @@ class BookingViewController: UIViewController {
         return Int(hours)
     }
     
-}
-
-extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let totalCourt = bookingCourt?.sportCenterDetail.count else {
-            return 0
+    
+    @IBAction func bookNowBtn(_ sender: Any) {
+        if(totalPrice != 0){
+            guard let jsonUrl = urlBook, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
+            
+            var bookParamDetail = [BookParamDetail]()
+            for n in 0 ..< self.bookParamDetail.count{
+                bookParamDetail.append(self.bookParamDetail[n]!)
+            }
+            
+            let sendParam = BookingParam(bookDate: dateString, userID: userID, sportCenterID: sportCenterID, bookInput: bookParamDetail)
+            
+            bookingModel.sendBookingRequest(url: jsonUrl, setBodyParam: sendParam){ (result, error) in
+                if let result = result{
+                    if(result.errorCode == "200"){
+                        print("Book Success")
+                        print(result.data.bookID)
+                        //TINGGAL SEGUE
+                    }else if(result.errorCode == "400"){
+                        print(result.errorMessage)
+                    }
+                }else if let error = error {
+                    print(error)
+                }
+            }
         }
-        return totalCourt
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourtTableViewCell
-        cell.courtName.text = bookingCourt!.sportCenterDetail[indexPath.row].courtName
-        cell.courtDayPrice.text = "Day Price Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceDay
-        cell.courtNightPrice.text = "Night Price Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceNight
-        cell.courtId = bookingCourt!.sportCenterDetail[indexPath.row].courtID
-        cell.getTotalTime(totalTime: calcTotalTime(), startTime: bookingCourt!.sportCenterOpenTime)
-        cell.collectionView.reloadData()
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
-    }
 }
-
 

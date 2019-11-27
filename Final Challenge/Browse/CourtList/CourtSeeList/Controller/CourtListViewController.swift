@@ -26,6 +26,7 @@ class CourtListViewController: UIViewController {
     var getCourtData = [CourtListData]()
     var getSportID: String?
     var sportTypeID: String?
+    var addressName :String?
 
     var searchController: UISearchController?
     
@@ -39,18 +40,17 @@ class CourtListViewController: UIViewController {
     }
     
     private func setNavigation(){
-        let backButton = UIBarButtonItem()
-        backButton.title = "Category"
         
         self.title = "Court"
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         
         
         navigationItem.largeTitleDisplayMode = .automatic
        
-        setSearchBar()
+        //setSearchBar()
     }
+    
     
     
     private func setSearchBar(){
@@ -187,12 +187,12 @@ class CourtListViewController: UIViewController {
             
             if pm.count > 0 {
                 let pm = placemark[0]
-                
+                print("placemark \(pm)")
                 if pm.name != nil{
                     guard let address = pm.name else{
                         return
                     }
-                    self.courtListView.userLocationAdress.text = address
+                    self.addressName = address
                 }
             }
         }
@@ -201,6 +201,8 @@ class CourtListViewController: UIViewController {
 }
 
 extension CourtListViewController: CLLocationManagerDelegate{
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first{
@@ -231,6 +233,21 @@ extension CourtListViewController: UITableViewDelegate{
 }
 
 extension CourtListViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerText = UILabel()
+        headerText.adjustsFontSizeToFitWidth = true
+        headerText.textAlignment = .center
+        guard let address = addressName else{
+            return UIView()
+        }
+        headerText.text = address
+        
+       
+        
+        return headerText
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return getCourtData.count
     }

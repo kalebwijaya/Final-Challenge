@@ -9,5 +9,5 @@
 import Foundation
 
 class BaseURL{
-   public static let  baseURL = "http://cdbb7512.ngrok.io/"
+   public static let  baseURL = "http://8225789e.ngrok.io/"
 }

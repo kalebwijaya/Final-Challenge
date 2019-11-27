@@ -9,8 +9,7 @@
 import Foundation
 
 class BookingCourtDetails: Codable {
-    let courtID:Double
-    let courtName, courtPriceDay, courtPriceNight: String
+    let courtName, courtID, courtPriceDay, courtPriceNight: String
     let courtUnavailableTime: [String]
 
     enum CodingKeys: String, CodingKey {
@@ -21,7 +20,7 @@ class BookingCourtDetails: Codable {
         case courtUnavailableTime = "court_unavailable_time"
     }
 
-    init(courtID: Double, courtName: String, courtPriceDay: String, courtPriceNight: String, courtUnavailableTime: [String]) {
+    init(courtID: String, courtName: String, courtPriceDay: String, courtPriceNight: String, courtUnavailableTime: [String]) {
         self.courtID = courtID
         self.courtName = courtName
         self.courtPriceDay = courtPriceDay

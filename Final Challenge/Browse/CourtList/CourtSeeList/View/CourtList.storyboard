@@ -15,46 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-Pu-HxU">
-                                <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRn-de-fCP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WRn-de-fCP" secondAttribute="bottom" id="HYI-Gx-WZ9"/>
-                                    <constraint firstItem="WRn-de-fCP" firstAttribute="leading" secondItem="5Dd-Pu-HxU" secondAttribute="leading" id="LYA-fq-bzm"/>
-                                    <constraint firstItem="WRn-de-fCP" firstAttribute="top" secondItem="5Dd-Pu-HxU" secondAttribute="top" id="R29-IT-p6C"/>
-                                    <constraint firstAttribute="trailing" secondItem="WRn-de-fCP" secondAttribute="trailing" id="VzC-6q-DFU"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3i3-uA-Ef5">
-                                <rect key="frame" x="0.0" y="131.5" width="414" height="681.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5Dd-Pu-HxU" firstAttribute="height" secondItem="otL-gG-8WY" secondAttribute="height" multiplier="0.06" id="BrI-KD-CVc"/>
-                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="trailing" secondItem="otL-gG-8WY" secondAttribute="trailing" id="NBo-7K-Eni"/>
-                            <constraint firstItem="5Dd-Pu-HxU" firstAttribute="top" secondItem="otL-gG-8WY" secondAttribute="top" id="Vjj-gK-erg"/>
-                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="top" secondItem="5Dd-Pu-HxU" secondAttribute="bottom" id="YMl-dB-1QR"/>
-                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="top" secondItem="5Dd-Pu-HxU" secondAttribute="bottom" id="ZxX-Oa-MpU"/>
-                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="bottom" secondItem="otL-gG-8WY" secondAttribute="bottom" id="bO8-jJ-iUE"/>
-                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="leading" secondItem="otL-gG-8WY" secondAttribute="leading" id="edZ-u9-yjw"/>
-                            <constraint firstItem="5Dd-Pu-HxU" firstAttribute="trailing" secondItem="otL-gG-8WY" secondAttribute="trailing" id="er3-jn-Jfy"/>
-                            <constraint firstItem="5Dd-Pu-HxU" firstAttribute="leading" secondItem="otL-gG-8WY" secondAttribute="leading" id="h0w-H5-VZd"/>
+                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="trailing" secondItem="otL-gG-8WY" secondAttribute="trailing" id="1fl-Ua-7zt"/>
+                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="top" secondItem="otL-gG-8WY" secondAttribute="top" id="2WP-Bu-uAZ"/>
+                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="leading" secondItem="otL-gG-8WY" secondAttribute="leading" id="IRO-cW-SlB"/>
+                            <constraint firstItem="3i3-uA-Ef5" firstAttribute="bottom" secondItem="otL-gG-8WY" secondAttribute="bottom" id="UY9-VB-UbM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="otL-gG-8WY"/>
                         <connections>
-                            <outlet property="addressViewContainer" destination="5Dd-Pu-HxU" id="WTF-Uf-MpQ"/>
                             <outlet property="courtListTableView" destination="3i3-uA-Ef5" id="mbn-lU-g1f"/>
-                            <outlet property="userLocationAdress" destination="WRn-de-fCP" id="aDB-mr-zE4"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="5Gk-xs-DgK"/>

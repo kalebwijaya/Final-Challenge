@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Court Category-->
+        <!--Browse View Controller-->
         <scene sceneID="zBl-EN-HQ6">
             <objects>
                 <viewController id="szJ-Dr-16Y" customClass="BrowseViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                             <outlet property="browserTableView" destination="grf-TI-dUy" id="yGI-SB-EdX"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Court Category" id="yia-Cm-AUe"/>
+                    <navigationItem key="navigationItem" id="yia-Cm-AUe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="browseView" destination="Cmo-ka-ieV" id="d7F-EI-XaW"/>
@@ -46,7 +46,7 @@
         <!--Browse-->
         <scene sceneID="qaR-Am-4ED">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h8N-U1-m9h" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="browse" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h8N-U1-m9h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" id="E8k-AR-5h8" customClass="Browse"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

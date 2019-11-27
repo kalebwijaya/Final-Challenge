@@ -9,19 +9,21 @@
 import Foundation
 
 class BookingParam: Codable{
-    let bookDate, userID : String
+    let bookDate, userID, sportCenterID : String
     let bookInput: [BookParamDetail]
     
     enum CodingKeys: String, CodingKey{
         case bookDate = "date"
         case userID = "user_id"
-        case bookInput
+        case sportCenterID = "sport_center_id"
+        case bookInput = "book_input"
     }
     
-    init(bookDate: String, userID: String, bookInput: [BookParamDetail]) {
+    init(bookDate: String, userID: String, sportCenterID:String, bookInput: [BookParamDetail]) {
         self.bookDate = bookDate
         self.userID = userID
         self.bookInput = bookInput
+        self.sportCenterID = sportCenterID
     }
     
 }

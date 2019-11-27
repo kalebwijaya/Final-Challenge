@@ -51,7 +51,8 @@ class CourtDetailsViewController: UIViewController {
         let vc = storyBoard.instantiateViewController(identifier: "booking") as! BookingViewController
         vc.getSportTypeID = self.getSportTypeID
         vc.getSportCenterID = self.getSportCenterID
-        self.present(vc,animated: true,completion: nil)
+        vc.sportCenterName = self.courtDetails.sportCenterName
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
