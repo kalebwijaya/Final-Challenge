@@ -33,7 +33,6 @@ class CourtDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.present(loadingView, animated: true, completion: nil)
         getData()
         imageCarousel.delegate = self
         setGradientBackground()
@@ -63,7 +62,7 @@ class CourtDetailsViewController: UIViewController {
     }
     
     func getData(){
-        
+//        self.present(loadingView, animated: true, completion: nil)
         guard let jsonUrl = url,
             let sportTypeID = getSportTypeID,
             let sportCenterID = getSportCenterID
@@ -88,12 +87,10 @@ class CourtDetailsViewController: UIViewController {
             }else if let error = error {
                 print(error)
             }
-            DispatchQueue.main.async {
-                self.loadingView.dismiss(animated: true, completion: nil)
-            }
         }
-        setButtonClickHandler()
         
+        self.loadingView.dismiss(animated: true, completion: nil)
+        setButtonClickHandler()
     }
     
     func setAllData(){

@@ -10,7 +10,7 @@
         <!--Court Details View Controller-->
         <scene sceneID="aqJ-VO-eml">
             <objects>
-                <viewController storyboardIdentifier="courtDetails" id="UPf-WT-qEA" customClass="CourtDetailsViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="courtDetails" interfaceStyle="light" id="UPf-WT-qEA" customClass="CourtDetailsViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZC-Di-ODF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

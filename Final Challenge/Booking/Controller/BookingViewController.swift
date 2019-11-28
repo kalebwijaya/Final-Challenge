@@ -93,7 +93,7 @@ class BookingViewController: UIViewController {
     }
     
     func getData(){
-        self.present(loadingView, animated: true, completion: nil)
+//        self.present(loadingView, animated: true, completion: nil)
         guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
         let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: dateString)
         bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
