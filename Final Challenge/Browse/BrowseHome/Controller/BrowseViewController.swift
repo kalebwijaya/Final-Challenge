@@ -13,6 +13,8 @@ class BrowseViewController: UIViewController {
     @IBOutlet var browseView: BrowseView!
     var browseData = [BrowseData]()
     let url = URL(string: "\(BaseURL.baseURL)api/browse-category")
+    
+    let loadingView = Load.shared.showLoad()
 
     var browseModel = BrowseModel()
     
@@ -21,15 +23,13 @@ class BrowseViewController: UIViewController {
         // Do any additional setup after loading the view.
         setNavigation()
         initialization()
-        
     }
     
     private func setNavigation(){
         self.title = "Court Category"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         setNavigation()
         getData()
@@ -43,6 +43,7 @@ class BrowseViewController: UIViewController {
     }
     
     private func getData(){
+        self.present(loadingView, animated: true, completion: nil)
         guard let jsonUrl = url else{
             return
         }
@@ -57,6 +58,9 @@ class BrowseViewController: UIViewController {
                 }else if (response.errorCode == "400"){
                     print(response.errorMessage)
                 }
+            }
+            DispatchQueue.main.async {
+                self.loadingView.dismiss(animated: true, completion: nil)
             }
         }
         
@@ -92,7 +96,6 @@ extension BrowseViewController: UITableViewDataSource{
         let getID = browseData[indexPath.row].sportTypeID
         let storyboard = UIStoryboard(name: "CourtList", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtList") as! CourtListViewController
-        vc.navigationItem.setHidesBackButton(true, animated: true)
         vc.getSportTypeID = getID
         self.navigationController?.pushViewController(vc, animated: true)
         

@@ -21,6 +21,7 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var courtMap: MKMapView!
     @IBOutlet weak var bookNowBtn: UIButton!
+    let loadingView = Load.shared.showLoad()
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
@@ -32,12 +33,14 @@ class CourtDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.present(loadingView, animated: true, completion: nil)
         getData()
         imageCarousel.delegate = self
         setGradientBackground()
         view.bringSubviewToFront(imagePageController)
         view.bringSubviewToFront(bookNowBtn)
         setNeedsStatusBarAppearanceUpdate()
+        imageCarousel.contentInsetAdjustmentBehavior = .never
 //        self.tabBarController?.tabBar.isHidden = true
         
     }
@@ -85,9 +88,13 @@ class CourtDetailsViewController: UIViewController {
             }else if let error = error {
                 print(error)
             }
-            
+            DispatchQueue.main.async {
+                self.loadingView.dismiss(animated: true, completion: nil)
+            }
         }
-        setButtonClickHandler()    }
+        setButtonClickHandler()
+        
+    }
     
     func setAllData(){
         self.addImage()

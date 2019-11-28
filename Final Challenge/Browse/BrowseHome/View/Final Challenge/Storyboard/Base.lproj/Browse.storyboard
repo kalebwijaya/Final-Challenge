@@ -47,7 +47,7 @@
         <scene sceneID="qaR-Am-4ED">
             <objects>
                 <navigationController storyboardIdentifier="browse" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h8N-U1-m9h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Browse" id="E8k-AR-5h8" customClass="Browse"/>
+                    <tabBarItem key="tabBarItem" title="Browse" image="browse" id="E8k-AR-5h8" customClass="Browse"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AGK-Ka-v9r">
@@ -64,4 +64,7 @@
             <point key="canvasLocation" x="405.79710144927537" y="770.75892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="browse" width="23" height="25"/>
+    </resources>
 </document>

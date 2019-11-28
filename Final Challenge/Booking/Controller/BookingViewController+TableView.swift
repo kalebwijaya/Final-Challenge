@@ -26,6 +26,10 @@ extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
         cell.index = indexPath.row
         cell.delegate = self
         self.tableCellHeight = cell.getTotalTime(totalTime: calcTotalTime(), startTime: bookingCourt!.sportCenterOpenTime, unavailableTime: bookingCourt!.sportCenterDetail[indexPath.row].courtUnavailableTime)
+        cell.collectionView.reloadData()
+        cell.starIndex = 0
+        cell.endIndex = 0
+        cell.firstTap = true
         return cell
     }
     
