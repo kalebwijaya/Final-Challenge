@@ -17,6 +17,7 @@ class CourtListViewController: UIViewController {
     @IBOutlet var courtListView: CourtListView!
     let locationManager = CLLocationManager()
     
+    let loadingView = Load.shared.showLoad()
     var longitude: String?
     var latitude: String?
     var courtListModel = CourtListModel()
@@ -80,6 +81,7 @@ class CourtListViewController: UIViewController {
         guard let getURL = getCourtListUrl else{
             return
         }
+        
         courtListModel.fetchData(url: getURL, getUserData: getUserData) { (responses, error) in
             if let response = responses {
                 if (response.errorCode == "200"){
@@ -90,13 +92,19 @@ class CourtListViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.courtListView.courtListTableView.reloadData()
                     }
+                    
                 }else if (response.errorCode == "400"){
                     print(response.errorMessage)
                 }
+                
             }else if let error = error{
                 print(error)
             }
+            
         }
+        
+        loadingView.dismiss(animated: true, completion: nil)
+//        loadingView.removeFromParent()
     }
     
     private func initialization(){
@@ -104,6 +112,7 @@ class CourtListViewController: UIViewController {
         
         courtListView.courtListTableView.delegate = self
         courtListView.courtListTableView.dataSource = self
+        self.navigationItem.backBarButtonItem?.title = "Court Category"
         guard let sportID = getSportTypeID, let longitude = longitude, let latitude = latitude else{
             return
         }
@@ -118,6 +127,7 @@ class CourtListViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
+        self.present(loadingView, animated: true, completion: nil)
         getUserLocation()
     }
     

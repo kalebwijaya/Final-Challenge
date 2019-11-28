@@ -29,11 +29,7 @@ extension BookingViewController: BookingViewControllerDelegate {
         for n in 0 ..< bookingCourt!.sportCenterDetail.count {
             self.totalPrice += self.totalPricePerCourt[n] ?? 0
         }
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.groupingSeparator = "."
-        currencyFormatter.numberStyle = .decimal
-        currencyFormatter.locale = Locale(identifier: "id_ID")
+        
         self.totalPriceLabel.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: self.totalPrice))!
     }
 }

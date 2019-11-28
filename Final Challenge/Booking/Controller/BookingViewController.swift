@@ -28,12 +28,18 @@ class BookingViewController: UIViewController {
     let cellIdentifier = "CourtTableViewCell"
     let url = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/schedule")
     let urlBook = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/book")
+    let currencyFormatter = NumberFormatter()
     var bookParamDetail = [Int:BookParamDetail]()
+    let loadingView = Load.shared.showLoad()
     
     var getSportTypeID, getSportCenterID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.groupingSeparator = "."
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.locale = Locale(identifier: "id_ID")
         setDatePicker()
         getData()
         title = sportCenterName
@@ -48,8 +54,20 @@ class BookingViewController: UIViewController {
     }
     
     func setDatePicker(){
+        let calendar = Calendar(identifier: .gregorian)
+
+        let currentDate = Date()
+        var components = DateComponents()
+        components.calendar = calendar
+
+        let minDate = calendar.date(byAdding: components, to: currentDate)!
+        components.day = 7
+        let maxDate = calendar.date(byAdding: components, to: currentDate)!
+        
         datePicker.isUserInteractionEnabled = true
         datePickerKeyboard.datePickerMode = .date
+        datePickerKeyboard.maximumDate = maxDate
+        datePickerKeyboard.minimumDate = minDate
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
         self.datePicker.addGestureRecognizer(gesture)
         dateField.inputView = datePickerKeyboard
@@ -69,10 +87,13 @@ class BookingViewController: UIViewController {
         dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
         dateString = dateFormatter.string(from: datePickerKeyboard.date)
         getData()
+        totalPrice = 0
+        self.totalPriceLabel.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: self.totalPrice))!
         self.view.endEditing(true)
     }
     
     func getData(){
+        self.present(loadingView, animated: true, completion: nil)
         guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
         let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: dateString)
         bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
@@ -88,6 +109,10 @@ class BookingViewController: UIViewController {
             }else if let error = error {
                 print(error)
             }
+            DispatchQueue.main.async {
+                self.loadingView.dismiss(animated: true, completion: nil)
+                self.view.endEditing(true)
+            }
         }
     }
     
@@ -101,11 +126,13 @@ class BookingViewController: UIViewController {
     
     @IBAction func bookNowBtn(_ sender: Any) {
         if(totalPrice != 0){
-            guard let jsonUrl = urlBook, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
+            guard let jsonUrl = urlBook, let sportCenterID = getSportCenterID else {return}
             
             var bookParamDetail = [BookParamDetail]()
             for n in 0 ..< self.bookParamDetail.count{
-                bookParamDetail.append(self.bookParamDetail[n]!)
+                if(self.bookParamDetail[n] != nil){
+                    bookParamDetail.append(self.bookParamDetail[n]!)
+                }
             }
             
             let sendParam = BookingParam(bookDate: dateString, userID: userID, sportCenterID: sportCenterID, bookInput: bookParamDetail)
@@ -115,7 +142,10 @@ class BookingViewController: UIViewController {
                     if(result.errorCode == "200"){
                         print("Book Success")
                         print(result.data.bookID)
-                        //TINGGAL SEGUE
+                        //TINGGAL SEGUE]
+                        let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+                        let vc = storyboard.instantiateViewController(identifier: "orderList") as! OrdersViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }else if(result.errorCode == "400"){
                         print(result.errorMessage)
                     }
