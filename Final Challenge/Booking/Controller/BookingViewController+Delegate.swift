@@ -24,7 +24,13 @@ extension BookingViewController: BookingViewControllerDelegate {
             totalPriceCourt = (abs(start-end)) * Int(bookingCourt!.sportCenterDetail[index].courtPriceDay)!
         }
         self.totalPricePerCourt[index] = totalPriceCourt
-        self.bookParamDetail[index] = BookParamDetail(courtID: bookingCourt!.sportCenterDetail[index].courtID, bookStartTime: startTime, bookEndTime: endTime)
+        
+        if(Int(startTime.prefix(2))! < Int(endTime.prefix(2))!){
+            self.bookParamDetail[index] = BookParamDetail(courtID: bookingCourt!.sportCenterDetail[index].courtID, bookStartTime: startTime, bookEndTime: endTime)
+        }else{
+            self.bookParamDetail[index] = BookParamDetail(courtID: bookingCourt!.sportCenterDetail[index].courtID, bookStartTime: endTime, bookEndTime: startTime)
+        }
+        
         self.totalPrice = 0
         for n in 0 ..< bookingCourt!.sportCenterDetail.count {
             self.totalPrice += self.totalPricePerCourt[n] ?? 0

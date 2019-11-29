@@ -25,7 +25,10 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var statusImage: UIImageView!
     
     var orderDetails:OrderDetailsData!
-    let url = URL(string: "http://10.60.50.34:3000/bookingDetails")
+    let url = "\(BaseURL.baseURL)api/book/detail/"
+    var bookID = ""
+    var sportCenterImageURL = ""
+    let orderDetailsModel = OrderDetailsModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,25 +56,21 @@ class OrderDetailsViewController: UIViewController {
     }
     
     func getData(){
-        guard let jsonUrl = url else {return}
-        URLSession.shared.dataTask(with: jsonUrl) {(data,response, error) in
-            guard let data = data, error == nil, response != nil else {
-                print("URL Error")
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(OrderDetailsResult.self, from: data)
+        guard let jsonUrl = URL(string: url+bookID) else {return}
+        
+        orderDetailsModel.sendOrderRequest(url: jsonUrl){
+            (result, error) in
+            if let result = result{
                 if(result.errorCode == "200"){
                     self.orderDetails = result.data
                     self.setData()
-                    print("JSON Get")
                 }else if(result.errorCode == "400"){
                     print(result.errorMessage)
                 }
-            } catch {
-                print("Error After Getting JSON")
+            }else if let error = error {
+                print(error)
             }
-        }.resume()
+        }
     }
     
     func setData(){
@@ -106,14 +105,14 @@ class OrderDetailsViewController: UIViewController {
             
             if(self.orderDetails.bookStatus == "Waiting List"){
                 self.statusImage.image = #imageLiteral(resourceName: "waitingStamp")
-            }else if(self.orderDetails.bookStatus == "Done"){
+            }else if(self.orderDetails.bookStatus == "Done" || self.orderDetails.bookStatus == "Confirmed"){
                 self.statusImage.image = #imageLiteral(resourceName: "bookedStamp")
             }else{
                 self.statusImage.image = #imageLiteral(resourceName: "calncelledStamp")
             }
         }
         
-        if let imageURL = URL(string: orderDetails.sportCenterImageURL){
+        if let imageURL = URL(string: sportCenterImageURL){
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {

@@ -50,7 +50,7 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.orderStatus.text = history[indexPath.row].statusTypeName
         if(cell.orderStatus.text == "Waiting List"){
             cell.orderStatus.textColor = UIColor(red: 1, green: 0.73, blue: 0.39, alpha: 1)
-        }else if(cell.orderStatus.text == "Done"){
+        }else if(cell.orderStatus.text == "Done" || cell.orderStatus.text == "Confirmed"){
             cell.orderStatus.textColor = UIColor(red: 0, green: 0.77, blue: 0.55, alpha: 1)
         }else{
             cell.orderStatus.textColor = UIColor(red: 0.98, green: 0.48, blue: 0.42, alpha: 1)
@@ -72,7 +72,7 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toBookingDetails", sender: self)
+        performSegue(withIdentifier: "toBookingDetails", sender: history[indexPath.row])
     }
     
 }

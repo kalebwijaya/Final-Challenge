@@ -14,7 +14,8 @@ class OrdersViewController: UIViewController {
     
     var history = [History]()
     let orderModel = OrderModel()
-    let url = URL(string: "http://10.60.50.34:3000/history")
+    let url = "\(BaseURL.baseURL)api/book/list/"
+    let userID = "1423556093315144139"
     
     let cellIdentifier = "OrdersCollectionViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
@@ -34,27 +35,32 @@ class OrdersViewController: UIViewController {
         setupCollectionViewCell()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBookingDetails" {
+            let sendData = sender as? History
+            let vc = segue.destination as? OrderDetailsViewController
+            vc?.bookID = sendData!.bookID
+            vc?.sportCenterImageURL = sendData!.sportCenterImageURL
+            print(sendData!.bookID)
+        }
+    }
+    
     func getData(){
-        guard let jsonUrl = url else {return}
-        URLSession.shared.dataTask(with: jsonUrl) {(data,response, error) in
-            guard let data = data, error == nil, response != nil else {
-                print("URL Error")
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(HistoryResult.self, from: data)
+        guard let jsonUrl = URL(string: url+userID) else {return}
+        
+        orderModel.sendOrderRequest(url: jsonUrl){ (result, error) in
+            if let result = result{
                 if(result.errorCode == "200"){
                     self.history = result.data
-                    print("JSON Get")
                     DispatchQueue.main.async {
                         self.orderCollectionView.reloadData()
                     }
                 }else if(result.errorCode == "400"){
                     print(result.errorMessage)
                 }
-            } catch {
-                print("Error After Getting JSON")
+            }else if let error = error {
+                print(error)
             }
-        }.resume()
+        }
     }
 }
