@@ -43,7 +43,7 @@ class CourtDetailsViewController: UIViewController {
         view.bringSubviewToFront(bookNowBtn)
         setNeedsStatusBarAppearanceUpdate()
         imageCarousel.contentInsetAdjustmentBehavior = .never
-        
+        setButtonClickHandler()
     }
     
     func setButtonClickHandler(){
@@ -56,6 +56,8 @@ class CourtDetailsViewController: UIViewController {
         vc.getSportTypeID = self.getSportTypeID
         vc.getSportCenterID = self.getSportCenterID
         vc.sportCenterName = self.courtDetails.sportCenterName
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("testing button")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -72,11 +74,10 @@ class CourtDetailsViewController: UIViewController {
                 return
                 
         }
-        
         loadingIndicator.showLoading()
         
         courtDetailParam = CourtDetailsParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID)
-        
+    
         courtDetailModel.getData(url: jsonUrl, setParam: courtDetailParam) { (result, error) in
             
             if let result = result{
@@ -93,8 +94,8 @@ class CourtDetailsViewController: UIViewController {
             }
         }
         
-//        loadingIndicator.removeLoading()
-        setButtonClickHandler()
+        loadingIndicator.removeLoading()
+        
     }
     
     func setAllData(){
