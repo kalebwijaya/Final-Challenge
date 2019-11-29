@@ -14,8 +14,8 @@ class BrowseViewController: UIViewController {
     var browseData = [BrowseData]()
     let url = URL(string: "\(BaseURL.baseURL)api/browse-category")
     
-    let loadingView = Load.shared.showLoad()
-
+    let loadingView = UIView()
+    var loadingIndicator:LoadingIndicator?
     var browseModel = BrowseModel()
     
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class BrowseViewController: UIViewController {
     }
     
     private func initialization(){
+        loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         browseView.browserTableView.register(UINib(nibName: "BrowseTableViewCell", bundle: nil), forCellReuseIdentifier: "browseCell")
         browseView.browserTableView.delegate = self
         browseView.browserTableView.dataSource = self
@@ -43,11 +44,12 @@ class BrowseViewController: UIViewController {
     }
     
     private func getData(){
-        self.present(loadingView, animated: true, completion: nil)
-        guard let jsonUrl = url else{
+        guard let jsonUrl = url, let loadingIndicator = loadingIndicator else{
             return
         }
         
+        loadingIndicator.showLoading()
+    
         browseModel.fetchData(url: jsonUrl) { (responses, error) in
             if let response = responses {
                 if (response.errorCode == "200"){
@@ -60,7 +62,8 @@ class BrowseViewController: UIViewController {
                 }
             }
         }
-        self.loadingView.dismiss(animated: true, completion: nil)
+        
+        loadingIndicator.removeLoading()
         
     }
 

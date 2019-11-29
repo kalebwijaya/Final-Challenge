@@ -21,7 +21,6 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var courtMap: MKMapView!
     @IBOutlet weak var bookNowBtn: UIButton!
-    let loadingView = Load.shared.showLoad()
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
@@ -31,8 +30,12 @@ class CourtDetailsViewController: UIViewController {
     var getSportTypeID: String?
     var getSportCenterID: String?
     
+    let loadingView = UIView()
+    var loadingIndicator:LoadingIndicator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         getData()
         imageCarousel.delegate = self
         setGradientBackground()
@@ -53,7 +56,6 @@ class CourtDetailsViewController: UIViewController {
         vc.getSportTypeID = self.getSportTypeID
         vc.getSportCenterID = self.getSportCenterID
         vc.sportCenterName = self.courtDetails.sportCenterName
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -61,14 +63,17 @@ class CourtDetailsViewController: UIViewController {
     }
     
     func getData(){
-//        self.present(loadingView, animated: true, completion: nil)
+        
         guard let jsonUrl = url,
             let sportTypeID = getSportTypeID,
-            let sportCenterID = getSportCenterID
+            let sportCenterID = getSportCenterID,
+            let loadingIndicator = loadingIndicator
             else {
                 return
                 
         }
+        
+        loadingIndicator.showLoading()
         
         courtDetailParam = CourtDetailsParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID)
         
@@ -88,7 +93,7 @@ class CourtDetailsViewController: UIViewController {
             }
         }
         
-        self.loadingView.dismiss(animated: true, completion: nil)
+//        loadingIndicator.removeLoading()
         setButtonClickHandler()
     }
     

@@ -17,7 +17,6 @@ class CourtListViewController: UIViewController {
     @IBOutlet var courtListView: CourtListView!
     let locationManager = CLLocationManager()
     
-    let loadingView = Load.shared.showLoad()
     var longitude: String?
     var latitude: String?
     var courtListModel = CourtListModel()
@@ -28,15 +27,17 @@ class CourtListViewController: UIViewController {
     var getSportID: String?
     var sportTypeID: String?
     var addressName :String?
+    
+    let loadingView = UIView()
+    var loadingIndicator:LoadingIndicator?
 
     var searchController: UISearchController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         setNavigation()
         setUserPermissionLocation()
-        
         
     }
     
@@ -78,9 +79,11 @@ class CourtListViewController: UIViewController {
     }
     
     private func getData(userData : CourtListParam){
-        guard let getURL = getCourtListUrl else{
+        guard let getURL = getCourtListUrl , let loadingIndicator = loadingIndicator else{
             return
         }
+        
+        loadingIndicator.showLoading()
         
         courtListModel.fetchData(url: getURL, getUserData: getUserData) { (responses, error) in
             if let response = responses {
@@ -101,7 +104,7 @@ class CourtListViewController: UIViewController {
                 print(error)
             }
         }
-        self.loadingView.dismiss(animated: true, completion: nil)
+        loadingIndicator.removeLoading()
     }
     
     func initialization(){
@@ -124,7 +127,6 @@ class CourtListViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
-//        self.present(loadingView, animated: true, completion: nil)
         getUserLocation()
     }
     
@@ -200,6 +202,7 @@ class CourtListViewController: UIViewController {
                         return
                     }
                     self.addressName = address
+                    self.courtListView.courtListTableView.reloadData()
                 }
             }
         }
