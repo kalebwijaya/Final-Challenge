@@ -35,9 +35,11 @@ class CourtListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
+        
         currencyFormatter.numberStyle = .decimal
         currencyFormatter.locale = Locale(identifier: "id_ID")
         setNavigation()
@@ -45,12 +47,16 @@ class CourtListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setNavigation()
+    }
+    
+    
     private func setNavigation(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
+        //self.title = "Courts"
         
-        self.title = "Courts"
-        
-        navigationController?.navigationBar.prefersLargeTitles = false
-       
         //setSearchBar()
     }
     
@@ -112,7 +118,6 @@ class CourtListViewController: UIViewController {
         
         courtListView.courtListTableView.delegate = self
         courtListView.courtListTableView.dataSource = self
-        self.navigationItem.backBarButtonItem?.title = "Court Category"
         guard let sportID = getSportTypeID, let longitude = longitude, let latitude = latitude else{
             return
         }
@@ -207,7 +212,11 @@ class CourtListViewController: UIViewController {
                     }
                     self.addressName = address
                     self.courtListView.courtListTableView.reloadData()
-                    self.loadingIndicator!.removeLoading()
+                    guard let loadingIndicator = self.loadingIndicator else{
+                        return
+                    }
+                   loadingIndicator.removeLoading()
+                    
                 }
             }
            

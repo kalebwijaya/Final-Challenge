@@ -18,18 +18,27 @@ class LoadingIndicator{
     }
     
     func showLoading(){
-        view = UIView(frame: mainView!.bounds)
-        view!.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0)
+        guard let mainView = mainView else{
+            return
+        }
+        view = UIView(frame: mainView.bounds)
+        guard let viewLoading = view else{
+            return
+        }
+        viewLoading.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0)
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.center = view!.center
+        indicator.center = viewLoading.center
         indicator.startAnimating()
-        view!.addSubview(indicator)
-        mainView!.addSubview(view!)
+        viewLoading.addSubview(indicator)
+        mainView.addSubview(viewLoading)
     }
     
     func removeLoading(){
-        view!.removeFromSuperview()
-        view = nil
+        guard let view = view else{
+            return
+        }
+        view.removeFromSuperview()
+        self.view = nil
     }
     
     

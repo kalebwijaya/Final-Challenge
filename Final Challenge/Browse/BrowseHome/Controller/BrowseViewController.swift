@@ -21,13 +21,15 @@ class BrowseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setNavigation()
         initialization()
     }
     
+    
     private func setNavigation(){
-        self.title = "Court Category"
+        
+//        self.title = "Court Category"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     override func viewWillAppear(_ animated: Bool) {
