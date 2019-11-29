@@ -27,7 +27,7 @@ class CourtListViewController: UIViewController {
     var getSportID: String?
     var sportTypeID: String?
     var addressName :String?
-    
+    let currencyFormatter = NumberFormatter()
     let loadingView = UIView()
     var loadingIndicator:LoadingIndicator?
 
@@ -36,6 +36,10 @@ class CourtListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.groupingSeparator = "."
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.locale = Locale(identifier: "id_ID")
         setNavigation()
         setUserPermissionLocation()
         

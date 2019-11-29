@@ -74,7 +74,7 @@ class BookingViewController: UIViewController {
         
         toolBar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         //        toolBar.barStyle = .blackTranslucent
-        toolBar.items = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil), UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
+        toolBar.items = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil), UIBarButtonItem(title: "Pick", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
         toolBar.sizeToFit()
         self.view.addSubview(toolBar)
     }

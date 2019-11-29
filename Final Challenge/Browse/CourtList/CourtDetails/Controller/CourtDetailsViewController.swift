@@ -29,7 +29,7 @@ class CourtDetailsViewController: UIViewController {
     var courtDetailModel = CourtDetailsModel()
     var getSportTypeID: String?
     var getSportCenterID: String?
-    
+    let currencyFormatter = NumberFormatter()
     let loadingView = UIView()
     var loadingIndicator:LoadingIndicator?
     
@@ -37,6 +37,12 @@ class CourtDetailsViewController: UIViewController {
         super.viewDidLoad()
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         getData()
+        
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.groupingSeparator = "."
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.locale = Locale(identifier: "id_ID")
+        
         imageCarousel.delegate = self
         setGradientBackground()
         view.bringSubviewToFront(imagePageController)
@@ -106,7 +112,8 @@ class CourtDetailsViewController: UIViewController {
         
         sportCenterName.text = courtDetails.sportCenterName
         
-        courtMinPrice.text = "Rp. " + courtDetails.sportMinPrice
+        courtMinPrice.text = "Rp. " +  currencyFormatter.string(from: NSNumber(value: Int(self.courtDetails.sportMinPrice)!))!
+        
         courtStatus.text = courtDetails.sportCenterStatus.capitalizingFirstLetter()
         if(courtDetails.sportCenterStatus == "open"){
             courtStatus.textColor = UIColor(red: 0, green: 0.77, blue: 0.55, alpha: 1)
