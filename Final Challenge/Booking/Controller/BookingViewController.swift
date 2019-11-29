@@ -129,7 +129,7 @@ class BookingViewController: UIViewController {
             guard let jsonUrl = urlBook, let sportCenterID = getSportCenterID else {return}
             
             var bookParamDetail = [BookParamDetail]()
-            for n in 0 ..< self.bookParamDetail.count{
+            for n in 0 ... self.bookParamDetail.count{
                 if(self.bookParamDetail[n] != nil){
                     bookParamDetail.append(self.bookParamDetail[n]!)
                 }
@@ -144,8 +144,10 @@ class BookingViewController: UIViewController {
                         print(result.data.bookID)
                         //TINGGAL SEGUE]
                         let storyboard = UIStoryboard(name: "Orders", bundle: nil)
-                        let vc = storyboard.instantiateViewController(identifier: "orderList") as! OrdersViewController
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        DispatchQueue.main.async {
+                            let vc = storyboard.instantiateViewController(identifier: "orderList") as! OrdersViewController
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
                     }else if(result.errorCode == "400"){
                         print(result.errorMessage)
                     }
