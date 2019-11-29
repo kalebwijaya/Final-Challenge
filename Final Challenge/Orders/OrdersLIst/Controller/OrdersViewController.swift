@@ -28,6 +28,7 @@ class OrdersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getData()
+        collectionViewSetup()
     }
     
     override func viewWillLayoutSubviews() {

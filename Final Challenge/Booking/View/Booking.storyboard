@@ -10,7 +10,7 @@
         <!--Court Name-->
         <scene sceneID="1xh-et-3zX">
             <objects>
-                <viewController storyboardIdentifier="booking" id="XDa-g6-Rdt" customClass="BookingViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="booking" id="XDa-g6-Rdt" customClass="BookingViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWs-Qs-bv6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,17 +26,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cfk-aB-q89">
-                                        <rect key="frame" x="32" y="35" width="176" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="disclosureIndocator" translatesAutoresizingMaskIntoConstraints="NO" id="l3V-hl-hki">
                                         <rect key="frame" x="370" y="25" width="15" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zde-iL-hJl">
+                                        <rect key="frame" x="32" y="37" width="330" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -89,7 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Court Name" largeTitleDisplayMode="never" id="Sjo-KU-cCO"/>
                     <connections>
-                        <outlet property="dateField" destination="Cfk-aB-q89" id="MEp-C7-wpy"/>
+                        <outlet property="dateLabel" destination="zde-iL-hJl" id="AjH-i5-WGs"/>
                         <outlet property="datePicker" destination="C41-W9-kq4" id="2aY-Py-4sw"/>
                         <outlet property="tableView" destination="u2r-tp-MLp" id="GbW-4h-CkC"/>
                         <outlet property="totalPriceLabel" destination="Cu6-e1-OJq" id="oG4-eE-QQa"/>
