@@ -37,7 +37,6 @@
 		51CD0816237E9EEB00F251D9 /* Final_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0815237E9EEB00F251D9 /* Final_ChallengeUITests.swift */; };
 		51CD0828237EA0C200F251D9 /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CD0826237EA0C200F251D9 /* Browse.storyboard */; };
 		51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CD0829237EA0D800F251D9 /* Orders.storyboard */; };
-		51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD082F237EA22E00F251D9 /* AnimUtils.swift */; };
 		51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0832237EA67600F251D9 /* OrdersViewController.swift */; };
 		51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D39E342387C39400B3BB24 /* Booking.storyboard */; };
 		51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E382387DFFB00B3BB24 /* BookingViewController.swift */; };
@@ -143,7 +142,6 @@
 		51CD0817237E9EEB00F251D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CD0827237EA0C200F251D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Final Challenge/Storyboard/Base.lproj/Browse.storyboard"; sourceTree = "<group>"; };
 		51CD0829237EA0D800F251D9 /* Orders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
-		51CD082F237EA22E00F251D9 /* AnimUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimUtils.swift; sourceTree = "<group>"; };
 		51CD0832237EA67600F251D9 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		51D39E342387C39400B3BB24 /* Booking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Booking.storyboard; sourceTree = "<group>"; };
 		51D39E382387DFFB00B3BB24 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 				51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */,
 				51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */,
 				51CD0824237E9F9100F251D9 /* Controller */,
-				51CD082E237EA20D00F251D9 /* Anim */,
 				51CD07FC237E9EEB00F251D9 /* Assets.xcassets */,
 				51CD07FE237E9EEB00F251D9 /* LaunchScreen.storyboard */,
 				51CD0801237E9EEB00F251D9 /* Info.plist */,
@@ -421,14 +418,6 @@
 				51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		51CD082E237EA20D00F251D9 /* Anim */ = {
-			isa = PBXGroup;
-			children = (
-				51CD082F237EA22E00F251D9 /* AnimUtils.swift */,
-			);
-			path = Anim;
 			sourceTree = "<group>";
 		};
 		51D39E302387C34200B3BB24 /* Booking */ = {
@@ -807,7 +796,6 @@
 				51201D38238D15F3007C8EE6 /* OrderDetailsModel.swift in Sources */,
 				51201D30238D11C4007C8EE6 /* OrderModel.swift in Sources */,
 				512D258F238E9E0C00388563 /* BookingViewController+Delegate.swift in Sources */,
-				51CD0830237EA22E00F251D9 /* AnimUtils.swift in Sources */,
 				51201D36238D1594007C8EE6 /* OrderDetailsDataDetails.swift in Sources */,
 				B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */,
 				B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */,

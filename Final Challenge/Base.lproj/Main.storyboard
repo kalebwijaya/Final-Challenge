@@ -17,13 +17,11 @@
                         <color key="selectedImageTintColor" red="0.99607843139999996" green="0.73333333329999995" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <outlet property="delegate" destination="27z-GU-X8W" id="Rjk-a8-YHr"/>
                         <segue destination="iVv-Z4-ral" kind="relationship" relationship="viewControllers" id="rrL-pq-1yn"/>
                         <segue destination="fyh-86-J8W" kind="relationship" relationship="viewControllers" id="8Tr-9g-tMp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pme-82-YRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="27z-GU-X8W" customClass="AnimUtils" customModule="Sport_Space" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1185" y="39"/>
         </scene>

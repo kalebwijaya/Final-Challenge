@@ -27,7 +27,7 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtListCell") as! CourtListTableViewCell
         
-        let textChangeColor: NSAttributedString = "from \(getCourtData[indexPath.row].sportMinPrice)".attributedStringWithColor(["from"], color: UIColor.black)
+        let textChangeColor: NSAttributedString = "From Rp. \( currencyFormatter.string(from: NSNumber(value: Int(getCourtData[indexPath.row].sportMinPrice)!))! )".attributedStringWithColor(["From"], color: UIColor.black)
         
         cell.sportCenterName.text = getCourtData[indexPath.row].sportCenterName
         
