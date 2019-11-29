@@ -17,7 +17,7 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textAlignment = NSTextAlignment.center
+        header.textLabel?.textAlignment = NSTextAlignment.left
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -28,21 +28,21 @@ class BrowseTableViewCell: UITableViewCell {
     private func setContainerBorder(){
         containerView.backgroundColor = UIColor.clear
         containerView.layer.shadowOpacity = 1
-        containerView.layer.shadowRadius = 2
-        containerView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
-        containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        containerView.layer.cornerRadius = 10
+        containerView.layer.shadowRadius = 10
+        containerView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.cornerRadius = 8
         containerView.clipsToBounds = true
         containerView.layer.masksToBounds = true
     }
     
     private func setClippingBorder(){
-        clippingView.layer.cornerRadius = 10
+        clippingView.layer.cornerRadius = 8
         clippingView.clipsToBounds = true
         clippingView.backgroundColor = UIColor(named: "Red")
         clippingView.layer.masksToBounds = true
         
-        sportImage.layer.cornerRadius = 10
+        sportImage.layer.cornerRadius = 8
         sportImage.clipsToBounds = true
         sportImage.layer.masksToBounds = true
         

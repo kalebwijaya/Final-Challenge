@@ -43,12 +43,9 @@ class CourtListViewController: UIViewController {
     
     private func setNavigation(){
         
-        self.title = "Court"
+        self.title = "Courts"
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
-        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = false
        
         //setSearchBar()
     }
