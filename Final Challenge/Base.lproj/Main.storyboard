@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="abd-E4-rwI">
             <objects>
-                <tabBarController id="Xyh-ss-4Hr" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTab" id="Xyh-ss-4Hr" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="agH-tF-ocf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +23,7 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pme-82-YRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="27z-GU-X8W" customClass="AnimUtils" customModule="Final_Challenge" customModuleProvider="target"/>
+                <customObject id="27z-GU-X8W" customClass="AnimUtils" customModule="Sport_Space" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1185" y="39"/>
         </scene>

@@ -996,7 +996,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BLQPCH7T63;
+				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = "Final Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1014,7 +1014,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BLQPCH7T63;
+				DEVELOPMENT_TEAM = EF3ZB275X3;
 				INFOPLIST_FILE = "Final Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

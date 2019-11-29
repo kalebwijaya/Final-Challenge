@@ -11,6 +11,8 @@ import CoreLocation
 
 extension CourtListViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
         if let location = locations.first{
             self.latitude = "\(location.coordinate.latitude)"
             self.longitude = "\(location.coordinate.longitude)"
