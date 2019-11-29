@@ -11,11 +11,13 @@ import UIKit
 class BookingViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIView!
-    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
-    let datePickerKeyboard = UIDatePicker()
+    var datePickerKeyboard = UIDatePicker.init()
+    let toolbar = UIToolbar()
+    var toolBar = UIToolbar()
     let dateFormatter = DateFormatter()
     var tableCellHeight = 0
     var totalPrice = 0
@@ -50,10 +52,6 @@ class BookingViewController: UIViewController {
     }
     
     @objc func datePickerTap(sender : UITapGestureRecognizer) {
-        dateField.becomeFirstResponder()
-    }
-    
-    func setDatePicker(){
         let calendar = Calendar(identifier: .gregorian)
 
         let currentDate = Date()
@@ -63,33 +61,46 @@ class BookingViewController: UIViewController {
         let minDate = calendar.date(byAdding: components, to: currentDate)!
         components.day = 7
         let maxDate = calendar.date(byAdding: components, to: currentDate)!
-        
-        datePicker.isUserInteractionEnabled = true
         datePickerKeyboard.datePickerMode = .date
         datePickerKeyboard.maximumDate = maxDate
         datePickerKeyboard.minimumDate = minDate
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
-        self.datePicker.addGestureRecognizer(gesture)
-        dateField.inputView = datePickerKeyboard
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let submitButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(submitTapped))
-        toolbar.setItems([submitButton], animated: true)
-        dateField.inputAccessoryView = toolbar
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        dateString = dateFormatter.string(from: datePickerKeyboard.date)
-        dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
+        
+        datePickerKeyboard.backgroundColor = UIColor.white
+
+        datePickerKeyboard.autoresizingMask = .flexibleWidth
+        datePickerKeyboard.datePickerMode = .date
+
+        datePickerKeyboard.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+        self.view.addSubview(datePickerKeyboard)
+
+        toolBar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+//        toolBar.barStyle = .blackTranslucent
+        toolBar.items = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil), UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
+        toolBar.sizeToFit()
+        self.view.addSubview(toolBar)
     }
     
-    @objc func submitTapped(){
-        dateField.text = dateFormatter.string(from: datePickerKeyboard.date)
+    @objc func onDoneButtonClick() {
+        dateLabel.text = dateFormatter.string(from: datePickerKeyboard.date)
         dateString = dateFormatter.string(from: datePickerKeyboard.date)
         getData()
         totalPrice = 0
         self.totalPriceLabel.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: self.totalPrice))!
         self.view.endEditing(true)
+        toolBar.removeFromSuperview()
+        datePickerKeyboard.removeFromSuperview()
+    }
+    
+    func setDatePicker(){
+        datePicker.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
+        self.datePicker.addGestureRecognizer(gesture)
+
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateString = dateFormatter.string(from: datePickerKeyboard.date)
+        dateLabel.text = dateFormatter.string(from: datePickerKeyboard.date)
     }
     
     func getData(){
@@ -142,7 +153,7 @@ class BookingViewController: UIViewController {
                     if(result.errorCode == "200"){
                         print("Book Success")
                         print(result.data.bookID)
-                        //TINGGAL SEGUE]
+                        
                         let storyboard = UIStoryboard(name: "Orders", bundle: nil)
                         DispatchQueue.main.async {
                             let vc = storyboard.instantiateViewController(identifier: "orderList") as! OrdersViewController

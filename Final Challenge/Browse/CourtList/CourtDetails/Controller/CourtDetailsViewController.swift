@@ -40,7 +40,6 @@ class CourtDetailsViewController: UIViewController {
         view.bringSubviewToFront(bookNowBtn)
         setNeedsStatusBarAppearanceUpdate()
         imageCarousel.contentInsetAdjustmentBehavior = .never
-//        self.tabBarController?.tabBar.isHidden = true
         
     }
     
@@ -102,8 +101,8 @@ class CourtDetailsViewController: UIViewController {
         sportCenterName.text = courtDetails.sportCenterName
         
         courtMinPrice.text = "Rp. " + courtDetails.sportMinPrice
-        courtStatus.text = courtDetails.sportCenterStatus
-        if(courtDetails.sportCenterStatus == "Open"){
+        courtStatus.text = courtDetails.sportCenterStatus.capitalizingFirstLetter()
+        if(courtDetails.sportCenterStatus == "open"){
             courtStatus.textColor = UIColor(red: 0, green: 0.77, blue: 0.55, alpha: 1)
         }else{
             courtStatus.textColor = UIColor(red: 0.98, green: 0.48, blue: 0.42, alpha: 1)
@@ -116,7 +115,6 @@ class CourtDetailsViewController: UIViewController {
         courtMap.addAnnotation(annotation)
     }
     
-    //Sudah Pindah
     func generateAddress(){
         addressLabel.text = courtDetails.sportCenterAddress
         addressLabel.numberOfLines = 0
@@ -134,7 +132,6 @@ class CourtDetailsViewController: UIViewController {
         self.view.addSubview(lineView)
     }
     
-    //Sudah Pindah :D
     func setupSlideScrollView(images : [ImageSlide]) {
         imageCarousel.frame = CGRect(x: 0, y: 0, width: imageCarousel.frame.width, height: imageCarousel.frame.height)
         imageCarousel.contentSize = CGSize(width: imageCarousel.frame.width * CGFloat(images.count), height: imageCarousel.frame.height)
@@ -155,7 +152,6 @@ class CourtDetailsViewController: UIViewController {
         gradientBar.layer.mask = gradient
     }
     
-    //Sudah Pindah :D
     func addImage(){
         for n in 0 ..< courtDetails.sportCenterImage.count {
             let slide:ImageSlide = Bundle.main.loadNibNamed("ImageSlide", owner: self, options: nil)?.first as! ImageSlide
@@ -181,5 +177,15 @@ extension CourtDetailsViewController: UIScrollViewDelegate{
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         imagePageController.currentPage = Int(pageIndex)
         
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+      return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+      self = self.capitalizingFirstLetter()
     }
 }
