@@ -10,7 +10,7 @@
         <!--Booking List-->
         <scene sceneID="zUX-oT-YI1">
             <objects>
-                <viewController storyboardIdentifier="orderList" title="Booking List" id="lSI-Ua-NrM" customClass="OrdersViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderList" title="Booking List" id="lSI-Ua-NrM" customClass="OrdersViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="71m-FB-L0K" colorLabel="IBBuiltInLabel-Yellow">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Orders-->
         <scene sceneID="Cki-lM-Wkg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="azr-ye-gog" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="bookingNav" automaticallyAdjustsScrollViewInsets="NO" id="azr-ye-gog" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Orders" image="orderList" id="fma-l6-xNe"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

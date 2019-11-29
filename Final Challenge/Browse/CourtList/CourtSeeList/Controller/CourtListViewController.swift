@@ -43,12 +43,9 @@ class CourtListViewController: UIViewController {
     
     private func setNavigation(){
         
-        self.title = "Court"
+        self.title = "Courts"
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
-        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = false
        
         //setSearchBar()
     }
@@ -79,11 +76,10 @@ class CourtListViewController: UIViewController {
     }
     
     private func getData(userData : CourtListParam){
-        guard let getURL = getCourtListUrl , let loadingIndicator = loadingIndicator else{
+        guard let getURL = getCourtListUrl  else{
             return
         }
         
-        loadingIndicator.showLoading()
         
         courtListModel.fetchData(url: getURL, getUserData: getUserData) { (responses, error) in
             if let response = responses {
@@ -104,7 +100,7 @@ class CourtListViewController: UIViewController {
                 print(error)
             }
         }
-        loadingIndicator.removeLoading()
+        
     }
     
     func initialization(){
@@ -124,6 +120,10 @@ class CourtListViewController: UIViewController {
     }
 
     private func setUserPermissionLocation(){
+        guard let loadingIndicator = loadingIndicator else {
+            return
+        }
+        loadingIndicator.showLoading()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
@@ -203,8 +203,10 @@ class CourtListViewController: UIViewController {
                     }
                     self.addressName = address
                     self.courtListView.courtListTableView.reloadData()
+                    self.loadingIndicator!.removeLoading()
                 }
             }
+           
         }
     }
 

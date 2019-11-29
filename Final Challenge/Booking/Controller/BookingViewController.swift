@@ -9,7 +9,7 @@
 import UIKit
 
 class BookingViewController: UIViewController {
-
+    
     @IBOutlet weak var datePicker: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -52,11 +52,11 @@ class BookingViewController: UIViewController {
     
     @objc func datePickerTap(sender : UITapGestureRecognizer) {
         let calendar = Calendar(identifier: .gregorian)
-
+        
         let currentDate = Date()
         var components = DateComponents()
         components.calendar = calendar
-
+        
         let minDate = calendar.date(byAdding: components, to: currentDate)!
         components.day = 7
         let maxDate = calendar.date(byAdding: components, to: currentDate)!
@@ -65,15 +65,15 @@ class BookingViewController: UIViewController {
         datePickerKeyboard.minimumDate = minDate
         
         datePickerKeyboard.backgroundColor = UIColor.white
-
+        
         datePickerKeyboard.autoresizingMask = .flexibleWidth
         datePickerKeyboard.datePickerMode = .date
-
+        
         datePickerKeyboard.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
         self.view.addSubview(datePickerKeyboard)
-
+        
         toolBar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-//        toolBar.barStyle = .blackTranslucent
+        //        toolBar.barStyle = .blackTranslucent
         toolBar.items = [UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil), UIBarButtonItem(title: "Submit", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
         toolBar.sizeToFit()
         self.view.addSubview(toolBar)
@@ -94,7 +94,7 @@ class BookingViewController: UIViewController {
         datePicker.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.datePickerTap))
         self.datePicker.addGestureRecognizer(gesture)
-
+        
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.dateFormat = "YYYY-MM-dd"
@@ -103,7 +103,7 @@ class BookingViewController: UIViewController {
     }
     
     func getData(){
-//        self.present(loadingView, animated: true, completion: nil)
+        //        self.present(loadingView, animated: true, completion: nil)
         guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
         let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: dateString)
         bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
@@ -149,11 +149,18 @@ class BookingViewController: UIViewController {
                         print("Book Success")
                         print(result.data.bookID)
                         
-                        let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        
                         DispatchQueue.main.async {
-                            let vc = storyboard.instantiateViewController(identifier: "orderList") as! OrdersViewController
-                            self.navigationController?.pushViewController(vc, animated: true)
+                            let vc = storyboard.instantiateViewController(identifier: "mainTab") as? UITabBarController
+                            vc?.selectedIndex = 1
+                            vc?.navigationItem.setHidesBackButton(true, animated: true)
+                            vc?.modalPresentationStyle = .fullScreen
+                            self.present(vc!,animated: false)
                         }
+                        
+                        
+                        
                     }else if(result.errorCode == "400"){
                         print(result.errorMessage)
                     }

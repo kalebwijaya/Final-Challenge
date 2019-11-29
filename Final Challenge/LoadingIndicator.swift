@@ -19,7 +19,7 @@ class LoadingIndicator{
     
     func showLoading(){
         view = UIView(frame: mainView!.bounds)
-        view?.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8)
+        view!.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0)
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.center = view!.center
         indicator.startAnimating()
