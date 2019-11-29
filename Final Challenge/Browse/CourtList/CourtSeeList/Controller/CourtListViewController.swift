@@ -45,6 +45,7 @@ class CourtListViewController: UIViewController {
         
     }
     
+    
     private func setNavigation(){
         
         self.title = "Courts"
@@ -207,7 +208,11 @@ class CourtListViewController: UIViewController {
                     }
                     self.addressName = address
                     self.courtListView.courtListTableView.reloadData()
-                    self.loadingIndicator!.removeLoading()
+                    guard let loadingIndicator = self.loadingIndicator else{
+                        return
+                    }
+                   loadingIndicator.removeLoading()
+                    
                 }
             }
            
