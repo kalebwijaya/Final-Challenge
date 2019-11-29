@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Court List View Controller-->
+        <!--Courts-->
         <scene sceneID="tvv-33-gsI">
             <objects>
                 <viewController storyboardIdentifier="courtList" id="Lcg-Ls-AIo" customClass="CourtListViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="courtListTableView" destination="3i3-uA-Ef5" id="mbn-lU-g1f"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="5Gk-xs-DgK"/>
+                    <navigationItem key="navigationItem" title="Courts" id="5Gk-xs-DgK"/>
                     <connections>
                         <outlet property="courtListView" destination="EZM-Dp-Agm" id="5tI-Ne-KeV"/>
                     </connections>
