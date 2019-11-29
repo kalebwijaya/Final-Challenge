@@ -10,18 +10,14 @@ import UIKit
 
 extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerText = UILabel()
-        headerText.adjustsFontSizeToFitWidth = true
-        headerText.textAlignment = .center
-        guard let address = addressName else{
-            return UIView()
-        }
-        headerText.text = address
-        
-       
-        
-        return headerText
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let address = addressName else { return "" }
+        return address
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textAlignment = NSTextAlignment.center
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

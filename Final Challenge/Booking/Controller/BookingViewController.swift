@@ -32,7 +32,6 @@ class BookingViewController: UIViewController {
     let urlBook = URL(string: "\(BaseURL.baseURL)api/sport-center/courts/book")
     let currencyFormatter = NumberFormatter()
     var bookParamDetail = [Int:BookParamDetail]()
-    let loadingView = Load.shared.showLoad()
     
     var getSportTypeID, getSportCenterID: String?
     
@@ -119,10 +118,6 @@ class BookingViewController: UIViewController {
                 }
             }else if let error = error {
                 print(error)
-            }
-            DispatchQueue.main.async {
-                self.loadingView.dismiss(animated: true, completion: nil)
-                self.view.endEditing(true)
             }
         }
     }
