@@ -31,7 +31,7 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
         let frontString =
             NSMutableAttributedString(string: "" , attributes: [.paragraphStyle: setAlignment])
 
-        let backString =   NSAttributedString(string: " \(address)",attributes: [.paragraphStyle: setAlignment])
+        let backString =   NSAttributedString(string: "     \(address)",attributes: [.paragraphStyle: setAlignment])
         
         let locationAttachment = NSTextAttachment()
         locationAttachment.image = UIImage(named: "IconLocationKecil")
