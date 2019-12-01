@@ -70,6 +70,7 @@
 		B034E6E22383CFA900CD0F67 /* CourtListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B034E6E02383CFA900CD0F67 /* CourtListTableViewCell.xib */; };
 		B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4A238261C3008FE79F /* BrowseModel.swift */; };
 		B0493D4D238261DB008FE79F /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0493D4C238261DB008FE79F /* BrowseView.swift */; };
+		B05E9BF4239144DC0050550F /* CircularBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05E9BF3239144DC0050550F /* CircularBarButton.swift */; };
 		B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */; };
 		B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651A2386AECB00CD4C90 /* CourtSearchData.swift */; };
 		B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */; };
@@ -180,6 +181,7 @@
 		B034E6E02383CFA900CD0F67 /* CourtListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourtListTableViewCell.xib; sourceTree = "<group>"; };
 		B0493D4A238261C3008FE79F /* BrowseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseModel.swift; sourceTree = "<group>"; };
 		B0493D4C238261DB008FE79F /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		B05E9BF3239144DC0050550F /* CircularBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBarButton.swift; sourceTree = "<group>"; };
 		B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchResponses.swift; sourceTree = "<group>"; };
 		B074651A2386AECB00CD4C90 /* CourtSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchData.swift; sourceTree = "<group>"; };
 		B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchParam.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				51CD07F9237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld */,
 				51D9B20B2390FF67009414A8 /* LoadingIndicator.swift */,
 				B0047A76238D0DF9005C0C49 /* BaseURL.swift */,
+				B05E9BF3239144DC0050550F /* CircularBarButton.swift */,
 			);
 			path = "Final Challenge";
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				51D39E402387EB7900B3BB24 /* TimeViewCell.swift in Sources */,
 				51D9B20C2390FF67009414A8 /* LoadingIndicator.swift in Sources */,
 				51A917F52381D06C00376021 /* OrderDetails.swift in Sources */,
+				B05E9BF4239144DC0050550F /* CircularBarButton.swift in Sources */,
 				51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */,
 				B031E9B1238D397C003A6729 /* BookingViewParam.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,

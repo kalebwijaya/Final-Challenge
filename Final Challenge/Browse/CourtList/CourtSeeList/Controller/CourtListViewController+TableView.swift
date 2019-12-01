@@ -11,13 +11,43 @@ import UIKit
 extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let address = addressName else { return "" }
+        guard let address = addressName else { return ""
+        }
         return address
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let address = addressName else { return
+        }
+        
         let header:UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.textAlignment = NSTextAlignment.left
+//        header.textLabel?.textAlignment = NSTextAlignment.center
+        header.textLabel?.center.x = view.center.x
+        
+        let setAlignment = NSMutableParagraphStyle()
+        setAlignment.alignment = .center
+        
+        let frontString =
+            NSMutableAttributedString(string: "" , attributes: [.paragraphStyle: setAlignment])
+
+        let backString =   NSAttributedString(string: "     \(address)",attributes: [.paragraphStyle: setAlignment])
+        
+        let locationAttachment = NSTextAttachment()
+        locationAttachment.image = UIImage(named: "IconLocationKecil")
+
+        let locationString = NSAttributedString(attachment: locationAttachment)
+
+
+        frontString.append(locationString)
+        frontString.append(backString)
+        
+
+        // draw the result in a label
+        header.textLabel?.attributedText = frontString
+        
+//        header.textLabel?.attributedText.
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

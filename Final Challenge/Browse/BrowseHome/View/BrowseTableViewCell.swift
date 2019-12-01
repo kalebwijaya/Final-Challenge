@@ -49,8 +49,7 @@ class BrowseTableViewCell: UITableViewCell {
     }
     
     private func setBlurTextBackground(){
-        textBackground.backgroundColor = #colorLiteral(red: 0.7006918788, green: 0.5842316747, blue: 0.3081508875, alpha: 1)
-        
+        textBackground.backgroundColor = UIColor(red: 1, green: 0.65, blue: 0.39, alpha: 1)
     }
 
     override func layoutSubviews() {

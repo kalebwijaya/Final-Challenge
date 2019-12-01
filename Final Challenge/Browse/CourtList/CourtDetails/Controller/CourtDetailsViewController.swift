@@ -124,8 +124,24 @@ class CourtDetailsViewController: UIViewController {
         
         generateAddress()
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(courtDetails.sportCenterLat)!), longitude: CLLocationDegrees(Double(courtDetails.sportCenterLong)!))
+        let locationCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(courtDetails.sportCenterLat)!), longitude: CLLocationDegrees(Double(courtDetails.sportCenterLong)!))
+        
+        annotation.coordinate = locationCoordinate
+        
+        
         courtMap.addAnnotation(annotation)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: locationCoordinate, span: span)
+        courtMap.setRegion(region, animated: true)
+        courtMap.isScrollEnabled = false
+        setCourtMapClicked()
+    }
+    
+    func setCourtMapClicked(){
+        let locationCoordinatex = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(courtDetails.sportCenterLat)!), longitude: CLLocationDegrees(Double(courtDetails.sportCenterLong)!))
+        
+        
+        
     }
     
     func generateAddress(){
