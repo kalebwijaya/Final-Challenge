@@ -46,6 +46,11 @@
 		51D39E412387EB7900B3BB24 /* TimeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D39E3F2387EB7900B3BB24 /* TimeViewCell.xib */; };
 		51D39E432387EB8D00B3BB24 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D39E422387EB8D00B3BB24 /* Booking.swift */; };
 		51D9B20C2390FF67009414A8 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9B20B2390FF67009414A8 /* LoadingIndicator.swift */; };
+		51D9B212239141EB009414A8 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9B211239141EB009414A8 /* OnboardingController.swift */; };
+		51D9B2152391420B009414A8 /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9B2132391420B009414A8 /* GetStarted.swift */; };
+		51D9B2162391420B009414A8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9B2142391420B009414A8 /* Slide.swift */; };
+		51D9B21923914234009414A8 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D9B21723914233009414A8 /* Slide.xib */; };
+		51D9B21A23914234009414A8 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D9B21823914234009414A8 /* OnBoarding.storyboard */; };
 		51E202A0238FB95B00524429 /* CourtTableViewCell+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2029F238FB95B00524429 /* CourtTableViewCell+CollectionView.swift */; };
 		51E202A423906A5200524429 /* BrowseViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E202A323906A5200524429 /* BrowseViewController+TableView.swift */; };
 		51E202A623906A9700524429 /* CourtListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E202A523906A9700524429 /* CourtListViewController+TableView.swift */; };
@@ -152,6 +157,11 @@
 		51D39E3F2387EB7900B3BB24 /* TimeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeViewCell.xib; sourceTree = "<group>"; };
 		51D39E422387EB8D00B3BB24 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		51D9B20B2390FF67009414A8 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		51D9B211239141EB009414A8 /* OnboardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		51D9B2132391420B009414A8 /* GetStarted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
+		51D9B2142391420B009414A8 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		51D9B21723914233009414A8 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		51D9B21823914234009414A8 /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		51E2029F238FB95B00524429 /* CourtTableViewCell+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourtTableViewCell+CollectionView.swift"; sourceTree = "<group>"; };
 		51E202A323906A5200524429 /* BrowseViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowseViewController+TableView.swift"; sourceTree = "<group>"; };
 		51E202A523906A9700524429 /* CourtListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CourtListViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -379,6 +389,7 @@
 		51CD07EF237E9EEA00F251D9 /* Final Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				51D9B20D239141A9009414A8 /* OnBoarding */,
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
 				B0493D4423826131008FE79F /* Browse */,
 				51D39E302387C34200B3BB24 /* Booking */,
@@ -468,6 +479,42 @@
 				51D39E382387DFFB00B3BB24 /* BookingViewController.swift */,
 				512D258E238E9E0C00388563 /* BookingViewController+Delegate.swift */,
 				512D258A238E9A0B00388563 /* BookingViewController+TableView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		51D9B20D239141A9009414A8 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				51D9B210239141C4009414A8 /* Controller */,
+				51D9B20F239141BF009414A8 /* View */,
+				51D9B20E239141BA009414A8 /* Model */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		51D9B20E239141BA009414A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51D9B2132391420B009414A8 /* GetStarted.swift */,
+				51D9B2142391420B009414A8 /* Slide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51D9B20F239141BF009414A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51D9B21823914234009414A8 /* OnBoarding.storyboard */,
+				51D9B21723914233009414A8 /* Slide.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		51D9B210239141C4009414A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				51D9B211239141EB009414A8 /* OnboardingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -704,6 +751,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D9B21923914234009414A8 /* Slide.xib in Resources */,
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
 				515E73082383ED1800ED494D /* BookingCourtDetails.storyboard in Resources */,
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
@@ -720,6 +768,7 @@
 				51CD0828237EA0C200F251D9 /* Browse.storyboard in Resources */,
 				B034E6E22383CFA900CD0F67 /* CourtListTableViewCell.xib in Resources */,
 				51CD07F8237E9EEA00F251D9 /* Main.storyboard in Resources */,
+				51D9B21A23914234009414A8 /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +810,7 @@
 				51201D3E238D470B007C8EE6 /* OrderDetailsParam.swift in Sources */,
 				B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */,
 				51E202A0238FB95B00524429 /* CourtTableViewCell+CollectionView.swift in Sources */,
+				51D9B212239141EB009414A8 /* OnboardingController.swift in Sources */,
 				51E202A423906A5200524429 /* BrowseViewController+TableView.swift in Sources */,
 				512D258B238E9A0B00388563 /* BookingViewController+TableView.swift in Sources */,
 				B0FA6B822382CD8C00D82B59 /* CourtListModel.swift in Sources */,
@@ -777,6 +827,8 @@
 				B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */,
 				B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */,
 				B0A04EB4238BFCFB0063BA1D /* BookingModel.swift in Sources */,
+				51D9B2162391420B009414A8 /* Slide.swift in Sources */,
+				51D9B2152391420B009414A8 /* GetStarted.swift in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
 				B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */,
 				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
