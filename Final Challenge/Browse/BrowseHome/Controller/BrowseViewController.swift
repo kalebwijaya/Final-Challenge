@@ -30,6 +30,10 @@ class BrowseViewController: UIViewController {
 //        self.title = "Court Category"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        let profileButton = CircularBarButton(image: UIImage(named: "court_category"))
+//        profileButton.button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        
+        navigationItem.rightBarButtonItems = [profileButton.load()]
     }
     
     override func viewWillAppear(_ animated: Bool) {
