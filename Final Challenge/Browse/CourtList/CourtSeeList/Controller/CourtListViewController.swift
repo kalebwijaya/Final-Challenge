@@ -210,8 +210,14 @@ class CourtListViewController: UIViewController {
                     guard let address = pm.name else{
                         return
                     }
-                    self.addressName = address
+                    let range = address.rangeOfCharacter(from: NSCharacterSet.letters)
+                    if  range != nil{
+                        self.addressName = address
+                    }else{
+                        self.addressName = "Near You"
+                    }
                     self.courtListView.courtListTableView.reloadData()
+                    
                     guard let loadingIndicator = self.loadingIndicator else{
                         return
                     }
