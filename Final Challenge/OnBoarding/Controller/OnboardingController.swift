@@ -119,7 +119,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
         
-        if pageControl.currentPage <= 3 {
+        if pageControl.currentPage <= 2 {
             nextButton.isHidden = true
         } else {
             showbutton(button: nextButton, hidden: false)
