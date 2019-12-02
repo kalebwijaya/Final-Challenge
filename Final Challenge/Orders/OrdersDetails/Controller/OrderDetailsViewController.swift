@@ -92,7 +92,7 @@ class OrderDetailsViewController: UIViewController {
             self.firstCourt.text = self.orderDetails.courtData[0].courtName
             self.firstCourtPrice.text = "\(hours) hour(s) @ Rp." + self.orderDetails.courtData[0].courtPrice
             let courtPrice = self.orderDetails.courtData[0].courtPrice.replacingOccurrences(of: ".", with: "")
-            courtTotalPrice = Int(courtPrice)! * hours
+            courtTotalPrice = Int(courtPrice)!
             self.firstCourtTotalPrice.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: courtTotalPrice))!
             totalPrice += courtTotalPrice
             
@@ -135,8 +135,8 @@ class OrderDetailsViewController: UIViewController {
     
     func moreThanOneCourt(index:Int) -> Int{
         let frameY = index > 1 ? (Int(firstCourt.frame.origin.x) + 252 + (40*index)) : Int(firstCourt.frame.maxY) + 23
-        orderView.frame = CGRect(x: 20, y:108, width: 374, height: Int(orderView.frame.height)+(32))
-        totalPriceView.frame = CGRect(x: 0, y: Int(totalPriceView.frame.maxY)-17, width: 374, height: 56)
+        orderView.frame = CGRect(x: 20, y:108, width: 374, height: Int(orderView.frame.height))
+        totalPriceView.frame = CGRect(x: 0, y: frameY + 40, width: 374, height: 56)
         
         let courtName = UILabel()
         courtName.frame = CGRect(x: 16, y: frameY, width: 172, height: 18)
@@ -164,7 +164,7 @@ class OrderDetailsViewController: UIViewController {
         courtTotalPrice.frame = CGRect(x: 277, y: frameY, width: 83, height: 20)
         courtTotalPrice.textColor = .black
         let courtTotalString = self.orderDetails.courtData[index].courtPrice.replacingOccurrences(of: ".", with: "")
-        let courtTotalPriceInt = Int(courtTotalString)! * hours
+        let courtTotalPriceInt = Int(courtTotalString)!
         courtTotalPrice.text = "Rp. " + currencyFormatter.string(from: NSNumber(value: courtTotalPriceInt))!
         courtTotalPrice.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         courtTotalPrice.sizeToFit()

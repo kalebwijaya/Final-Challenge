@@ -19,6 +19,7 @@ class CourtTableViewCell: UITableViewCell {
     
     var courtId:String = ""
     var totalTime:[String] = []
+    var courtPrices:[Int] = []
     let cellIdentifier = "TimeViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
     var firstTap:Bool = true
@@ -27,9 +28,11 @@ class CourtTableViewCell: UITableViewCell {
     var startTime = ""
     var endTime = ""
     var index = 0
-    var unAvailIndex:Int = 0
     var collectionViewHeight:Int = 0
     var unavailableTime:[String] = []
+    var nightTime:Int = 0
+    var dayTime:Int = 0
+    var bookingDataDetails:BookingCourtDetails!
     
     var delegate: BookingViewControllerDelegate?
     
@@ -50,8 +53,8 @@ class CourtTableViewCell: UITableViewCell {
             self.totalTime.append(timeString)
             time += 1
         }
-        let totalLine = ceil(Double(totalTime) / 4)
-        collectionViewHeight = Int(totalLine * 42)
+        let totalLine = ceil(Double(totalTime) / 3)
+        collectionViewHeight = Int(totalLine * 43)
         collectionView.frame = CGRect(x: 32, y: 93, width: 362, height: collectionViewHeight)
         frame = CGRect(x: 0, y: 0, width: 414, height: 109 + collectionViewHeight)
         self.unavailableTime = unavailableTime

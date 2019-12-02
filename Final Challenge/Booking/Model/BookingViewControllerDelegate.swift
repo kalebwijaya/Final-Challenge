@@ -11,7 +11,8 @@ import Foundation
 struct ScheduleTime {
     let startTime: String
     let endTime: String
-    let index : Int
+    let index:Int
+    let courtPrices : [Int]
 }
 
 protocol BookingViewControllerDelegate {

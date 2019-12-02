@@ -12,7 +12,8 @@ class TimeViewCell: UICollectionViewCell {
 
     @IBOutlet weak var time: UILabel!
     
-    var timeString:String = ""
+    var startTimeSting:String = ""
+    var endTimeSting:String = ""
     var price:Int = 0
     
     override func awakeFromNib() {
