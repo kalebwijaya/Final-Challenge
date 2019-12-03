@@ -139,9 +139,6 @@ class CourtDetailsViewController: UIViewController {
     
     func setCourtMapClicked(){
         let locationCoordinatex = CLLocationCoordinate2D(latitude: CLLocationDegrees(Double(courtDetails.sportCenterLat)!), longitude: CLLocationDegrees(Double(courtDetails.sportCenterLong)!))
-        
-        
-        
     }
     
     func generateAddress(){
