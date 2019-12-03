@@ -54,57 +54,47 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide1.imageAtas.image = UIImage(named: "imgOnboarding1")
-        slide1.labelTitle.text = "Welcome to SportSpace!"
-        slide1.labelDesc.text = ""
-        slide1.background.image = UIImage(named: "bgOnboarding1")
+        slide1.imageAtas.image = UIImage(named: "imgOnboarding2")
+        slide1.labelTitle.text = "Discover Courts in BSD"
+        slide1.labelDesc.text = "Find the best court to play in your area."
+        slide1.background.image = UIImage(named: "bgOnboarding2")
         slide1.labelOnboarding3atas.text = ""
         slide1.labelOnboarding3bawah.text = ""
         slide1.labelOnboarding5Atas.text = ""
         
-        
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide2.imageAtas.image = UIImage(named: "imgOnboarding2")
-        slide2.labelTitle.text = "Discover Courts in BSD"
-        slide2.labelDesc.text = "Find the best court to play in your area."
-        slide2.background.image = UIImage(named: "bgOnboarding2")
-        slide2.labelOnboarding3atas.text = ""
-        slide2.labelOnboarding3bawah.text = ""
+        slide2.imageTengah.image = UIImage(named: "BuletanTengah")
+        slide2.labelOnboarding3atas.text = "Play Whenever."
+        slide2.labelOnboarding3bawah.text = "Play Wherever."
+        slide2.background.image = UIImage(named: "bgOnboarding3")
+        slide2.labelDesc.text = ""
+        slide2.labelTitle.text = ""
         slide2.labelOnboarding5Atas.text = ""
-        
-        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide3.imageTengah.image = UIImage(named: "BuletanTengah")
-        slide3.labelOnboarding3atas.text = "Play Whenever."
-        slide3.labelOnboarding3bawah.text = "Play Wherever."
-        slide3.background.image = UIImage(named: "bgOnboarding3")
-        slide3.labelDesc.text = ""
-        slide3.labelTitle.text = ""
-        slide3.labelOnboarding5Atas.text = ""
       
-        let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide4.background.image = UIImage(named: "bgOnboarding4")
-        slide4.imageAtas.image = UIImage(named: "imgOnboarding4")
-        slide4.labelTitle.text = "Nearby Courts"
-        slide4.labelTitle.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
-        slide4.labelDesc.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
+        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide3.background.image = UIImage(named: "bgOnboarding4")
+        slide3.imageAtas.image = UIImage(named: "imgOnboarding4")
+        slide3.labelTitle.text = "Nearby Courts"
+        slide3.labelTitle.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
+        slide3.labelDesc.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
         
-        slide4.labelDesc.text = "We need your location to show nearest courts"
+        slide3.labelDesc.text = "We need your location to show nearest courts"
+        slide3.labelOnboarding3atas.text = ""
+        slide3.labelOnboarding3bawah.text = ""
+        slide3.labelOnboarding5Atas.text = ""
+        
+        let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide4.labelOnboarding5Atas.text = "Let’s book your first court now!"
+        slide4.labelDesc.text = ""
+        
+        slide4.labelTitle.text = ""
+        slide4.background.image = UIImage(named: "bgOnboarding5")
         slide4.labelOnboarding3atas.text = ""
         slide4.labelOnboarding3bawah.text = ""
-        slide4.labelOnboarding5Atas.text = ""
+        slide4.imageOnboarding5.image = UIImage(named: "imgOnboarding5")
+        slide4.labelOnboarding5Atas.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
         
-        let slide5:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide5.labelOnboarding5Atas.text = "Let’s book your first court now!"
-        slide5.labelDesc.text = ""
-        
-        slide5.labelTitle.text = ""
-        slide5.background.image = UIImage(named: "bgOnboarding5")
-        slide5.labelOnboarding3atas.text = ""
-        slide5.labelOnboarding3bawah.text = ""
-        slide5.imageOnboarding5.image = UIImage(named: "imgOnboarding5")
-        slide5.labelOnboarding5Atas.textColor = #colorLiteral(red: 1, green: 0.6685985923, blue: 0.320751369, alpha: 1)
-        
-        return [slide1, slide2, slide3, slide4, slide5]
+        return [slide1, slide2, slide3, slide4]
     }
     
     
@@ -129,7 +119,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
         
-        if pageControl.currentPage <= 3 {
+        if pageControl.currentPage <= 2 {
             nextButton.isHidden = true
         } else {
             showbutton(button: nextButton, hidden: false)
@@ -158,29 +148,27 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
          */
         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
         
-        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+        if(percentOffset.x > 0 && percentOffset.x <= 0.33) {
+            slides[0].imageAtas.transform = CGAffineTransform(scaleX: 1 - percentOffset.x/0.33, y: 1 - percentOffset.x/0.33)
+            slides[1].imageTengah.transform = CGAffineTransform(scaleX: percentOffset.x/0.33, y: percentOffset.x/0.33)
+            slides[1].labelOnboarding3atas
+                .transform = CGAffineTransform(scaleX: percentOffset.x/0.33, y: percentOffset.x/0.33)
+            slides[1].labelOnboarding3bawah
+                .transform = CGAffineTransform(scaleX: percentOffset.x/0.33, y: percentOffset.x/0.33)
             
-            slides[0].imageAtas.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-            slides[1].imageAtas.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
+        } else if(percentOffset.x > 0.33 && percentOffset.x <= 0.66) {
             
-        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.5) {
-            slides[1].imageAtas.transform = CGAffineTransform(scaleX: (0.5-percentOffset.x)/0.25, y: (0.5-percentOffset.x)/0.25)
-            slides[2].imageTengah.transform = CGAffineTransform(scaleX: percentOffset.x/0.5, y: percentOffset.x/0.5)
-            slides[2].labelOnboarding3atas
-                .transform = CGAffineTransform(scaleX: percentOffset.x/0.5, y: percentOffset.x/0.5)
-            slides[2].labelOnboarding3bawah
-                .transform = CGAffineTransform(scaleX: percentOffset.x/0.5, y: percentOffset.x/0.5)
-        } else if(percentOffset.x > 0.5 && percentOffset.x <= 0.75) {
-            slides[2].imageTengah.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-            slides[2].labelOnboarding3atas.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
-            slides[2].labelOnboarding3bawah.transform = CGAffineTransform(scaleX: (0.75-percentOffset.x)/0.25, y: (0.75-percentOffset.x)/0.25)
+            slides[1].imageTengah.transform = CGAffineTransform(scaleX: (0.66-percentOffset.x)/0.33, y: (0.66-percentOffset.x)/0.33)
+            slides[1].labelOnboarding3atas.transform = CGAffineTransform(scaleX: (0.66-percentOffset.x)/0.33, y: (0.66-percentOffset.x)/0.33)
+            slides[1].labelOnboarding3bawah.transform = CGAffineTransform(scaleX: (0.66-percentOffset.x)/0.33, y: (0.66-percentOffset.x)/0.33)
             
-            slides[3].imageAtas.transform = CGAffineTransform(scaleX: percentOffset.x/0.75, y: percentOffset.x/0.75)
+            slides[2].imageAtas.transform = CGAffineTransform(scaleX:  percentOffset.x/0.66, y:  percentOffset.x/0.66)
             
         }
-        else if(percentOffset.x > 0.75 && percentOffset.x <= 1) {
-            slides[3].imageAtas.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.25, y: (1-percentOffset.x)/0.25)
-            slides[4].imageOnboarding5.transform = CGAffineTransform(scaleX: percentOffset.x/1, y: percentOffset.x/1)
+        else if(percentOffset.x > 0.66 && percentOffset.x <= 1) {
+            slides[2].imageAtas.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.33, y: (1-percentOffset.x)/0.33)
+            
+            slides[3].imageOnboarding5.transform = CGAffineTransform(scaleX: percentOffset.x/1, y: percentOffset.x/1)
         }
     }
     

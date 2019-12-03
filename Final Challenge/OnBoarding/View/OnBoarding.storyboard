@@ -38,13 +38,25 @@
                                     <action selector="nextButtonDidTapped:" destination="bME-Wr-J1P" eventType="touchUpInside" id="7eD-3b-2Wq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmF-vN-ovQ">
+                                <rect key="frame" x="345" y="59" width="39" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="0.98598939180374146" green="0.65020257234573364" blue="0.38424825668334961" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonDidTapped:" destination="bME-Wr-J1P" eventType="touchUpInside" id="ugJ-e2-Yla"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1U2-wY-GjR" firstAttribute="centerX" secondItem="0ww-Ip-HVf" secondAttribute="centerX" id="0BL-TR-3hB"/>
                             <constraint firstItem="1U2-wY-GjR" firstAttribute="leading" secondItem="0ww-Ip-HVf" secondAttribute="leading" constant="179.5" id="2s6-GY-iVW"/>
                             <constraint firstItem="0ww-Ip-HVf" firstAttribute="trailing" secondItem="P3C-mc-Q9h" secondAttribute="trailing" constant="32" id="G1d-fA-k1t"/>
+                            <constraint firstItem="lmF-vN-ovQ" firstAttribute="top" secondItem="rsM-Dh-BK2" secondAttribute="topMargin" constant="15" id="HjU-Jo-Fpb"/>
                             <constraint firstItem="P3C-mc-Q9h" firstAttribute="leading" secondItem="0ww-Ip-HVf" secondAttribute="leading" constant="32" id="Rzg-Sq-MQI"/>
+                            <constraint firstItem="lmF-vN-ovQ" firstAttribute="leading" secondItem="0ww-Ip-HVf" secondAttribute="leading" constant="345" id="TnJ-M6-Lwf"/>
                             <constraint firstItem="0ww-Ip-HVf" firstAttribute="bottom" secondItem="P3C-mc-Q9h" secondAttribute="bottom" constant="120" id="X4j-sH-9gN"/>
                             <constraint firstItem="P3C-mc-Q9h" firstAttribute="centerX" secondItem="0ww-Ip-HVf" secondAttribute="centerX" id="bNt-gP-RJv"/>
                             <constraint firstItem="0ww-Ip-HVf" firstAttribute="trailing" secondItem="1U2-wY-GjR" secondAttribute="trailing" constant="179.5" id="h7H-f1-KT2"/>
