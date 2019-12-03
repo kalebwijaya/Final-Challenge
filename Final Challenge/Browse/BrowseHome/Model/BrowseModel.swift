@@ -31,4 +31,15 @@ class BrowseModel  {
         
     }
     
+    public func fetchImage(imageURL : String , completion: @escaping (Data) -> Void){
+        if let imageURL = URL(string: imageURL){
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    completion(data)
+                }
+            }
+        }
+    }
+    
 }
