@@ -64,8 +64,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageTengah.image = UIImage(named: "BuletanTengah")
-        slide2.labelOnboarding3atas.text = "Play Whenever."
-        slide2.labelOnboarding3bawah.text = "Play Wherever."
+        slide2.labelOnboarding3atas.text = "Book courts"
+        slide2.labelOnboarding3bawah.text = "Without the hassle."
         slide2.background.image = UIImage(named: "bgOnboarding3")
         slide2.labelDesc.text = ""
         slide2.labelTitle.text = ""
@@ -84,7 +84,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         slide3.labelOnboarding5Atas.text = ""
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide4.labelOnboarding5Atas.text = "Let’s book your first court now!"
+        slide4.labelOnboarding5Atas.text = "Let’s book your first court!"
         slide4.labelDesc.text = ""
         
         slide4.labelTitle.text = ""
