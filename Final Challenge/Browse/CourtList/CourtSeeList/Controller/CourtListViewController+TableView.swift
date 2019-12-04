@@ -65,9 +65,6 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
         
         //count distance from user location to sport center
 
-        guard let getLongitude = Double(getCourtData[indexPath.row].sportCenterLong) , let getLatitude = Double(getCourtData[indexPath.row].sportCenterLat) else {
-            return cell
-        }
         
         self.courtListModel.fetchImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
             let image = UIImage(data: data)
@@ -78,18 +75,12 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
         
         cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
         
-        cell.sportCenterImage.image = UIImage(named: "court_category")
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let getLongitude = Double(getCourtData[indexPath.row].sportCenterLong) , let getLatitude = Double(getCourtData[indexPath.row].sportCenterLat) else {
-            return
-        }
-        
-        let getSportCenterID = getCourtData[indexPath.row].sportCenterID
-        let getDistance = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
         
         let storyboard = UIStoryboard(name: "BookingCourtDetails", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "courtDetails") as! CourtDetailsViewController

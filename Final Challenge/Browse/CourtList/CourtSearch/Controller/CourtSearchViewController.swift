@@ -17,7 +17,9 @@ class CourtSearchViewController: UITableViewController {
     var courtSearchModel = CourtSearchModel()
     var url = URL(string: "\(BaseURL.baseURL)api/sport-center/search")
     var sportTypeID: Int?
+    var searchText: String?
     let locationManager = CLLocationManager()
+    let currencyFormatter = NumberFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,16 @@ class CourtSearchViewController: UITableViewController {
     }
     
     private func initialization(){
+        
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.groupingSeparator = "."
+        
+        currencyFormatter.numberStyle = .decimal
+        currencyFormatter.locale = Locale(identifier: "id_ID")
+    
         tableView.register(UINib(nibName: "CourtListTableViewCell", bundle: nil), forCellReuseIdentifier:  "courtListCell")
+        courtSearchData.removeAll()
+        self.tableView.reloadData()
         setUserLocation()
     }
     
@@ -36,7 +47,13 @@ class CourtSearchViewController: UITableViewController {
         locationManager.requestAlwaysAuthorization()
     }
     
-    private func getUserLocation(){
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = ""
+        navigationItem.hidesBackButton = true
+    }
+    
+    public func getUserLocation(){
         let status = CLLocationManager.authorizationStatus()
         
         if (status == .denied || status == .restricted || !CLLocationManager.locationServicesEnabled()) {
@@ -65,10 +82,16 @@ class CourtSearchViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "CourtDetails", bundle: nil)
+        let storyboard = UIStoryboard(name: "BookingCourtDetails", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(identifier: "courtDetails")
+        let vc = storyboard.instantiateViewController(identifier: "courtDetails") as! CourtDetailsViewController
         
+        guard let sportTypeID = self.sportTypeID else{
+            return
+        }
+        vc.getSportTypeID = "\(sportTypeID)"
+        vc.getSportCenterID = "\(courtSearchData[indexPath.row].sportCenterID)"
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
@@ -78,23 +101,23 @@ class CourtSearchViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courtListCell", for: indexPath) as! CourtListTableViewCell
         
         cell.sportCenterName.text = courtSearchData[indexPath.row].sportCenterName
-        let textChangeColor: NSAttributedString = "from \(courtSearchData[indexPath.row].sportCenterName)".attributedStringWithColor(["from"], color: UIColor.black)
+        
+        let textChangeColor: NSAttributedString = "From Rp. \( currencyFormatter.string(from: NSNumber(value: Int(courtSearchData[indexPath.row].courtMinPrice)!))! )".attributedStringWithColor(["From"], color: UIColor.black)
         
         cell.sportCenterStartPrice.attributedText = textChangeColor
         
         //count distance from user location to sport center
 
-        guard let getLongitude = Double(courtSearchData[indexPath.row].sportCenterLong) , let getLatitude = Double(courtSearchData[indexPath.row].sportCenterLat) else {
-            return cell
+
+        
+        cell.sportCenterDistance.text = "\(String(format: "%.2f", courtSearchData[indexPath.row].sportCenterDistance)) km Away"
+        
+        self.courtSearchModel.fetchImage(imageURL: courtSearchData[indexPath.row].sportCenterImageURL) { (data) in
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.sportCenterImage.image = image
+            }
         }
-        
-        cell.sportCenterDistance.text = "\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away"
-        
-        print("\(getSportCenterDistance(sportLongitude: getLongitude, sportLatitude: getLatitude)) km Away")
-        
-        cell.sportCenterImage.image = UIImage(named: "sport_center_image")
-        
-        
 
         return cell
     }
@@ -115,6 +138,8 @@ class CourtSearchViewController: UITableViewController {
     }
     
     public func getSearchData(getParam : CourtSearchParam){
+        courtSearchData.removeAll()
+        self.tableView.reloadData()
         guard let jsonUrl = url else {
             return
         }
@@ -137,45 +162,7 @@ class CourtSearchViewController: UITableViewController {
     
 }
 
-extension CourtSearchViewController: UISearchResultsUpdating{
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-        guard let searchTxt = searchController.searchBar.text else{
-            return
-        }
-        
-        getUserLocation()
-        guard let searchText = searchController.searchBar.text, let sportTypeID = sportTypeID else {
-            return
-        }
-        
-        let dataParam = CourtSearchParam(sportCenterName: searchText, sportTypeID: sportTypeID)
-        getSearchData(getParam: dataParam)
-        
-        
-    }
-    
-}
 
-extension CourtSearchViewController: CLLocationManagerDelegate{
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first{
-            self.latitude = "\(location.coordinate.latitude)"
-            self.longitude = "\(location.coordinate.longitude)"
-            
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if (status == .authorizedWhenInUse || status == .authorizedAlways){
-            
-            
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-}
+
+
+

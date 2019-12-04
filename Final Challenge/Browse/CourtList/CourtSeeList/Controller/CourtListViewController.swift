@@ -35,7 +35,6 @@ class CourtListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
@@ -47,8 +46,13 @@ class CourtListViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+       
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        setNavigation()
+        
     }
     
     
@@ -57,7 +61,7 @@ class CourtListViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         //self.title = "Courts"
         
-        //setSearchBar()
+        setSearchBar()
     }
     
     
@@ -69,20 +73,29 @@ class CourtListViewController: UIViewController {
         courtSearchTable.sportTypeID = getSportTypeID
         
         searchController = UISearchController(searchResultsController: courtSearchTable)
-        //searchController?.searchBar.delegate = courtSearchTable
-        searchController?.searchResultsUpdater = courtSearchTable
+        searchController?.searchBar.delegate = courtSearchTable
         
         let searchBar = searchController?.searchBar
         
         searchBar?.sizeToFit()
         searchBar?.placeholder = "Search Sport Center Name"
-
-        searchController?.searchBar.showsCancelButton = false
-        searchController?.hidesNavigationBarDuringPresentation = false
+        
         searchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationItem.searchController?.searchBar.delegate = searchBar!.delegate
+//        navigationItem.searchController?.searchResultsUpdater = searchController!.searchResultsUpdater
+//        navigationItem.searchController?.isActive = true
+//        let searchBar = UISearchBar()
+//        searchBar.delegate = self
+//        searchBar.sizeToFit()
+//        searchBar.searchBarStyle = .minimal
+//        navigationItem.searchController?.searchBar = searchBar
+//        searchBar.isTranslucent = true
         
+        
+                
     }
     
     private func getData(userData : CourtListParam){
@@ -229,4 +242,12 @@ class CourtListViewController: UIViewController {
         }
     }
 
+}
+
+
+
+extension CourtListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("TAY")
+    }
 }
