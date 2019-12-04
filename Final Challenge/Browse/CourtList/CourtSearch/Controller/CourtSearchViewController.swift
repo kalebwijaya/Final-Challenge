@@ -13,6 +13,7 @@ class CourtSearchViewController: UITableViewController {
 
     var courtSearchData = [CourtSearchData]()
     var longitude: String?
+    var nav: UINavigationController!
     var latitude: String?
     var courtSearchModel = CourtSearchModel()
     var url = URL(string: "\(BaseURL.baseURL)api/sport-center/search")
@@ -31,6 +32,8 @@ class CourtSearchViewController: UITableViewController {
         
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
+        
+        self.tableView.tableFooterView = UIView()
         
         currencyFormatter.numberStyle = .decimal
         currencyFormatter.locale = Locale(identifier: "id_ID")
@@ -92,8 +95,10 @@ class CourtSearchViewController: UITableViewController {
         vc.getSportTypeID = "\(sportTypeID)"
         vc.getSportCenterID = "\(courtSearchData[indexPath.row].sportCenterID)"
         vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
         
+        nav.pushViewController(vc, animated: true)
+        
+        self.dismiss(animated: false, completion: nil)
     }
 
     
@@ -143,6 +148,7 @@ class CourtSearchViewController: UITableViewController {
         guard let jsonUrl = url else {
             return
         }
+        print(getParam.sportCenterName)
         courtSearchModel.fetchData(url: jsonUrl, getUserData: getParam) { (responses, error) in
             if let response = responses {
                 if (response.errorCode == "200"){

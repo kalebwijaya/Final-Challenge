@@ -15,7 +15,7 @@ class CourtSearchParam: Codable{
     var longitude: String
     
     enum CodingKeys: String , CodingKey {
-        case sportCenterName = "sport_center_name"
+        case sportCenterName = "search_sport_center"
         case sportTypeID = "sport_type_id"
         case latitude = "lat"
         case longitude = "long"

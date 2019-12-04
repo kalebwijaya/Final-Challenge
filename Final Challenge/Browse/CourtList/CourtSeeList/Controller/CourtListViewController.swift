@@ -48,6 +48,8 @@ class CourtListViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        
        
     }
     
@@ -71,7 +73,7 @@ class CourtListViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CourtSearch", bundle: nil)
         let courtSearchTable = storyboard.instantiateViewController(identifier: "courtSearch") as! CourtSearchViewController
         courtSearchTable.sportTypeID = getSportTypeID
-        
+        courtSearchTable.nav = self.navigationController
         searchController = UISearchController(searchResultsController: courtSearchTable)
         searchController?.searchBar.delegate = courtSearchTable
         
@@ -84,16 +86,6 @@ class CourtListViewController: UIViewController {
         definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-//        navigationItem.searchController?.searchBar.delegate = searchBar!.delegate
-//        navigationItem.searchController?.searchResultsUpdater = searchController!.searchResultsUpdater
-//        navigationItem.searchController?.isActive = true
-//        let searchBar = UISearchBar()
-//        searchBar.delegate = self
-//        searchBar.sizeToFit()
-//        searchBar.searchBarStyle = .minimal
-//        navigationItem.searchController?.searchBar = searchBar
-//        searchBar.isTranslucent = true
-        
         
                 
     }
@@ -245,9 +237,3 @@ class CourtListViewController: UIViewController {
 }
 
 
-
-extension CourtListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print("TAY")
-    }
-}

@@ -23,6 +23,8 @@ extension CourtSearchViewController: CLLocationManagerDelegate{
             }
             
             let dataParam = CourtSearchParam(sportCenterName: searchText, sportTypeID: sportTypeID,latitude: latitude,longitude: longitude )
+            
+           
             getSearchData(getParam: dataParam)
         }
     }

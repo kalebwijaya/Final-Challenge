@@ -11,11 +11,6 @@ import UIKit
 
 extension CourtSearchViewController: UISearchBarDelegate{
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        courtSearchData.removeAll()
-        self.tableView.reloadData()
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         courtSearchData.removeAll()
         self.tableView.reloadData()

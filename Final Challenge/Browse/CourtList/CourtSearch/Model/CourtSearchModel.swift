@@ -29,14 +29,12 @@ class CourtSearchModel{
         }
         let task = session.dataTask(with: request) {
                (data , response , error) in
-               
+            
             if let error = error{
                 completion(nil,error)
             }else if let data = data{
                 do{
                     let result = try JSONDecoder().decode(CourtSearchResponse.self, from: data)
-                    
-                    print("\(result.data) ini ni")
                     
                     completion(result,nil)
                 }catch {
