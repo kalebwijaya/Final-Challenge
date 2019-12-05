@@ -35,7 +35,6 @@ class CourtListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
@@ -47,8 +46,15 @@ class CourtListViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+       
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        setNavigation()
+        
     }
     
     
@@ -57,7 +63,7 @@ class CourtListViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         //self.title = "Courts"
         
-        //setSearchBar()
+        setSearchBar()
     }
     
     
@@ -67,22 +73,21 @@ class CourtListViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CourtSearch", bundle: nil)
         let courtSearchTable = storyboard.instantiateViewController(identifier: "courtSearch") as! CourtSearchViewController
         courtSearchTable.sportTypeID = getSportTypeID
-        
+        courtSearchTable.nav = self.navigationController
         searchController = UISearchController(searchResultsController: courtSearchTable)
-        //searchController?.searchBar.delegate = courtSearchTable
-        searchController?.searchResultsUpdater = courtSearchTable
+        searchController?.searchBar.delegate = courtSearchTable
         
         let searchBar = searchController?.searchBar
         
         searchBar?.sizeToFit()
         searchBar?.placeholder = "Search Sport Center Name"
-
-        searchController?.searchBar.showsCancelButton = false
-        searchController?.hidesNavigationBarDuringPresentation = false
+        
         searchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
+                
     }
     
     private func getData(userData : CourtListParam){
@@ -230,3 +235,5 @@ class CourtListViewController: UIViewController {
     }
 
 }
+
+

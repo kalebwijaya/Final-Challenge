@@ -14,25 +14,28 @@ class CourtSearchModel{
         let session = URLSession(configuration: .default)
         var request = URLRequest(url: url)
         
-        //if body exist
-//        request.httpMethod = "POST"
-//
-//        let encoder = JSONEncoder()
-//
-//        do{
-//            let bodyParam = try encoder.encode(getUserData)
-//            request.httpBody = bodyParam
-//        }catch{x
-//            print(error)
-//        }
+        
+        request.httpMethod = "POST"
+
+        let encoder = JSONEncoder()
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do{
+            let bodyParam = try encoder.encode(getUserData)
+            request.httpBody = bodyParam
+        }catch{
+            print(error)
+        }
         let task = session.dataTask(with: request) {
                (data , response , error) in
-               
+            
             if let error = error{
                 completion(nil,error)
             }else if let data = data{
                 do{
                     let result = try JSONDecoder().decode(CourtSearchResponse.self, from: data)
+                    
                     completion(result,nil)
                 }catch {
                     completion(nil,error)
@@ -41,7 +44,15 @@ class CourtSearchModel{
         }
         task.resume()
         
-        
-        
+    }
+    public func fetchImage(imageURL : String , completion: @escaping (Data) -> Void){
+        if let imageURL = URL(string: imageURL){
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: imageURL)
+                if let data = data {
+                    completion(data)
+                }
+            }
+        }
     }
 }
