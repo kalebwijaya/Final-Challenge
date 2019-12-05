@@ -29,10 +29,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="leading" secondItem="bfQ-zU-tEN" secondAttribute="leading" id="0o5-sR-WFh"/>
-                            <constraint firstItem="bfQ-zU-tEN" firstAttribute="trailing" secondItem="BeF-Dy-FCX" secondAttribute="trailing" id="Dod-h2-G3F"/>
-                            <constraint firstItem="bfQ-zU-tEN" firstAttribute="bottom" secondItem="BeF-Dy-FCX" secondAttribute="bottom" id="Kzv-2c-cc1"/>
-                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="top" secondItem="bfQ-zU-tEN" secondAttribute="top" id="fgi-Av-0sh"/>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="leading" secondItem="bfQ-zU-tEN" secondAttribute="leading" id="IEL-L7-F2g"/>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="centerX" secondItem="bfQ-zU-tEN" secondAttribute="centerX" id="P9A-hm-bBg"/>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="top" secondItem="bfQ-zU-tEN" secondAttribute="top" id="U8u-x7-Llf"/>
+                            <constraint firstItem="BeF-Dy-FCX" firstAttribute="centerY" secondItem="bfQ-zU-tEN" secondAttribute="centerY" id="h5Q-du-SA8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bfQ-zU-tEN"/>
                     </view>

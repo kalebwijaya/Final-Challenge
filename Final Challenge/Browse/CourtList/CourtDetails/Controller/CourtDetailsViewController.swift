@@ -22,6 +22,7 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var courtMap: MKMapView!
     @IBOutlet weak var bookNowBtn: UIButton!
     
+    
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
     let url = URL(string: "\(BaseURL.baseURL)api/sport-center/detail")
@@ -50,6 +51,26 @@ class CourtDetailsViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         imageCarousel.contentInsetAdjustmentBehavior = .never
         setButtonClickHandler()
+        self.setAddressWhenTap()
+    }
+    
+    func setAddressWhenTap(){
+        addressView.isUserInteractionEnabled = true
+        courtMap.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
+        self.addressView.addGestureRecognizer(gesture)
+        self.courtMap.addGestureRecognizer(gesture)
+    }
+    
+    @objc func addressTapped(){
+        let lat = courtDetails.sportCenterLat
+        let long = courtDetails.sportCenterLong
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            UIApplication.shared.openURL(URL(string: "comgooglemaps://?q=\(lat),\(long)&directionsmode=driving&zoom=14")!)
+        } else {
+          print("Can't use comgooglemaps://");
+        }
+        
     }
     
     func setButtonClickHandler(){
