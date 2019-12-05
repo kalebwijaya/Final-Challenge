@@ -31,7 +31,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjK-p3-ioB" userLabel="Label Onboarding3 atas">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjK-p3-ioB" userLabel="Label Onboarding3 atas">
                     <rect key="frame" x="127" y="315" width="160" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="OjK-p3-ioB" secondAttribute="height" multiplier="20:3" id="euR-uk-ehj"/>
@@ -40,8 +40,8 @@
                     <color key="textColor" red="0.9938177466" green="0.68575030569999995" blue="0.38816252350000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeR-Ee-xfw" userLabel="Label Onboarding3 bawah">
-                    <rect key="frame" x="184" y="394" width="46" height="21.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeR-Ee-xfw" userLabel="Label Onboarding3 bawah">
+                    <rect key="frame" x="184" y="389" width="46" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -77,13 +77,13 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5Lh-Ly-62p" secondAttribute="trailing" constant="25" id="2CA-49-swp"/>
                 <constraint firstItem="HnG-09-MXF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4xA-eW-Qyb"/>
-                <constraint firstItem="eeR-Ee-xfw" firstAttribute="top" secondItem="OjK-p3-ioB" secondAttribute="bottom" constant="55" id="5ol-Br-xPJ"/>
                 <constraint firstItem="OjK-p3-ioB" firstAttribute="top" secondItem="kjH-nc-1Yd" secondAttribute="bottom" constant="55" id="6vQ-qA-PSC"/>
                 <constraint firstItem="3SO-7l-VCA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="49" id="7cg-sa-95G"/>
                 <constraint firstItem="HnG-09-MXF" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="A8y-EK-HrZ"/>
                 <constraint firstItem="KMl-gq-UNZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Crw-sw-He3"/>
                 <constraint firstItem="5Lh-Ly-62p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="FaO-Fp-fZ5"/>
                 <constraint firstItem="OjK-p3-ioB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GQe-hb-zqM"/>
+                <constraint firstItem="eeR-Ee-xfw" firstAttribute="top" secondItem="OjK-p3-ioB" secondAttribute="bottom" constant="50" id="Hjj-34-1fU"/>
                 <constraint firstItem="eeR-Ee-xfw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KJI-i1-lTP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1eG-RX-rhY" secondAttribute="bottom" constant="335" id="Ld1-da-T0A"/>
                 <constraint firstItem="afP-Zy-zwm" firstAttribute="top" secondItem="kjH-nc-1Yd" secondAttribute="bottom" id="MtF-zX-xGF"/>

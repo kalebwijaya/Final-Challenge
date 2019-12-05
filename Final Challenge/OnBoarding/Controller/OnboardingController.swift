@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func nextButtonDidTapped(_ sender: Any) {
         //Function pindah page pake present
         UserDefaults.standard.set(true, forKey: "pernahbuka")
-        performSegue(withIdentifier: "showMainTabBar", sender: nil)
+        performSegue(withIdentifier: "showLogin", sender: nil)
     }
     
     var slides:[Slide] = [];
