@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class BrowseModel  {
+    let cache = NSCache<NSString,UIImage>()
+    
     public func fetchData(url: URL, completion: @escaping (BrowseResponses?, Error?) -> Void){
         
         let session = URLSession(configuration: .default)
@@ -36,10 +39,25 @@ class BrowseModel  {
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
+                    
+                    let downloadImage = UIImage(data: data)
+                    self.cache.setObject(downloadImage!, forKey: imageURL.absoluteString as NSString)
                     completion(data)
                 }
             }
         }
+    }
+    
+    public func getImage(imageURL : String , completion: @escaping (Data) -> Void){
+        if let getImage = URL(string: imageURL){
+            if let image = cache.object(forKey: getImage.absoluteString as NSString){
+                
+                completion(image.pngData()!)
+            }else{
+                fetchImage(imageURL: imageURL, completion: completion)
+            }
+        }
+        
     }
     
 }

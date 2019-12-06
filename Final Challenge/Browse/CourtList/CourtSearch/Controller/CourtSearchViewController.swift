@@ -117,7 +117,7 @@ class CourtSearchViewController: UITableViewController {
         
         cell.sportCenterDistance.text = "\(String(format: "%.2f", courtSearchData[indexPath.row].sportCenterDistance)) km Away"
         
-        self.courtSearchModel.fetchImage(imageURL: courtSearchData[indexPath.row].sportCenterImageURL) { (data) in
+        self.courtSearchModel.getImage(imageURL: courtSearchData[indexPath.row].sportCenterImageURL) { (data) in
             let image = UIImage(data: data)
             DispatchQueue.main.async {
                 cell.sportCenterImage.image = image

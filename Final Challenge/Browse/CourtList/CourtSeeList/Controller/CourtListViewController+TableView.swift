@@ -66,7 +66,7 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
         //count distance from user location to sport center
 
         
-        self.courtListModel.fetchImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
+        self.courtListModel.getImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
             let image = UIImage(data: data)
             DispatchQueue.main.async {
                 cell.sportCenterImage.image = image

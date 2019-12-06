@@ -139,8 +139,6 @@ class CourtListViewController: UIViewController {
         }
         loadingIndicator.showLoading()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
         getUserLocation()
     }
     
@@ -159,7 +157,7 @@ class CourtListViewController: UIViewController {
         
         if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
         }
         
     }

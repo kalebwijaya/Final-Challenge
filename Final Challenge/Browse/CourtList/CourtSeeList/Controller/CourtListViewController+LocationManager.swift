@@ -21,13 +21,15 @@ extension CourtListViewController: CLLocationManagerDelegate{
                 self.initialization()
                 self.setAddressName()
             }
+            manager.stopUpdatingLocation()
             
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if (status == .authorizedWhenInUse || status == .authorizedAlways){
-            manager.requestLocation()
+            manager.desiredAccuracy = kCLLocationAccuracyBest
+            manager.startUpdatingLocation()
         }
     }
     
