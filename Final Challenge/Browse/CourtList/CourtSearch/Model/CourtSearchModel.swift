@@ -34,6 +34,7 @@ class CourtSearchModel{
                (data , response , error) in
             
             if let error = error{
+                print(error)
                 completion(nil,error)
             }else if let data = data{
                 do{
@@ -41,6 +42,7 @@ class CourtSearchModel{
                     
                     completion(result,nil)
                 }catch {
+                    print(error)
                     completion(nil,error)
                 }
             }

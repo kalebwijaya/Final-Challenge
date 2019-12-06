@@ -12,6 +12,8 @@ import CoreLocation
 class CourtSearchViewController: UITableViewController {
 
     var courtSearchData = [CourtSearchData]()
+    var loadingIndicator:LoadingIndicator?
+    let loadingView = UIView()
     var longitude: String?
     var nav: UINavigationController!
     var latitude: String?
@@ -30,6 +32,8 @@ class CourtSearchViewController: UITableViewController {
     
     private func initialization(){
         
+        loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
+        
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         
@@ -45,9 +49,12 @@ class CourtSearchViewController: UITableViewController {
     }
     
     private func setUserLocation(){
+        guard let loadingIndicator = loadingIndicator else{
+            return
+        }
+        loadingIndicator.showLoading()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,23 +64,36 @@ class CourtSearchViewController: UITableViewController {
     }
     
     public func getUserLocation(){
-        let status = CLLocationManager.authorizationStatus()
-        
-        if (status == .denied || status == .restricted || !CLLocationManager.locationServicesEnabled()) {
-            //show alert nanti
-            return
+        if CLLocationManager.locationServicesEnabled(){
+            switch CLLocationManager.authorizationStatus() {
+            case .restricted, .denied:
+                locationAlertDialog()
+            case .authorizedAlways, .authorizedWhenInUse :
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+                return
+            @unknown default:
+                break
+            }
+        }else {
+            locationAlertDialog()
         }
         
-        if (status == .notDetermined){
-            locationManager.requestWhenInUseAuthorization()
-            return
-        }
+    }
+    
+    public func locationAlertDialog(){
+        let alert = UIAlertController(title: "You need to turn on your location", message: "We need your location to show nearby courts.", preferredStyle: .alert)
         
-        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestLocation()
-        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
         
+        let settingAction = UIAlertAction(title: NSLocalizedString("Setting", comment: ""), style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)! as URL, options: [:], completionHandler: nil)
+        }
+        alert.addAction(settingAction)
+        alert.addAction(cancelAction)
+        self.present(alert,animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -143,12 +163,19 @@ class CourtSearchViewController: UITableViewController {
     }
     
     public func getSearchData(getParam : CourtSearchParam){
-        courtSearchData.removeAll()
-        self.tableView.reloadData()
-        guard let jsonUrl = url else {
+        guard let loadingIndicator = loadingIndicator else {
             return
         }
-        print(getParam.sportCenterName)
+        
+        loadingIndicator.removeLoading()
+        
+        guard let jsonUrl = url else {
+            return print("data not found")
+        }
+        
+        courtSearchData.removeAll()
+        self.tableView.reloadData()
+        
         courtSearchModel.fetchData(url: jsonUrl, getUserData: getParam) { (responses, error) in
             if let response = responses {
                 if (response.errorCode == "200"){
@@ -157,12 +184,16 @@ class CourtSearchViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }else if (response.errorCode == "400") {
+                    print("ni jalan")
                     print(response.errorMessage)
                 }
             }else if let error = error {
+                print("ni jalan")
                 print(error)
             }
         }
+        
+        
     }
 
     
