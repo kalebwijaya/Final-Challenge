@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPf-WT-qEA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,19 +10,19 @@
         <!--Court Details View Controller-->
         <scene sceneID="aqJ-VO-eml">
             <objects>
-                <viewController storyboardIdentifier="courtDetails" interfaceStyle="light" id="UPf-WT-qEA" customClass="CourtDetailsViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="courtDetails" interfaceStyle="light" id="UPf-WT-qEA" customClass="CourtDetailsViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZC-Di-ODF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-w6-GdT">
-                                <rect key="frame" x="0.0" y="0.0" width="415" height="276"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jS1-du-3t2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="4x1-QT-jst"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="PqJ-4k-HKw">
-                                <rect key="frame" x="188" y="229" width="39" height="37"/>
+                                <rect key="frame" x="187.66666666666666" y="229" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laB-dO-koO">
@@ -78,7 +78,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmb-XB-PGA">
-                                <rect key="frame" x="16" y="446" width="201" height="24"/>
+                                <rect key="frame" x="16" y="446" width="76" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -104,7 +104,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RL-Ca-niN">
-                                <rect key="frame" x="16" y="570" width="201" height="24"/>
+                                <rect key="frame" x="16" y="570" width="58" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -134,7 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="VgD-8s-DxK" id="U5O-Vd-U3m"/>
-                        <outlet property="addressView" destination="RZy-zR-6ly" id="fmI-Rl-C6C"/>
+                        <outlet property="addressView" destination="RZy-zR-6ly" id="boK-ak-pAm"/>
                         <outlet property="bookNowBtn" destination="Gjr-GN-RuP" id="Fy2-yC-B28"/>
                         <outlet property="courtMap" destination="euO-15-MlP" id="eLL-7G-toH"/>
                         <outlet property="courtMinPrice" destination="3ek-uv-tmV" id="szd-jK-chS"/>
