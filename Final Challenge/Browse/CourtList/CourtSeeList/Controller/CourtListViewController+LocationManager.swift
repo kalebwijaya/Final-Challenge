@@ -27,9 +27,13 @@ extension CourtListViewController: CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if (status == .authorizedWhenInUse || status == .authorizedAlways){
-            manager.desiredAccuracy = kCLLocationAccuracyBest
-            manager.startUpdatingLocation()
+        if CLLocationManager.locationServicesEnabled(){
+            if (status == .authorizedWhenInUse || status == .authorizedAlways){
+                manager.desiredAccuracy = kCLLocationAccuracyBest
+                manager.startUpdatingLocation()
+            }
+        }else{
+            
         }
     }
     

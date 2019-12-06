@@ -73,7 +73,7 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
             }
         }
         
-        cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
+        cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km away"
         
 
         return cell
