@@ -166,7 +166,8 @@ class CourtListViewController: UIViewController {
         
     }
     
-    private func locationAlertDialog(){
+    public func locationAlertDialog(){
+        print("JALAN DONG")
         let alert = UIAlertController(title: "ayo nyalain locationnya", message: "tolong dinyalakan ya", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)

@@ -31,9 +31,11 @@ extension CourtListViewController: CLLocationManagerDelegate{
             if (status == .authorizedWhenInUse || status == .authorizedAlways){
                 manager.desiredAccuracy = kCLLocationAccuracyBest
                 manager.startUpdatingLocation()
+            }else if (status == .denied || status == .restricted){
+                self.locationAlertDialog()
             }
         }else{
-            
+            self.locationAlertDialog()
         }
     }
     
