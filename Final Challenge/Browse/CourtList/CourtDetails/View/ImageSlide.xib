@@ -9,12 +9,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" restorationIdentifier="ImageSlide" id="iN0-l3-epB" customClass="ImageSlide" customModule="Final_Challenge" customModuleProvider="target">
+        <view contentMode="scaleToFill" restorationIdentifier="ImageSlide" id="iN0-l3-epB" customClass="ImageSlide" customModule="Sport_Space" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="415" height="276"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4qR-gF-wba">
                     <rect key="frame" x="0.0" y="0.0" width="415" height="276"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="276" id="5eg-Rl-b9L"/>
+                        <constraint firstAttribute="width" constant="415" id="a1D-nw-hD7"/>
+                    </constraints>
                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium" weight="light"/>
                 </imageView>
             </subviews>

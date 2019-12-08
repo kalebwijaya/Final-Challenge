@@ -10,7 +10,7 @@
         <!--Booking Detail-->
         <scene sceneID="wl2-Oi-qXS">
             <objects>
-                <viewController id="KFC-b7-2nF" customClass="OrderDetailsViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KFC-b7-2nF" customClass="OrderDetailsViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XpZ-wP-Gnj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -23,12 +23,11 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
             let lineSpacing:CGFloat = 20
             let interItemSpacing:CGFloat = 20
             
-            let width = (orderCollectionView.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
+            let width = (self.view.frame.width - (numberOfItemRow - 1) * interItemSpacing) / numberOfItemRow
             
             collectionViewFlowLayout = UICollectionViewFlowLayout()
-            
             collectionViewFlowLayout.itemSize = CGSize(width: width - 40, height: 125)
-            collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+            collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
             collectionViewFlowLayout.scrollDirection = .vertical
             collectionViewFlowLayout.minimumLineSpacing = lineSpacing
             collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
