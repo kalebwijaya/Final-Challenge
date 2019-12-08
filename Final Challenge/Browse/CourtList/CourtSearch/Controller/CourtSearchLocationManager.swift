@@ -26,13 +26,20 @@ extension CourtSearchViewController: CLLocationManagerDelegate{
             
            
             getSearchData(getParam: dataParam)
+            manager.stopUpdatingLocation()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if (status == .authorizedWhenInUse || status == .authorizedAlways){
-            
-            
+        if CLLocationManager.locationServicesEnabled(){
+            if (status == .authorizedWhenInUse || status == .authorizedAlways){
+                manager.desiredAccuracy = kCLLocationAccuracyBest
+                manager.startUpdatingLocation()
+            }else if (status == .denied || status == .restricted){
+                self.locationAlertDialog()
+            }
+        }else{
+            self.locationAlertDialog()
         }
     }
     

@@ -66,14 +66,14 @@ extension CourtListViewController: UITableViewDataSource, UITableViewDelegate{
         //count distance from user location to sport center
 
         
-        self.courtListModel.fetchImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
+        self.courtListModel.getImage(imageURL: getCourtData[indexPath.row].sportCenterImageURL) { (data) in
             let image = UIImage(data: data)
             DispatchQueue.main.async {
                 cell.sportCenterImage.image = image
             }
         }
         
-        cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km Away"
+        cell.sportCenterDistance.text = "\(String(format: "%.2f", getCourtData[indexPath.row].sportCenterDistance)) km away"
         
 
         return cell

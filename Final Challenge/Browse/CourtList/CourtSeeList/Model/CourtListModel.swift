@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class CourtListModel{
+    let cache = NSCache<NSString,UIImage>()
+    
     public func fetchData(url : URL, getUserData: CourtListParam, completion: @escaping (CourtListResponses?, Error?) -> Void){
         
         let session = URLSession(configuration: .default)
@@ -34,6 +37,7 @@ class CourtListModel{
             }else if let data = data{
                 do{
                     let result = try JSONDecoder().decode(CourtListResponses.self, from: data)
+    
                     completion(result,nil)
                 }catch {
                     completion(nil,error)
@@ -50,9 +54,21 @@ class CourtListModel{
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
+                    let downloadImage = UIImage(data: data)
+                    self.cache.setObject(downloadImage!, forKey: imageURL.absoluteString as NSString)
                     completion(data)
                 }
             }
         }
+    }
+    public func getImage(imageURL : String , completion: @escaping (Data) -> Void){
+        if let getImage = URL(string: imageURL){
+            if let image = cache.object(forKey: getImage.absoluteString as NSString){
+                completion(image.pngData()!)
+            }else{
+                fetchImage(imageURL: imageURL, completion: completion)
+            }
+        }
+        
     }
 }

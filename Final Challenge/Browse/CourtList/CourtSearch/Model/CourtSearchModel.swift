@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class CourtSearchModel{
+    let cache = NSCache<NSString,UIImage>()
+    
     public func fetchData(url: URL, getUserData: CourtSearchParam, completion: @escaping (CourtSearchResponse?, Error?) -> Void){
         
         let session = URLSession(configuration: .default)
@@ -31,6 +34,7 @@ class CourtSearchModel{
                (data , response , error) in
             
             if let error = error{
+                print(error)
                 completion(nil,error)
             }else if let data = data{
                 do{
@@ -38,6 +42,7 @@ class CourtSearchModel{
                     
                     completion(result,nil)
                 }catch {
+                    print(error)
                     completion(nil,error)
                 }
             }
@@ -50,9 +55,25 @@ class CourtSearchModel{
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: imageURL)
                 if let data = data {
+                    
+                    let downloadImage = UIImage(data: data)
+                    self.cache.setObject(downloadImage!, forKey: imageURL.absoluteString as NSString)
                     completion(data)
                 }
             }
         }
     }
+    public func getImage(imageURL : String , completion: @escaping (Data) -> Void){
+        if let getImage = URL(string: imageURL){
+            if let image = cache.object(forKey: getImage.absoluteString as NSString){
+                
+                completion(image.pngData()!)
+            }else{
+                fetchImage(imageURL: imageURL, completion: completion)
+            }
+        }
+        
+    }
+    
+    
 }

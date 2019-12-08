@@ -12,6 +12,8 @@ import UIKit
 extension CourtSearchViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print(searchText)
         courtSearchData.removeAll()
         self.tableView.reloadData()
         self.searchText = searchText
@@ -20,6 +22,14 @@ extension CourtSearchViewController: UISearchBarDelegate{
     }
     
     @objc func fetchData(){
+        if loadingIndicator != nil {
+            loadingIndicator?.removeLoading()
+        }
+        
+        guard let loadingIndicator = loadingIndicator else{
+            return
+        }
+        loadingIndicator.showLoading()
         getUserLocation()
         
     }
