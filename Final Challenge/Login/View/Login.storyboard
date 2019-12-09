@@ -161,7 +161,7 @@
                         <outlet property="passwordTextField" destination="wye-Li-aol" id="dUe-2p-ca2"/>
                         <outlet property="usernameTextField" destination="mED-7Q-d6Y" id="K0d-6Y-Myj"/>
                         <segue destination="ZCY-kK-vOb" kind="presentation" identifier="toRegister" modalPresentationStyle="fullScreen" id="uI3-DI-5dg"/>
-                        <segue destination="3NZ-jB-ndd" kind="presentation" identifier="loggedIn" modalPresentationStyle="fullScreen" id="wbj-7g-iF9"/>
+                        <segue destination="3NZ-jB-ndd" kind="presentation" identifier="loggedIn" animates="NO" modalPresentationStyle="fullScreen" id="wbj-7g-iF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUe-dq-72h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
