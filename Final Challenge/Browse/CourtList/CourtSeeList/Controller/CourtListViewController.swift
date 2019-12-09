@@ -35,7 +35,6 @@ class CourtListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
@@ -47,8 +46,17 @@ class CourtListViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+       
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        setNavigation()
+        super.viewWillAppear(animated)
+        
+        if let index = self.courtListView.courtListTableView.indexPathForSelectedRow {
+            self.courtListView.courtListTableView.deselectRow(at: index, animated: false)
+        }
     }
     
     
@@ -57,7 +65,7 @@ class CourtListViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         //self.title = "Courts"
         
-        //setSearchBar()
+        setSearchBar()
     }
     
     
@@ -67,22 +75,21 @@ class CourtListViewController: UIViewController {
         let storyboard = UIStoryboard(name: "CourtSearch", bundle: nil)
         let courtSearchTable = storyboard.instantiateViewController(identifier: "courtSearch") as! CourtSearchViewController
         courtSearchTable.sportTypeID = getSportTypeID
-        
+        courtSearchTable.nav = self.navigationController
         searchController = UISearchController(searchResultsController: courtSearchTable)
-        //searchController?.searchBar.delegate = courtSearchTable
-        searchController?.searchResultsUpdater = courtSearchTable
+        searchController?.searchBar.delegate = courtSearchTable
         
         let searchBar = searchController?.searchBar
         
         searchBar?.sizeToFit()
         searchBar?.placeholder = "Search Sport Center Name"
-
-        searchController?.searchBar.showsCancelButton = false
-        searchController?.hidesNavigationBarDuringPresentation = false
+        
         searchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
+                
     }
     
     private func getData(userData : CourtListParam){
@@ -134,29 +141,42 @@ class CourtListViewController: UIViewController {
         }
         loadingIndicator.showLoading()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
         getUserLocation()
     }
     
     private func getUserLocation(){
-        let status = CLLocationManager.authorizationStatus()
         
-        if (status == .denied || status == .restricted || !CLLocationManager.locationServicesEnabled()) {
-            //show alert nanti
-            return
+        if CLLocationManager.locationServicesEnabled(){
+            switch CLLocationManager.authorizationStatus() {
+            case .restricted, .denied:
+                locationAlertDialog()
+            case .authorizedAlways, .authorizedWhenInUse :
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+                return
+            @unknown default:
+                break
+            }
+        }else {
+            locationAlertDialog()
         }
+
         
-        if (status == .notDetermined){
-            locationManager.requestWhenInUseAuthorization()
-            return
+    }
+    
+    public func locationAlertDialog(){
+        let alert = UIAlertController(title: "You need to turn on your location", message: "We need your location to show nearby courts.", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        
+        let settingAction = UIAlertAction(title: NSLocalizedString("Setting", comment: ""), style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)! as URL, options: [:], completionHandler: nil)
         }
-        
-        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestLocation()
-        }
-        
+        alert.addAction(settingAction)
+        alert.addAction(cancelAction)
+        self.present(alert,animated: true, completion: nil)
     }
     
     public func getSportCenterDistance(sportLongitude: Double , sportLatitude: Double) -> Double {
@@ -230,3 +250,5 @@ class CourtListViewController: UIViewController {
     }
 
 }
+
+

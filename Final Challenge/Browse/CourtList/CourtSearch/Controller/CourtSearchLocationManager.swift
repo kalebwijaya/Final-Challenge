@@ -1,28 +1,32 @@
 //
-//  CourtListViewController+LocationManager.swift
+//  CourtSearchLocationManager.swift
 //  Final Challenge
 //
-//  Created by Kaleb Wijaya on 29/11/19.
+//  Created by Steven on 12/4/19.
 //  Copyright © 2019 Kaleb Wijaya. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreLocation
+import UIKit
 
-extension CourtListViewController: CLLocationManagerDelegate{
+extension CourtSearchViewController: CLLocationManagerDelegate{
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        
         if let location = locations.first{
             self.latitude = "\(location.coordinate.latitude)"
             self.longitude = "\(location.coordinate.longitude)"
-            print(self.latitude as Any)
-            DispatchQueue.main.async {
-                self.initialization()
-                self.setAddressName()
-            }
-            manager.stopUpdatingLocation()
             
+            
+            guard let sportTypeID = sportTypeID,let searchText = searchText , let latitude = self.latitude, let longitude = self.longitude else {
+                return
+            }
+            
+            let dataParam = CourtSearchParam(sportCenterName: searchText, sportTypeID: sportTypeID,latitude: latitude,longitude: longitude )
+            
+           
+            getSearchData(getParam: dataParam)
+            manager.stopUpdatingLocation()
         }
     }
     
@@ -43,4 +47,3 @@ extension CourtListViewController: CLLocationManagerDelegate{
         
     }
 }
-
