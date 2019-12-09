@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if(pernahbuka == true)
         {
-        storyboard  = UIStoryboard(name: (!sudahLogin) ? "Login" : "Main", bundle:nil)
+            storyboard  = UIStoryboard(name: (!sudahLogin ) ? "Login" : "Main", bundle:nil)
         }
         
         window?.makeKeyAndVisible()

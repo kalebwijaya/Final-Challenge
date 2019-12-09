@@ -19,24 +19,17 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var confirmpasswordTextField: UITextField!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     
+    
+    let registerModel = RegisterModel()
+    var registerParam:RegisterParam?
+    var registerResponse:RegisterResponse?
+    let url = URL(string: "\(BaseURL.baseURL)api/register")
+    
     @IBAction func registerButtonTapped(_ sender: Any) {
-        
-        let username = usernameTextField.text
-        let fullname = fullnameTextField.text
-        let phone  = phonenumberTextField.text
-        let password = passwordTextField.text
-        let email = emailTextField.text
-        
-        //save File
-        UserDefaults.standard.set(username, forKey: "username")
-        UserDefaults.standard.set(fullname, forKey: "fullname")
-        UserDefaults.standard.set(phone, forKey: "phonenumber")
-        UserDefaults.standard.set(password, forKey: "password")
-        UserDefaults.standard.set(email, forKey: "email")
         
         if(cekRegistrasi())
         {
-            performSegue(withIdentifier: "toMain", sender: nil)
+            regisUserToServer()
         }
     }
     
@@ -55,18 +48,24 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
     
     func cekRegistrasi()-> Bool
     {
-        var i = 6
+        var i = 7
         
-        if(usernameTextField.text?.isEmpty == true)
+        if(usernameTextField.text!.count <= 6)
         {
             i = i - 1
-            passwordErrorLabel.text = "Username should not be empty"
+            passwordErrorLabel.text = "Username should be more than 6 character"
             return false
         }
-        if(fullnameTextField.text?.isEmpty == true)
+        if(!validateName(name: fullnameTextField.text!))
         {
             i = i - 1
-            passwordErrorLabel.text = "Fullname should not be empty"
+            passwordErrorLabel.text = "Full name can not contain symbol"
+            return false
+        }
+        if  (fullnameTextField.text!.count < 3 && fullnameTextField.text!.count > 30 )
+        {
+            i = i - 1
+            passwordErrorLabel.text = "Full name should be between 3 until 30 character"
             return false
         }
         if(isValid(emailTextField.text!) == false)
@@ -76,10 +75,10 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
             passwordErrorLabel.text = "Email is invalid"
             return false
         }
-        if(phonenumberTextField.text?.isEmpty == true)
+        if(phonenumberTextField.text!.count < 10 || phonenumberTextField.text!.count > 12)
         {
             i = i - 1
-            passwordErrorLabel.text = "Phone number should not be empty"
+            passwordErrorLabel.text = "Phone number should be between 10 - 12 character"
             return false
         }
         if(isPassValid(passwordTextField.text!) == false)
@@ -96,21 +95,23 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
         }
             
             
-            
-            
         else
         {
-            if(i == 6)
+            if(i == 7)
             {
                 return true
-            }
-            else
-            {
-                return false
             }
         }
     }
     
+    public func validateName(name: String) ->Bool {
+        
+        let nameRegex =  "^[a-zA-Z]{3,30}(?: [a-zA-Z]+){0,2}$"
+        let trimmedString = name.trimmingCharacters(in: .whitespaces)
+        let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
+        let isValidateName = validateName.evaluate(with: trimmedString)
+        return isValidateName
+    }
     func isPassValid(_ password:String)->Bool
     {
         let passRegEx =  "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})"
@@ -152,7 +153,7 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password ex : Password123",
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         confirmpasswordTextField.attributedPlaceholder = NSAttributedString(string: "Confirm Password",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+                                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         
     }

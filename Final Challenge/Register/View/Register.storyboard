@@ -252,6 +252,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ONw-Lx-a7C"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zWn-BI-eCw"/>
                     <connections>
                         <outlet property="confirmpasswordTextField" destination="bCa-u9-clB" id="JsT-mb-DWG"/>
                         <outlet property="emailTextField" destination="9Uc-xY-qcm" id="uDn-IO-4qw"/>
@@ -265,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S2-fe-0vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="85.714285714285708"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="85.714285714285708"/>
         </scene>
         <!--Login-->
         <scene sceneID="5pc-Es-dPv">
@@ -275,7 +276,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TpW-z6-aef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="234"/>
+            <point key="canvasLocation" x="2625.36231884058" y="233.70535714285714"/>
         </scene>
     </scenes>
     <resources>

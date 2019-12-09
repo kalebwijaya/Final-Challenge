@@ -10,30 +10,23 @@ import UIKit
 
 class LoginViewController: UIViewController ,UITextFieldDelegate{
     
-   
-    
+
+    let loginModel = LoginModel()
+    var loginParam:LoginParam?
+    var loginResponse:LoginResponses?
+    let url = URL(string: "\(BaseURL.baseURL)api/login")
+  
     @IBAction func loginButton(_ sender: Any) {
-        let username = UserDefaults.standard.string(forKey: "username")
-        let password = UserDefaults.standard.string(forKey: "password")
+
         
-        
-        if(usernameTextField.text == username && passwordTextField.text == password)
-        {
-            print("benar1")
-            labelWrong.isHidden = true
-            UserDefaults.standard.set(true, forKey: "sudahLogin")
-            performSegue(withIdentifier: "loggedIn", sender: nil)
-        }
-        else if(usernameTextField.text != username)
-        {
-            labelWrong.isHidden = false
-            print("salah1")
-        }
-        else if(passwordTextField.text != password)
-        {
-            labelWrong.isHidden = false
-            print("salah2")
-        }
+//        loginModel.getLogin(url: URL, setBodyParam: loginParam) { (responses, error) in
+//            if responses.errorCode == "200"{
+//                
+//            }
+//            else if responses.errorCode == "" {
+//                
+//            }
+        loginUserToServer()
         
     }
     
@@ -42,7 +35,10 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     }
     
     @IBAction func CreateIDButton(_ sender: Any) {
-        performSegue(withIdentifier: "toRegister", sender: nil)
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()!
+         navigationController?.pushViewController(vc,
+         animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -82,7 +78,9 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     func setupView()
     {
-        
+    self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
