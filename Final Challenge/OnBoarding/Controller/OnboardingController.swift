@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func nextButtonDidTapped(_ sender: Any) {
         //Function pindah page pake present
         UserDefaults.standard.set(true, forKey: "pernahbuka")
-        performSegue(withIdentifier: "showMainTabBar", sender: nil)
+        performSegue(withIdentifier: "showLogin", sender: nil)
     }
     
     var slides:[Slide] = [];
@@ -56,7 +56,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageAtas.image = UIImage(named: "imgOnboarding2")
         slide1.labelTitle.text = "Discover Courts in BSD"
-        slide1.labelDesc.text = "Find the best court to play in your area."
+        slide1.labelDesc.text = "Find the best court to play in your area"
         slide1.background.image = UIImage(named: "bgOnboarding2")
         slide1.labelOnboarding3atas.text = ""
         slide1.labelOnboarding3bawah.text = ""
@@ -64,8 +64,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageTengah.image = UIImage(named: "BuletanTengah")
-        slide2.labelOnboarding3atas.text = "Play Whenever."
-        slide2.labelOnboarding3bawah.text = "Play Wherever."
+        slide2.labelOnboarding3atas.text = "Book courts"
+        slide2.labelOnboarding3bawah.text = "Without the hassle"
         slide2.background.image = UIImage(named: "bgOnboarding3")
         slide2.labelDesc.text = ""
         slide2.labelTitle.text = ""
@@ -84,7 +84,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         slide3.labelOnboarding5Atas.text = ""
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-        slide4.labelOnboarding5Atas.text = "Let’s book your first court now!"
+        slide4.labelOnboarding5Atas.text = "Let’s book your first court!"
         slide4.labelDesc.text = ""
         
         slide4.labelTitle.text = ""
@@ -148,7 +148,12 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
          */
         let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
         
-        if(percentOffset.x > 0 && percentOffset.x <= 0.33) {
+        if(scrollView.contentOffset.x < -1)
+        {
+           scrollView.isScrollEnabled = false
+        }
+        else if(percentOffset.x >= 0 && percentOffset.x <= 0.33) {
+            scrollView.isScrollEnabled = true
             slides[0].imageAtas.transform = CGAffineTransform(scaleX: 1 - percentOffset.x/0.33, y: 1 - percentOffset.x/0.33)
             slides[1].imageTengah.transform = CGAffineTransform(scaleX: percentOffset.x/0.33, y: percentOffset.x/0.33)
             slides[1].labelOnboarding3atas
@@ -166,9 +171,14 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
             
         }
         else if(percentOffset.x > 0.66 && percentOffset.x <= 1) {
+            scrollView.isScrollEnabled = true
             slides[2].imageAtas.transform = CGAffineTransform(scaleX: (1-percentOffset.x)/0.33, y: (1-percentOffset.x)/0.33)
             
             slides[3].imageOnboarding5.transform = CGAffineTransform(scaleX: percentOffset.x/1, y: percentOffset.x/1)
+        }
+        else if(percentOffset.x > 1)
+        {
+            scrollView.isScrollEnabled = false
         }
     }
     

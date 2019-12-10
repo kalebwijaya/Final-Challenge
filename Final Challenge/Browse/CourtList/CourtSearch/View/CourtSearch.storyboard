@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z1f-D8-8QZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DgA-U3-hFL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -9,7 +9,7 @@
         <!--Court Search View Controller-->
         <scene sceneID="Fom-5P-pb5">
             <objects>
-                <tableViewController storyboardIdentifier="courtSearch" id="DgA-U3-hFL" customClass="CourtSearchViewController" customModule="Final_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="courtSearch" id="DgA-U3-hFL" customClass="CourtSearchViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBS-P3-Bc9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,24 +34,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukF-eG-dLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="39.508928571428569"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ok1-Da-0NC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z1f-D8-8QZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XtV-P1-5Da">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="DgA-U3-hFL" kind="relationship" relationship="rootViewController" id="vwT-eL-hJU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JRi-pj-7HX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="98.550724637681171" y="39.508928571428569"/>
         </scene>
     </scenes>
 </document>

@@ -17,7 +17,13 @@ extension BrowseViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "browseCell") as! BrowseTableViewCell
         cell.sportTypeLbl.text = browseData[indexPath.row].sportTypeName
-        cell.sportImage.image = UIImage(named: "court_category")
+        self.browseModel.getImage(imageURL: browseData[indexPath.row].sportTypeImage) { (data) in
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                cell.sportImage.image = image
+            }
+        }
+        
         
         return cell
         

@@ -34,11 +34,13 @@ class BrowseViewController: UIViewController {
 //        profileButton.button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
         
         navigationItem.rightBarButtonItems = [profileButton.load()]
+            navigationItem.hidesBackButton = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setNavigation()
         getData()
+        print(navigationItem.title)
     }
     
     private func initialization(){
