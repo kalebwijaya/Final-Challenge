@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5111B4F7239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */; };
+		5111B4FA239FAC1A007F99A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */; };
+		5111B4FB239FAC1A007F99A3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */; };
 		5114A05C238189280056121B /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A05B238189280056121B /* Orders.swift */; };
 		5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */; };
 		5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */; };
@@ -112,6 +115,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetailsViewController+TableView.swift"; sourceTree = "<group>"; };
+		5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5114A05B238189280056121B /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -354,6 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				51275CCB2385303000927DB7 /* OrdersDetails.storyboard */,
+				5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */,
+				5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				51A917F22381D04200376021 /* OrderDetailsViewController.swift */,
+				5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -793,6 +802,7 @@
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
 				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
 				51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */,
+				5111B4FB239FAC1A007F99A3 /* TableViewCell.xib in Resources */,
 				B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */,
 				51D39E3D2387E2DA00B3BB24 /* CourtTableViewCell.xib in Resources */,
 				51D39E412387EB7900B3BB24 /* TimeViewCell.xib in Resources */,
@@ -884,11 +894,13 @@
 				51201D38238D15F3007C8EE6 /* OrderDetailsModel.swift in Sources */,
 				51201D30238D11C4007C8EE6 /* OrderModel.swift in Sources */,
 				512D258F238E9E0C00388563 /* BookingViewController+Delegate.swift in Sources */,
+				5111B4F7239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift in Sources */,
 				51201D36238D1594007C8EE6 /* OrderDetailsDataDetails.swift in Sources */,
 				B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */,
 				B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */,
+				5111B4FA239FAC1A007F99A3 /* TableViewCell.swift in Sources */,
 				51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */,
 				51BE035C2383F61F004A241D /* CourtDetailsViewController.swift in Sources */,
 			);
