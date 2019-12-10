@@ -10,20 +10,20 @@ import UIKit
 
 extension LoginViewController
 {
-  
+    
     func loginUserToServer(){
         
         guard let jsonUrl  = url ,
             let username = usernameTextField.text ,
             let password = passwordTextField.text
             
-        else
+            else
         {
             return
             
         }
-    
-    loginParam = LoginParam(id: username, password: password)
+        
+        loginParam = LoginParam(id: username, password: password)
         
         loginModel.getLogin(url: jsonUrl, setBodyParam: loginParam!){ (result, error) in
             if let result = result{
@@ -45,6 +45,6 @@ extension LoginViewController
                 print(error)
             }
         }
-
-}
+        
+    }
 }

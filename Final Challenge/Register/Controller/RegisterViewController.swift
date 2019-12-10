@@ -56,13 +56,13 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
             passwordErrorLabel.text = "Username should be more than 6 character"
             return false
         }
-        if(!validateName(name: fullnameTextField.text!))
+        if(!validateName(name: usernameTextField.text!))
         {
             i = i - 1
-            passwordErrorLabel.text = "Full name can not contain symbol"
+            passwordErrorLabel.text = "Username can not contain symbol"
             return false
         }
-        if  (fullnameTextField.text!.count < 3 && fullnameTextField.text!.count > 30 )
+        if  (fullnameTextField.text!.count < 3 || fullnameTextField.text!.count > 30 )
         {
             i = i - 1
             passwordErrorLabel.text = "Full name should be between 3 until 30 character"
@@ -106,11 +106,10 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate {
     
     public func validateName(name: String) ->Bool {
         
-        let nameRegex =  "^[a-zA-Z]{3,30}(?: [a-zA-Z]+){0,2}$"
-        let trimmedString = name.trimmingCharacters(in: .whitespaces)
-        let validateName = NSPredicate(format: "SELF MATCHES %@", nameRegex)
-        let isValidateName = validateName.evaluate(with: trimmedString)
-        return isValidateName
+        let nameRegex =  "^\\w{6,16}$"
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", nameRegex)
+        
+        return nameTest.evaluate(with: name)
     }
     func isPassValid(_ password:String)->Bool
     {

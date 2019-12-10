@@ -10,24 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController ,UITextFieldDelegate{
     
-
+    
     let loginModel = LoginModel()
     var loginParam:LoginParam?
     var loginResponse:LoginResponses?
     let url = URL(string: "\(BaseURL.baseURL)api/login")
-  
+    
     @IBAction func loginButton(_ sender: Any) {
-
-        
-//        loginModel.getLogin(url: URL, setBodyParam: loginParam) { (responses, error) in
-//            if responses.errorCode == "200"{
-//                
-//            }
-//            else if responses.errorCode == "" {
-//                
-//            }
         loginUserToServer()
-        
     }
     
     @objc func dismissKeyboard() {
@@ -37,21 +27,21 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     @IBAction func CreateIDButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()!
-         navigationController?.pushViewController(vc,
-         animated: true)
+        navigationController?.pushViewController(vc,
+                                                 animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-         // Try to find next responder
-         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
-         } else {
+        } else {
             // Not found, so remove keyboard.
             textField.resignFirstResponder()
-         }
-         // Do not add a line break
-         return false
-      }
+        }
+        // Do not add a line break
+        return false
+    }
     
     
     
@@ -66,7 +56,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         labelWrong.isHidden = true
     }
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,20 +68,20 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     func setupView()
     {
-    self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-
+        
         view.addGestureRecognizer(tap)
-
+        
         usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
-               attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         
     }
