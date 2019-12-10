@@ -18,6 +18,7 @@ extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CourtTableViewCell
+        cell.widthFromSuper = self.view.frame
         cell.courtName.text = bookingCourt!.sportCenterDetail[indexPath.row].courtName
         cell.courtDayPrice.text = "Day Price Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceDay
         cell.courtNightPrice.text = "Night Price Rp. "+bookingCourt!.sportCenterDetail[indexPath.row].courtPriceNight
@@ -33,11 +34,13 @@ extension BookingViewController: UITableViewDataSource, UITableViewDelegate{
         cell.starIndex = 0
         cell.endIndex = 0
         cell.firstTap = true
+        cell.sizeToFit()
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(tableCellHeight)
     }
+    
     
 }

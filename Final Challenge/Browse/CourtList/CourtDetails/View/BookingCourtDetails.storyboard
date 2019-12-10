@@ -143,7 +143,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MO-iA-NVc">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MO-iA-NVc" userLabel="Facility VIew">
                                                 <rect key="frame" x="16" y="572" width="382" height="49"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml1-Y6-9JH">
@@ -262,9 +262,11 @@
                         <outlet property="courtMinPrice" destination="A23-uJ-DTv" id="fh9-ew-ENA"/>
                         <outlet property="courtOpenTime" destination="Gag-rb-Dtw" id="J37-7l-oYy"/>
                         <outlet property="courtStatus" destination="bLq-Pa-RkA" id="bKU-FC-gsi"/>
+                        <outlet property="facilityText" destination="Ml1-Y6-9JH" id="V0O-dG-vAg"/>
                         <outlet property="gradientBar" destination="9N4-qq-amF" id="tz6-ab-MeC"/>
                         <outlet property="imageCarousel" destination="anr-hz-GHp" id="cxT-Vc-qNe"/>
                         <outlet property="imagePageController" destination="4Pf-yT-lKH" id="N7D-oq-Qsh"/>
+                        <outlet property="scrolVIewSubView" destination="aW9-YN-b8g" id="k7L-c1-Hea"/>
                         <outlet property="sportCenterName" destination="6yw-oi-rID" id="4Fz-le-lrb"/>
                     </connections>
                 </viewController>

@@ -11,26 +11,23 @@ import UIKit
 extension CourtTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionViewSetup(){
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         
         let nib = UINib(nibName: cellIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
-        
     }
     
     func setupCollectionViewCell(){
         if collectionViewFlowLayout == nil{
-            let numberOfItemRow:CGFloat = 2.7
+            let numberOfItemRow:CGFloat = 3
             let lineSpacing:CGFloat = 10
-            let interItemSpacing:CGFloat = 10
+            let interItemSpacing:CGFloat = 5
             
             let width = (collectionView.frame.width - (numberOfItemRow-1) * interItemSpacing) / numberOfItemRow
-            
             collectionViewFlowLayout = UICollectionViewFlowLayout()
             
-            collectionViewFlowLayout.itemSize = CGSize(width: width - 20, height: 33)
+            collectionViewFlowLayout.itemSize = CGSize(width: width - 10, height: 33)
             collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
             collectionViewFlowLayout.scrollDirection = .vertical
             collectionViewFlowLayout.minimumLineSpacing = lineSpacing

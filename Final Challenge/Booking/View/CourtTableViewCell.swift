@@ -32,6 +32,7 @@ class CourtTableViewCell: UITableViewCell {
     var unavailableTime:[String] = []
     var nightTime:Int = 0
     var dayTime:Int = 0
+    var widthFromSuper:CGRect?
     var bookingDataDetails:BookingCourtDetails!
     
     var delegate: BookingViewControllerDelegate?
