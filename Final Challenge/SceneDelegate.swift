@@ -19,7 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         let pernahbuka: Bool = UserDefaults.standard.bool(forKey: "pernahbuka")
-        let storyboard  = UIStoryboard(name: (!pernahbuka) ? "OnBoarding" : "Main", bundle:nil)
+        let sudahLogin: Bool = UserDefaults.standard.bool(forKey: "sudahLogin")
+        var storyboard  = UIStoryboard(name: (!pernahbuka) ? "OnBoarding" : "Login", bundle:nil)
+        
+        if(pernahbuka == true)
+        {
+            storyboard  = UIStoryboard(name: (!sudahLogin ) ? "Login" : "Main", bundle:nil)
+        }
+        
         window?.makeKeyAndVisible()
         window?.rootViewController = storyboard.instantiateInitialViewController()
     }
