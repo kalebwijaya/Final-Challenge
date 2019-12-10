@@ -21,7 +21,8 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var courtMap: MKMapView!
     @IBOutlet weak var bookNowBtn: UIButton!
-    
+    @IBOutlet weak var facilityText: UILabel!
+    @IBOutlet weak var scrolVIewSubView: UIView!
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
@@ -44,6 +45,7 @@ class CourtDetailsViewController: UIViewController {
         currencyFormatter.numberStyle = .decimal
         currencyFormatter.locale = Locale(identifier: "id_ID")
         
+        self.view.sendSubviewToBack(scrolVIewSubView)
         imageCarousel.delegate = self
         setGradientBackground()
         view.bringSubviewToFront(imagePageController)
@@ -150,6 +152,7 @@ class CourtDetailsViewController: UIViewController {
         
         annotation.coordinate = locationCoordinate
         
+        facilityText.text = courtDetails.sportCenterFacility
         
         courtMap.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -174,10 +177,6 @@ class CourtDetailsViewController: UIViewController {
         addressView.frame.size.height += expectedLabelSize.height - 18
         addressLabel.centerXAnchor.constraint(equalTo: addressView.centerXAnchor).isActive = true
         addressLabel.centerYAnchor.constraint(equalTo: addressView.centerYAnchor).isActive = true
-        let lineView = UIView(frame: CGRect(x: 16, y: addressView.frame.maxY+15, width: self.view.frame.size.width-32, height: 1.0))
-        lineView.layer.borderWidth = 1.0
-        lineView.layer.borderColor = UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1).cgColor
-        self.view.addSubview(lineView)
     }
     
     //moved

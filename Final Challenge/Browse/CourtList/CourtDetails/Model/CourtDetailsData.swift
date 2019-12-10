@@ -11,7 +11,7 @@ import Foundation
 class CourtDetailsData: Codable {
     let sportCenterID, sportTypeID, sportCenterName, sportMinPrice: String
     let sportCenterAddress, sportCenterLat, sportCenterLong, sportCenterOpenTime: String
-    let sportCenterCloseTime, sportCenterStatus: String
+    let sportCenterCloseTime, sportCenterStatus, sportCenterFacility: String
     let sportCenterImage: [CourtDetailsImage]
 
     enum CodingKeys: String, CodingKey {
@@ -26,9 +26,10 @@ class CourtDetailsData: Codable {
         case sportCenterCloseTime = "sport_center_close_time"
         case sportCenterImage = "sport_center_image"
         case sportCenterStatus = "sport_center_status"
+        case sportCenterFacility = "sport_center_facilities"
     }
 
-    init(sportCenterID: String, sportTypeID: String, sportCenterName: String, sportMinPrice: String, sportCenterAddress: String, sportCenterLat: String, sportCenterLong: String, sportCenterOpenTime: String, sportCenterCloseTime: String, sportCenterStatus: String, sportCenterImage: [CourtDetailsImage]) {
+    init(sportCenterID: String, sportTypeID: String, sportCenterName: String, sportMinPrice: String, sportCenterAddress: String, sportCenterLat: String, sportCenterLong: String, sportCenterOpenTime: String, sportCenterCloseTime: String, sportCenterStatus: String, sportCenterFacility:String, sportCenterImage: [CourtDetailsImage]) {
         self.sportCenterID = sportCenterID
         self.sportTypeID = sportTypeID
         self.sportCenterName = sportCenterName
@@ -40,5 +41,6 @@ class CourtDetailsData: Codable {
         self.sportCenterCloseTime = sportCenterCloseTime
         self.sportCenterImage = sportCenterImage
         self.sportCenterStatus = sportCenterStatus
+        self.sportCenterFacility = sportCenterFacility
     }
 }

@@ -37,6 +37,7 @@ class BookingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         currencyFormatter.numberStyle = .decimal
