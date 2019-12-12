@@ -9,7 +9,7 @@
 import Foundation
 
 class LoginData: Codable {
-    let id: Double
+    let id: String
     let fullname, username, phoneNumber, email: String
 
     enum CodingKeys: String, CodingKey {
@@ -18,7 +18,7 @@ class LoginData: Codable {
         case email
     }
 
-    init(id: Double, fullname: String, username: String, phoneNumber: String, email: String) {
+    init(id: String, fullname: String, username: String, phoneNumber: String, email: String) {
         self.id = id
         self.fullname = fullname
         self.username = username
