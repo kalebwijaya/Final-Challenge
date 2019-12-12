@@ -14,6 +14,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     let loginModel = LoginModel()
     var loginParam:LoginParam?
     var loginResponse:LoginResponses?
+    var loginData:LoginData?
     let url = URL(string: "\(BaseURL.baseURL)api/login")
     
     @IBAction func loginButton(_ sender: Any) {
@@ -33,13 +34,14 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Try to find next responder
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField
+        {
             nextField.becomeFirstResponder()
-        } else {
-            // Not found, so remove keyboard.
+        }
+        else
+        {
             textField.resignFirstResponder()
         }
-        // Do not add a line break
         return false
     }
     

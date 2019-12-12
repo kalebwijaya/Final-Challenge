@@ -29,10 +29,17 @@ extension LoginViewController
             if let result = result{
                 if(result.errorCode == "200"){
                     self.loginResponse = result
+                    self.loginData = self.loginResponse?.data
                     print("200 "+result.errorMessage)
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "loggedIn", sender: nil)
                         UserDefaults.standard.set(true, forKey: "sudahLogin")
+                        UserDefaults.standard.set(String(self.loginData!.username), forKey: "username")
+                        UserDefaults.standard.set(String(self.loginData!.fullname), forKey: "fullname")
+                        UserDefaults.standard.set(String(self.loginData!.phoneNumber), forKey: "phonenumber")
+                        UserDefaults.standard.set(String(self.loginData!.email), forKey: "email")
+                        UserDefaults.standard.set(String(self.loginData!.id), forKey: "id")
+                        print(String(self.loginData!.phoneNumber))
                     }
                     
                 }else if(result.errorCode == "400"){
