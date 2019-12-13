@@ -37,7 +37,7 @@ class OrderDetailsViewController: UIViewController {
         tableView.allowsSelection = false
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
-        
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         currencyFormatter.numberStyle = .decimal

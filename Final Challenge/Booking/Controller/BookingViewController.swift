@@ -37,6 +37,7 @@ class BookingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
         
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
