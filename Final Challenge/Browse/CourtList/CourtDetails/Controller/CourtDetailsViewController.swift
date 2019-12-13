@@ -39,7 +39,7 @@ class CourtDetailsViewController: UIViewController {
         super.viewDidLoad()
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         getData()
-        
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         currencyFormatter.numberStyle = .decimal
