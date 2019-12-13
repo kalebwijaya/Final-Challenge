@@ -46,7 +46,13 @@ extension ProfileViewController: UITableViewDataSource{
             setCell.bodyTitleTypeLbl.text = dataType.key
             setCell.bodyInput.text = dataType.value
             
+            if dataType.key == "Email" {
+                setCell.isUserInteractionEnabled = false
+            }
+            
             cell = setCell
+            
+            
             
         }
         

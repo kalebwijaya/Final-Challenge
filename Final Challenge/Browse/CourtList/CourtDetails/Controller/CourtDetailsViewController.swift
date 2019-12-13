@@ -21,7 +21,8 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var courtMap: MKMapView!
     @IBOutlet weak var bookNowBtn: UIButton!
-    
+    @IBOutlet weak var facilityText: UILabel!
+    @IBOutlet weak var scrolVIewSubView: UIView!
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
@@ -38,12 +39,13 @@ class CourtDetailsViewController: UIViewController {
         super.viewDidLoad()
         loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
         getData()
-        
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         currencyFormatter.numberStyle = .decimal
         currencyFormatter.locale = Locale(identifier: "id_ID")
         
+        self.view.sendSubviewToBack(scrolVIewSubView)
         imageCarousel.delegate = self
         setGradientBackground()
         view.bringSubviewToFront(imagePageController)
@@ -57,9 +59,10 @@ class CourtDetailsViewController: UIViewController {
     func setAddressWhenTap(){
         addressView.isUserInteractionEnabled = true
         courtMap.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
-        self.addressView.addGestureRecognizer(gesture)
-        self.courtMap.addGestureRecognizer(gesture)
+        let gestureView = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
+        let gestureMaps = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
+        self.addressView.addGestureRecognizer(gestureView)
+        self.courtMap.addGestureRecognizer(gestureMaps)
     }
     
     @objc func addressTapped(){
@@ -149,6 +152,7 @@ class CourtDetailsViewController: UIViewController {
         
         annotation.coordinate = locationCoordinate
         
+        facilityText.text = courtDetails.sportCenterFacility
         
         courtMap.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -175,6 +179,7 @@ class CourtDetailsViewController: UIViewController {
         addressLabel.centerYAnchor.constraint(equalTo: addressView.centerYAnchor).isActive = true
     }
     
+    //moved
     func setupSlideScrollView(images : [ImageSlide]) {
         imageCarousel.frame = CGRect(x: 0, y: 0, width: imageCarousel.frame.width, height: imageCarousel.frame.height)
         imageCarousel.contentSize = CGSize(width: imageCarousel.frame.width * CGFloat(images.count), height: imageCarousel.frame.height)
@@ -186,6 +191,7 @@ class CourtDetailsViewController: UIViewController {
         }
     }
     
+    //done moved
     func setGradientBackground() {
         var gradient: CAGradientLayer!
         gradient = CAGradientLayer()
@@ -195,6 +201,7 @@ class CourtDetailsViewController: UIViewController {
         gradientBar.layer.mask = gradient
     }
     
+    //done moved
     func addImage(){
         for n in 0 ..< courtDetails.sportCenterImage.count {
             let slide:ImageSlide = Bundle.main.loadNibNamed("ImageSlide", owner: self, options: nil)?.first as! ImageSlide
@@ -215,6 +222,7 @@ class CourtDetailsViewController: UIViewController {
     }
 }
 
+//done moved
 extension CourtDetailsViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)

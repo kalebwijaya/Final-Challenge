@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    var loadingIndicator:LoadingIndicator?
+    let loadingView = UIView()
     @IBOutlet var profileView: ProfileView!
     var profileStoragedData = [Any]()
     let url = URL(string: "\(BaseURL.baseURL)api/edit-profile")
@@ -25,11 +27,15 @@ class ProfileViewController: UIViewController {
     
     private func initialization(){
         
-        profileStoragedData.append("header")
-        profileStoragedData.append(("FullName","Steven"))
-        profileStoragedData.append(("Phone Number","0817"))
-        profileStoragedData.append(("Email","asd@adw.com"))
-        profileStoragedData.append(("Password","123123132"))
+        loadingIndicator = LoadingIndicator(loadingView: loadingView, mainView: self.view)
+        
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        profileStoragedData.append(username)
+        profileStoragedData.append(("Full Name",UserDefaults.standard.string(forKey: "fullname")))
+        profileStoragedData.append(("Phone Number",UserDefaults.standard.string(forKey: "phonenumber")))
+        profileStoragedData.append(("Email",UserDefaults.standard.string(forKey: "email")))
 
         print(profileStoragedData)
         profileView.profileTableView.delegate = self
@@ -43,26 +49,43 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func doneTapped(){
+        guard let loadingIndicator = loadingIndicator else{
+            return
+        }
+        loadingIndicator.showLoading()
         var sendData = [Any]()
         for index in 1 ..< profileStoragedData.count{
             let indexPath = IndexPath(row: index, section: 0)
             let cell = profileView.profileTableView.cellForRow(at: indexPath) as! ProfileBodyTableViewCell
             
-            sendData.append((key: cell.bodyTitleTypeLbl, value: cell.bodyInput))
-           
+            if cell.bodyTitleTypeLbl.text != "Email" && cell.bodyTitleTypeLbl.text != "Password" {
+                sendData.append((key: cell.bodyTitleTypeLbl.text, value: cell.bodyInput.text))
+            }
         }
         let dataParsed = sendData as![(key :String, value: String)]
-        let profileParam = ProfileParam(id: "1", fullname: dataParsed[0].value, phoneNumber: dataParsed[1].value, oldPassword: dataParsed[2].value, password: dataParsed[3].value)
+        let profileParam = ProfileParam(id: UserDefaults.standard.string(forKey: "id")!, fullname: dataParsed[0].value, phoneNumber: dataParsed[1].value)
         
-       
         guard let url = url else{
-            return
-        }
+            return        }
         
         profileModel.sendEditProfile(url: url, getProfileData: profileParam) { (response, error) in
             
+            if let response = response {
+                if response.errorCode == "200" {
+                    
+                    UserDefaults.standard.set(dataParsed[0].value, forKey: "fullname")
+                    
+                    UserDefaults.standard.set(dataParsed[1].value, forKey: "phonenumber")
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }else if (response.errorCode == "400"){
+                    print(response.errorMessage)
+                }
+            }
+            
         }
-        
+        loadingIndicator.removeLoading()
     }
     
     @objc func cancelTapped(){

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5111B4F7239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */; };
+		5111B4FA239FAC1A007F99A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */; };
+		5111B4FB239FAC1A007F99A3 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */; };
 		5114A05C238189280056121B /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A05B238189280056121B /* Orders.swift */; };
 		5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */; };
 		5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */; };
@@ -105,6 +108,19 @@
 		B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */; };
 		B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B892382DCFC00D82B59 /* CourtListData.swift */; };
 		B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */; };
+		B1C602392396745600ABAD9B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C602382396745600ABAD9B /* Login.storyboard */; };
+		B1C6025323967F7E00ABAD9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6025223967F7E00ABAD9B /* LoginViewController.swift */; };
+		B1C602592397954D00ABAD9B /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C602582397954D00ABAD9B /* Register.storyboard */; };
+		B1C6025B239799DC00ABAD9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6025A239799DC00ABAD9B /* RegisterViewController.swift */; };
+		B1C6025D239A620E00ABAD9B /* RegisterParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6025C239A620E00ABAD9B /* RegisterParam.swift */; };
+		B1C6025F239A629100ABAD9B /* RegisterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6025E239A629100ABAD9B /* RegisterResponses.swift */; };
+		B1C60261239A77DD00ABAD9B /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C60260239A77DD00ABAD9B /* RegisterModel.swift */; };
+		B1C60263239A78BB00ABAD9B /* RegisterViewControllerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C60262239A78BB00ABAD9B /* RegisterViewControllerSession.swift */; };
+		B1C60265239E2BBC00ABAD9B /* LoginParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C60264239E2BBC00ABAD9B /* LoginParam.swift */; };
+		B1C60267239E2BD000ABAD9B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C60266239E2BD000ABAD9B /* LoginModel.swift */; };
+		B1C60269239E2C3200ABAD9B /* LoginResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C60268239E2C3200ABAD9B /* LoginResponses.swift */; };
+		B1C6026B239E2E9B00ABAD9B /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6026A239E2E9B00ABAD9B /* LoginData.swift */; };
+		B1C6026D239E33AE00ABAD9B /* LoginViewControllerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6026C239E33AE00ABAD9B /* LoginViewControllerSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +141,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetailsViewController+TableView.swift"; sourceTree = "<group>"; };
+		5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5114A05B238189280056121B /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		5114A0612381C6260056121B /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 		5114A0622381C6260056121B /* OrdersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -229,6 +248,19 @@
 		B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourtList.storyboard; sourceTree = "<group>"; };
 		B0FA6B892382DCFC00D82B59 /* CourtListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListData.swift; sourceTree = "<group>"; };
 		B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListParam.swift; sourceTree = "<group>"; };
+		B1C602382396745600ABAD9B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B1C6025223967F7E00ABAD9B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B1C602582397954D00ABAD9B /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		B1C6025A239799DC00ABAD9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B1C6025C239A620E00ABAD9B /* RegisterParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParam.swift; sourceTree = "<group>"; };
+		B1C6025E239A629100ABAD9B /* RegisterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponses.swift; sourceTree = "<group>"; };
+		B1C60260239A77DD00ABAD9B /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		B1C60262239A78BB00ABAD9B /* RegisterViewControllerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerSession.swift; sourceTree = "<group>"; };
+		B1C60264239E2BBC00ABAD9B /* LoginParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginParam.swift; sourceTree = "<group>"; };
+		B1C60266239E2BD000ABAD9B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		B1C60268239E2C3200ABAD9B /* LoginResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponses.swift; sourceTree = "<group>"; };
+		B1C6026A239E2E9B00ABAD9B /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		B1C6026C239E33AE00ABAD9B /* LoginViewControllerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				51275CCB2385303000927DB7 /* OrdersDetails.storyboard */,
+				5111B4F8239FAC1A007F99A3 /* TableViewCell.swift */,
+				5111B4F9239FAC1A007F99A3 /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				51A917F22381D04200376021 /* OrderDetailsViewController.swift */,
+				5111B4F6239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,15 +451,15 @@
 			isa = PBXGroup;
 			children = (
 				B0817D7A23A0E3FE00789C6B /* Profile */,
+				B1C602542397949400ABAD9B /* Register */,
+				B1C602342396742900ABAD9B /* Login */,
 				51D9B20D239141A9009414A8 /* OnBoarding */,
-				51D90BE72398EF0D00B6276E /* Login */,
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
 				B0493D4423826131008FE79F /* Browse */,
 				51D39E302387C34200B3BB24 /* Booking */,
 				51275CD3238530BA00927DB7 /* Orders */,
 				51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */,
 				51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */,
-				51CD0824237E9F9100F251D9 /* Controller */,
 				51CD07FC237E9EEB00F251D9 /* Assets.xcassets */,
 				51CD07FE237E9EEB00F251D9 /* LaunchScreen.storyboard */,
 				51CD0801237E9EEB00F251D9 /* Info.plist */,
@@ -452,13 +487,6 @@
 				51CD0817237E9EEB00F251D9 /* Info.plist */,
 			);
 			path = "Final ChallengeUITests";
-			sourceTree = "<group>";
-		};
-		51CD0824237E9F9100F251D9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		51D39E302387C34200B3BB24 /* Booking */ = {
@@ -508,37 +536,6 @@
 				512D258A238E9A0B00388563 /* BookingViewController+TableView.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		51D90BE72398EF0D00B6276E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				51D90BE82398EF3700B6276E /* Controller */,
-				51D90BE92398EF3E00B6276E /* View */,
-				51D90BEA2398EF4900B6276E /* Model */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		51D90BE82398EF3700B6276E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		51D90BE92398EF3E00B6276E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		51D90BEA2398EF4900B6276E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		51D9B20D239141A9009414A8 /* OnBoarding */ = {
@@ -766,6 +763,81 @@
 			path = CourtList;
 			sourceTree = "<group>";
 		};
+		B1C602342396742900ABAD9B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B1C602372396744700ABAD9B /* Model */,
+				B1C602362396743C00ABAD9B /* View */,
+				B1C602352396743300ABAD9B /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B1C602352396743300ABAD9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1C6025223967F7E00ABAD9B /* LoginViewController.swift */,
+				B1C6026C239E33AE00ABAD9B /* LoginViewControllerSession.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B1C602362396743C00ABAD9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1C602382396745600ABAD9B /* Login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1C602372396744700ABAD9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1C60264239E2BBC00ABAD9B /* LoginParam.swift */,
+				B1C60266239E2BD000ABAD9B /* LoginModel.swift */,
+				B1C60268239E2C3200ABAD9B /* LoginResponses.swift */,
+				B1C6026A239E2E9B00ABAD9B /* LoginData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1C602542397949400ABAD9B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B1C602572397954200ABAD9B /* Controller */,
+				B1C602562397953E00ABAD9B /* View */,
+				B1C602552397949B00ABAD9B /* Model */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		B1C602552397949B00ABAD9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1C60260239A77DD00ABAD9B /* RegisterModel.swift */,
+				B1C6025C239A620E00ABAD9B /* RegisterParam.swift */,
+				B1C6025E239A629100ABAD9B /* RegisterResponses.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1C602562397953E00ABAD9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1C602582397954D00ABAD9B /* Register.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1C602572397954200ABAD9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1C6025A239799DC00ABAD9B /* RegisterViewController.swift */,
+				B1C60262239A78BB00ABAD9B /* RegisterViewControllerSession.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -872,6 +944,7 @@
 			files = (
 				51D9B21923914234009414A8 /* Slide.xib in Resources */,
 				B0817D8323A0E5C400789C6B /* Profile.storyboard in Resources */,
+				B1C602392396745600ABAD9B /* Login.storyboard in Resources */,
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
 				515E73082383ED1800ED494D /* BookingCourtDetails.storyboard in Resources */,
 				B0817D9823A0F66900789C6B /* ProfileHeaderTableViewCell.xib in Resources */,
@@ -881,8 +954,10 @@
 				51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */,
 				B0817DA123A0F83A00789C6B /* ProfileBodyTableViewCell.xib in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
+				B1C602592397954D00ABAD9B /* Register.storyboard in Resources */,
 				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
 				51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */,
+				5111B4FB239FAC1A007F99A3 /* TableViewCell.xib in Resources */,
 				B00328D52382768C007C9B0A /* BrowseTableViewCell.xib in Resources */,
 				51D39E3D2387E2DA00B3BB24 /* CourtTableViewCell.xib in Resources */,
 				51D39E412387EB7900B3BB24 /* TimeViewCell.xib in Resources */,
@@ -932,6 +1007,7 @@
 				51CD07FB237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld in Sources */,
 				B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */,
 				51201D3E238D470B007C8EE6 /* OrderDetailsParam.swift in Sources */,
+				B1C6025323967F7E00ABAD9B /* LoginViewController.swift in Sources */,
 				B0493D4B238261C3008FE79F /* BrowseModel.swift in Sources */,
 				51E202A0238FB95B00524429 /* CourtTableViewCell+CollectionView.swift in Sources */,
 				51D9B212239141EB009414A8 /* OnboardingController.swift in Sources */,
@@ -958,22 +1034,31 @@
 				51D9B2162391420B009414A8 /* Slide.swift in Sources */,
 				51D9B2152391420B009414A8 /* GetStarted.swift in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
+				B1C60265239E2BBC00ABAD9B /* LoginParam.swift in Sources */,
 				B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */,
 				B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */,
+				B1C60269239E2C3200ABAD9B /* LoginResponses.swift in Sources */,
 				B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */,
 				B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */,
 				B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */,
 				5114A05C238189280056121B /* Orders.swift in Sources */,
 				B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */,
+				B1C6025B239799DC00ABAD9B /* RegisterViewController.swift in Sources */,
 				5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */,
 				B0B365912397B63A00735A05 /* CourtSearchLocationManager.swift in Sources */,
 				51D39E402387EB7900B3BB24 /* TimeViewCell.swift in Sources */,
+				B1C60261239A77DD00ABAD9B /* RegisterModel.swift in Sources */,
+				B1C6026B239E2E9B00ABAD9B /* LoginData.swift in Sources */,
 				51D9B20C2390FF67009414A8 /* LoadingIndicator.swift in Sources */,
 				51A917F52381D06C00376021 /* OrderDetails.swift in Sources */,
+				B1C6025D239A620E00ABAD9B /* RegisterParam.swift in Sources */,
+				B1C60263239A78BB00ABAD9B /* RegisterViewControllerSession.swift in Sources */,
+				B1C6025F239A629100ABAD9B /* RegisterResponses.swift in Sources */,
 				B05E9BF4239144DC0050550F /* CircularBarButton.swift in Sources */,
 				51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */,
 				B031E9B1238D397C003A6729 /* BookingViewParam.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
+				B1C6026D239E33AE00ABAD9B /* LoginViewControllerSession.swift in Sources */,
 				51BE03602383F6D8004A241D /* ImageSlide.swift in Sources */,
 				B0817D8923A0E74200789C6B /* ProfileView.swift in Sources */,
 				51201D3C238D44F3007C8EE6 /* OrderDetailsData.swift in Sources */,
@@ -982,12 +1067,15 @@
 				B0817D8523A0E5CD00789C6B /* ProfileModel.swift in Sources */,
 				512D258F238E9E0C00388563 /* BookingViewController+Delegate.swift in Sources */,
 				B0817D8B23A0E90300789C6B /* ProfileTableViewDelegate.swift in Sources */,
+				5111B4F7239FABBD007F99A3 /* OrderDetailsViewController+TableView.swift in Sources */,
 				51201D36238D1594007C8EE6 /* OrderDetailsDataDetails.swift in Sources */,
 				B0817D9723A0F66900789C6B /* ProfileHeaderTableViewCell.swift in Sources */,
 				B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */,
 				B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */,
+				B1C60267239E2BD000ABAD9B /* LoginModel.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,
 				B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */,
+				5111B4FA239FAC1A007F99A3 /* TableViewCell.swift in Sources */,
 				51D39E392387DFFB00B3BB24 /* BookingViewController.swift in Sources */,
 				51BE035C2383F61F004A241D /* CourtDetailsViewController.swift in Sources */,
 			);

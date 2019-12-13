@@ -17,6 +17,7 @@ class ProfileHeaderTableViewCell: UITableViewCell {
         userNameLbl.numberOfLines = 0
         userNameLbl.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
         userNameLbl.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

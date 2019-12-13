@@ -87,6 +87,7 @@ class CourtSearchViewController: UITableViewController {
         let alert = UIAlertController(title: "You need to turn on your location", message: "We need your location to show nearby courts.", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.init(cgColor: #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)), forKey: "titleTextColor")
         
         let settingAction = UIAlertAction(title: NSLocalizedString("Setting", comment: ""), style: .default) { (UIAlertAction) in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)! as URL, options: [:], completionHandler: nil)
