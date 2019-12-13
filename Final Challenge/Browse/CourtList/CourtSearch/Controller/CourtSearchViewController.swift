@@ -114,7 +114,7 @@ class CourtSearchViewController: UITableViewController {
         }
         vc.getSportTypeID = "\(sportTypeID)"
         vc.getSportCenterID = "\(courtSearchData[indexPath.row].sportCenterID)"
-        vc.hidesBottomBarWhenPushed = true
+       vc.hidesBottomBarWhenPushed = true
         
         nav.pushViewController(vc, animated: true)
         

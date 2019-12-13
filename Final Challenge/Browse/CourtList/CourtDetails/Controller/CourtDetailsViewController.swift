@@ -173,10 +173,6 @@ class CourtDetailsViewController: UIViewController {
         addressView.frame.size.height += expectedLabelSize.height - 18
         addressLabel.centerXAnchor.constraint(equalTo: addressView.centerXAnchor).isActive = true
         addressLabel.centerYAnchor.constraint(equalTo: addressView.centerYAnchor).isActive = true
-        let lineView = UIView(frame: CGRect(x: 16, y: addressView.frame.maxY+15, width: self.view.frame.size.width-32, height: 1.0))
-        lineView.layer.borderWidth = 1.0
-        lineView.layer.borderColor = UIColor(red: 0.91, green: 0.91, blue: 0.91, alpha: 1).cgColor
-        self.view.addSubview(lineView)
     }
     
     func setupSlideScrollView(images : [ImageSlide]) {

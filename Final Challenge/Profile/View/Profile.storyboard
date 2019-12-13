@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8qH-Tn-O7P">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="aek-me-017">
+            <objects>
+                <viewController storyboardIdentifier="profile" id="8qH-Tn-O7P" customClass="ProfileViewController" customModule="Sport_Space" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sk8-yu-DsW" customClass="ProfileView" customModule="Sport_Space">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sp0-4K-o5K">
+                                <rect key="frame" x="0.0" y="44" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pr-4c-H9a">
+                                <rect key="frame" x="15" y="802" width="384" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="j0y-w6-0ZC"/>
+                                </constraints>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sp0-4K-o5K" firstAttribute="leading" secondItem="6nB-mD-Vau" secondAttribute="leading" id="MEP-Ac-2Rw"/>
+                            <constraint firstItem="6pr-4c-H9a" firstAttribute="leading" secondItem="6nB-mD-Vau" secondAttribute="leading" constant="15" id="Pyk-9s-dXv"/>
+                            <constraint firstItem="sp0-4K-o5K" firstAttribute="trailing" secondItem="6nB-mD-Vau" secondAttribute="trailing" id="e8a-74-ahj"/>
+                            <constraint firstItem="6nB-mD-Vau" firstAttribute="trailing" secondItem="6pr-4c-H9a" secondAttribute="trailing" constant="15" id="efc-rF-ZOx"/>
+                            <constraint firstItem="6pr-4c-H9a" firstAttribute="top" secondItem="sp0-4K-o5K" secondAttribute="bottom" constant="15" id="yWp-x2-PKI"/>
+                            <constraint firstItem="6pr-4c-H9a" firstAttribute="bottom" secondItem="6nB-mD-Vau" secondAttribute="bottom" id="ze0-jz-umz"/>
+                            <constraint firstItem="sp0-4K-o5K" firstAttribute="top" secondItem="6nB-mD-Vau" secondAttribute="top" id="zwK-4n-heq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6nB-mD-Vau"/>
+                        <connections>
+                            <outlet property="profileTableView" destination="sp0-4K-o5K" id="mR0-BY-vCh"/>
+                            <outlet property="signOutButton" destination="6pr-4c-H9a" id="shr-gE-pUD"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="profileView" destination="Sk8-yu-DsW" id="2i3-h2-dvl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6F-yK-N8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="159.375"/>
+        </scene>
+    </scenes>
+</document>

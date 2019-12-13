@@ -28,7 +28,6 @@
 		51BE03622383F6F0004A241D /* ImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51BE03612383F6F0004A241D /* ImageSlide.xib */; };
 		51CD07F1237E9EEA00F251D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */; };
 		51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */; };
-		51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */; };
 		51CD07F8237E9EEA00F251D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CD07F6237E9EEA00F251D9 /* Main.storyboard */; };
 		51CD07FB237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51CD07F9237E9EEA00F251D9 /* Final_Challenge.xcdatamodeld */; };
 		51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CD07FC237E9EEB00F251D9 /* Assets.xcassets */; };
@@ -75,6 +74,15 @@
 		B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */; };
 		B074651B2386AECB00CD4C90 /* CourtSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651A2386AECB00CD4C90 /* CourtSearchData.swift */; };
 		B074651D2386CCC600CD4C90 /* CourtSearchParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */; };
+		B0817D7F23A0E59E00789C6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D7E23A0E59E00789C6B /* ProfileViewController.swift */; };
+		B0817D8323A0E5C400789C6B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0817D8223A0E5C400789C6B /* Profile.storyboard */; };
+		B0817D8523A0E5CD00789C6B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D8423A0E5CD00789C6B /* ProfileModel.swift */; };
+		B0817D8923A0E74200789C6B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D8823A0E74200789C6B /* ProfileView.swift */; };
+		B0817D8B23A0E90300789C6B /* ProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D8A23A0E90300789C6B /* ProfileTableViewDelegate.swift */; };
+		B0817D9723A0F66900789C6B /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D9523A0F66900789C6B /* ProfileHeaderTableViewCell.swift */; };
+		B0817D9823A0F66900789C6B /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0817D9623A0F66900789C6B /* ProfileHeaderTableViewCell.xib */; };
+		B0817DA023A0F83A00789C6B /* ProfileBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0817D9E23A0F83A00789C6B /* ProfileBodyTableViewCell.swift */; };
+		B0817DA123A0F83A00789C6B /* ProfileBodyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0817D9F23A0F83A00789C6B /* ProfileBodyTableViewCell.xib */; };
 		B0A04EAA238BD3F10063BA1D /* CourtListResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EA9238BD3F10063BA1D /* CourtListResponses.swift */; };
 		B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EAB238BF2BE0063BA1D /* BookingData.swift */; };
 		B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EAD238BF2C60063BA1D /* BookingDataDetails.swift */; };
@@ -82,6 +90,8 @@
 		B0A04EB2238BF4CE0063BA1D /* BookParamDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB1238BF4CE0063BA1D /* BookParamDetail.swift */; };
 		B0A04EB4238BFCFB0063BA1D /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB3238BFCFB0063BA1D /* BookingModel.swift */; };
 		B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A04EB5238BFDB10063BA1D /* BookingResponses.swift */; };
+		B0A96C0823A38C0E0044F451 /* ProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A96C0723A38C0E0044F451 /* ProfileParam.swift */; };
+		B0A96C0A23A38C450044F451 /* ProfileResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A96C0923A38C450044F451 /* ProfileResponses.swift */; };
 		B0B365912397B63A00735A05 /* CourtSearchLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B365902397B63A00735A05 /* CourtSearchLocationManager.swift */; };
 		B0B365932397B68300735A05 /* CourtSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B365922397B68300735A05 /* CourtSearchBarDelegate.swift */; };
 		B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BD28752384216E009347DB /* CourtSearchViewController.swift */; };
@@ -137,7 +147,6 @@
 		51CD07ED237E9EEA00F251D9 /* Sport Space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sport Space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51CD07F0237E9EEA00F251D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51CD07F2237E9EEA00F251D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		51CD07F7237E9EEA00F251D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51CD07FA237E9EEA00F251D9 /* Final_Challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Final_Challenge.xcdatamodel; sourceTree = "<group>"; };
 		51CD07FC237E9EEB00F251D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +198,15 @@
 		B07465182386AEA500CD4C90 /* CourtSearchResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchResponses.swift; sourceTree = "<group>"; };
 		B074651A2386AECB00CD4C90 /* CourtSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchData.swift; sourceTree = "<group>"; };
 		B074651C2386CCC600CD4C90 /* CourtSearchParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchParam.swift; sourceTree = "<group>"; };
+		B0817D7E23A0E59E00789C6B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B0817D8223A0E5C400789C6B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B0817D8423A0E5CD00789C6B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		B0817D8823A0E74200789C6B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B0817D8A23A0E90300789C6B /* ProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewDelegate.swift; sourceTree = "<group>"; };
+		B0817D9523A0F66900789C6B /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B0817D9623A0F66900789C6B /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		B0817D9E23A0F83A00789C6B /* ProfileBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBodyTableViewCell.swift; sourceTree = "<group>"; };
+		B0817D9F23A0F83A00789C6B /* ProfileBodyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileBodyTableViewCell.xib; sourceTree = "<group>"; };
 		B0A04EA9238BD3F10063BA1D /* CourtListResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListResponses.swift; sourceTree = "<group>"; };
 		B0A04EAB238BF2BE0063BA1D /* BookingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingData.swift; sourceTree = "<group>"; };
 		B0A04EAD238BF2C60063BA1D /* BookingDataDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDataDetails.swift; sourceTree = "<group>"; };
@@ -196,6 +214,8 @@
 		B0A04EB1238BF4CE0063BA1D /* BookParamDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookParamDetail.swift; sourceTree = "<group>"; };
 		B0A04EB3238BFCFB0063BA1D /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		B0A04EB5238BFDB10063BA1D /* BookingResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingResponses.swift; sourceTree = "<group>"; };
+		B0A96C0723A38C0E0044F451 /* ProfileParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileParam.swift; sourceTree = "<group>"; };
+		B0A96C0923A38C450044F451 /* ProfileResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponses.swift; sourceTree = "<group>"; };
 		B0B365902397B63A00735A05 /* CourtSearchLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchLocationManager.swift; sourceTree = "<group>"; };
 		B0B365922397B68300735A05 /* CourtSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchBarDelegate.swift; sourceTree = "<group>"; };
 		B0BD28752384216E009347DB /* CourtSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtSearchViewController.swift; sourceTree = "<group>"; };
@@ -395,6 +415,7 @@
 		51CD07EF237E9EEA00F251D9 /* Final Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				B0817D7A23A0E3FE00789C6B /* Profile */,
 				51D9B20D239141A9009414A8 /* OnBoarding */,
 				51D90BE72398EF0D00B6276E /* Login */,
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
@@ -436,7 +457,6 @@
 		51CD0824237E9F9100F251D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				51CD07F4237E9EEA00F251D9 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +614,64 @@
 				51E202A323906A5200524429 /* BrowseViewController+TableView.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0817D7A23A0E3FE00789C6B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D7D23A0E41900789C6B /* Controller */,
+				B0817D7C23A0E41300789C6B /* View */,
+				B0817D7B23A0E40A00789C6B /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B0817D7B23A0E40A00789C6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D8423A0E5CD00789C6B /* ProfileModel.swift */,
+				B0A96C0723A38C0E0044F451 /* ProfileParam.swift */,
+				B0A96C0923A38C450044F451 /* ProfileResponses.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0817D7C23A0E41300789C6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D9D23A0F7CD00789C6B /* Body Cell */,
+				B0817D9423A0EC3800789C6B /* Header Cell */,
+				B0817D8223A0E5C400789C6B /* Profile.storyboard */,
+				B0817D8823A0E74200789C6B /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0817D7D23A0E41900789C6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D7E23A0E59E00789C6B /* ProfileViewController.swift */,
+				B0817D8A23A0E90300789C6B /* ProfileTableViewDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0817D9423A0EC3800789C6B /* Header Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D9523A0F66900789C6B /* ProfileHeaderTableViewCell.swift */,
+				B0817D9623A0F66900789C6B /* ProfileHeaderTableViewCell.xib */,
+			);
+			path = "Header Cell";
+			sourceTree = "<group>";
+		};
+		B0817D9D23A0F7CD00789C6B /* Body Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B0817D9E23A0F83A00789C6B /* ProfileBodyTableViewCell.swift */,
+				B0817D9F23A0F83A00789C6B /* ProfileBodyTableViewCell.xib */,
+			);
+			path = "Body Cell";
 			sourceTree = "<group>";
 		};
 		B0BD287B2384245D009347DB /* CourtSearch */ = {
@@ -793,12 +871,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D9B21923914234009414A8 /* Slide.xib in Resources */,
+				B0817D8323A0E5C400789C6B /* Profile.storyboard in Resources */,
 				51CD0800237E9EEB00F251D9 /* LaunchScreen.storyboard in Resources */,
 				515E73082383ED1800ED494D /* BookingCourtDetails.storyboard in Resources */,
+				B0817D9823A0F66900789C6B /* ProfileHeaderTableViewCell.xib in Resources */,
 				51CD07FD237E9EEB00F251D9 /* Assets.xcassets in Resources */,
 				51BE03622383F6F0004A241D /* ImageSlide.xib in Resources */,
 				5114A0642381C6260056121B /* OrdersCollectionViewCell.xib in Resources */,
 				51275CCC2385303000927DB7 /* OrdersDetails.storyboard in Resources */,
+				B0817DA123A0F83A00789C6B /* ProfileBodyTableViewCell.xib in Resources */,
 				51CD082A237EA0D800F251D9 /* Orders.storyboard in Resources */,
 				B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */,
 				51D39E352387C39400B3BB24 /* Booking.storyboard in Resources */,
@@ -844,6 +925,7 @@
 				51D39E3C2387E2DA00B3BB24 /* CourtTableViewCell.swift in Sources */,
 				B0BD288423842572009347DB /* CourtSearchModel.swift in Sources */,
 				B07465192386AEA500CD4C90 /* CourtSearchResponses.swift in Sources */,
+				B0817DA023A0F83A00789C6B /* ProfileBodyTableViewCell.swift in Sources */,
 				B031E9A9238D180C003A6729 /* CourtDetailsResponses.swift in Sources */,
 				B031E9AD238D1841003A6729 /* CourtDetailsImage.swift in Sources */,
 				51E202A823906ABA00524429 /* CourtListViewController+LocationManager.swift in Sources */,
@@ -858,6 +940,7 @@
 				B0FA6B822382CD8C00D82B59 /* CourtListModel.swift in Sources */,
 				B0047A77238D0DF9005C0C49 /* BaseURL.swift in Sources */,
 				512D258D238E9D6D00388563 /* BookingViewControllerDelegate.swift in Sources */,
+				B0A96C0A23A38C450044F451 /* ProfileResponses.swift in Sources */,
 				B0FA6B7E2382CD7400D82B59 /* CourtListViewController.swift in Sources */,
 				B0B365932397B68300735A05 /* CourtSearchBarDelegate.swift in Sources */,
 				B034E6E12383CFA900CD0F67 /* CourtListTableViewCell.swift in Sources */,
@@ -866,21 +949,21 @@
 				B00328D72382769C007C9B0A /* BrowseViewController.swift in Sources */,
 				51E202A623906A9700524429 /* CourtListViewController+TableView.swift in Sources */,
 				B031E9AF238D1872003A6729 /* CourtDetailsModel.swift in Sources */,
+				B0817D7F23A0E59E00789C6B /* ProfileViewController.swift in Sources */,
 				B0A04EB2238BF4CE0063BA1D /* BookParamDetail.swift in Sources */,
 				B0BD28762384216E009347DB /* CourtSearchViewController.swift in Sources */,
 				B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */,
+				B0A96C0823A38C0E0044F451 /* ProfileParam.swift in Sources */,
 				B0A04EB4238BFCFB0063BA1D /* BookingModel.swift in Sources */,
 				51D9B2162391420B009414A8 /* Slide.swift in Sources */,
 				51D9B2152391420B009414A8 /* GetStarted.swift in Sources */,
 				51CD0833237EA67600F251D9 /* OrdersViewController.swift in Sources */,
 				B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */,
-				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
 				B00328D42382768C007C9B0A /* BrowseTableViewCell.swift in Sources */,
 				B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */,
 				B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */,
 				B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */,
 				5114A05C238189280056121B /* Orders.swift in Sources */,
-				51CD07F5237E9EEA00F251D9 /* ProfileViewController.swift in Sources */,
 				B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */,
 				5114A0632381C6260056121B /* OrdersCollectionViewCell.swift in Sources */,
 				B0B365912397B63A00735A05 /* CourtSearchLocationManager.swift in Sources */,
@@ -892,11 +975,15 @@
 				B031E9B1238D397C003A6729 /* BookingViewParam.swift in Sources */,
 				51CD07F3237E9EEA00F251D9 /* SceneDelegate.swift in Sources */,
 				51BE03602383F6D8004A241D /* ImageSlide.swift in Sources */,
+				B0817D8923A0E74200789C6B /* ProfileView.swift in Sources */,
 				51201D3C238D44F3007C8EE6 /* OrderDetailsData.swift in Sources */,
 				51201D38238D15F3007C8EE6 /* OrderDetailsModel.swift in Sources */,
 				51201D30238D11C4007C8EE6 /* OrderModel.swift in Sources */,
+				B0817D8523A0E5CD00789C6B /* ProfileModel.swift in Sources */,
 				512D258F238E9E0C00388563 /* BookingViewController+Delegate.swift in Sources */,
+				B0817D8B23A0E90300789C6B /* ProfileTableViewDelegate.swift in Sources */,
 				51201D36238D1594007C8EE6 /* OrderDetailsDataDetails.swift in Sources */,
+				B0817D9723A0F66900789C6B /* ProfileHeaderTableViewCell.swift in Sources */,
 				B0A04EB6238BFDB10063BA1D /* BookingResponses.swift in Sources */,
 				B0A04EB0238BF3EC0063BA1D /* BookingParam.swift in Sources */,
 				51A917F32381D04200376021 /* OrderDetailsViewController.swift in Sources */,

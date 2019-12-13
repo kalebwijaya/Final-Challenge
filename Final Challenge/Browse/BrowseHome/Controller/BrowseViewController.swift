@@ -31,16 +31,25 @@ class BrowseViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         let profileButton = CircularBarButton(image: UIImage(named: "court_category"))
-//        profileButton.button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-        
+        profileButton.button.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
         navigationItem.rightBarButtonItems = [profileButton.load()]
             navigationItem.hidesBackButton = true
+    }
+    
+    @objc func showProfile(){
+        let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
+        
+        let vc = storyBoard.instantiateViewController(identifier: "profile") as! ProfileViewController
+        let navController = UINavigationController(rootViewController: vc)
+        
+        self.navigationController?.present(navController, animated: true, completion: nil)
+        //self.present(vc,animated: true,completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setNavigation()
         getData()
-        print(navigationItem.title)
     }
     
     private func initialization(){
