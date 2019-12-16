@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
         profileStoragedData.append(("Full Name",UserDefaults.standard.string(forKey: "fullname")))
         profileStoragedData.append(("Phone Number",UserDefaults.standard.string(forKey: "phonenumber")))
         profileStoragedData.append(("Email",UserDefaults.standard.string(forKey: "email")))
-
+        
         print(profileStoragedData)
         profileView.profileTableView.delegate = self
         profileView.profileTableView.dataSource = self
@@ -45,7 +45,21 @@ class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
-
+        
+        profileView.signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+        
+    }
+    
+    @objc func signOut(){
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+        
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "loginNavBar") as! UINavigationController
+        
+        self.view.window?.rootViewController = vc
+        
     }
     
     @objc func doneTapped(){
