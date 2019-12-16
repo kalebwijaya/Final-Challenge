@@ -23,6 +23,7 @@ class CourtDetailsViewController: UIViewController {
     @IBOutlet weak var bookNowBtn: UIButton!
     @IBOutlet weak var facilityText: UILabel!
     @IBOutlet weak var scrolVIewSubView: UIView!
+    @IBOutlet weak var getDirection: UILabel!
     
     var images:[ImageSlide] = []
     var courtDetails:CourtDetailsData!
@@ -57,12 +58,9 @@ class CourtDetailsViewController: UIViewController {
     }
     
     func setAddressWhenTap(){
-        addressView.isUserInteractionEnabled = true
-        courtMap.isUserInteractionEnabled = true
-        let gestureView = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
+        getDirection.isUserInteractionEnabled = true
         let gestureMaps = UITapGestureRecognizer(target: self, action:  #selector(self.addressTapped))
-        self.addressView.addGestureRecognizer(gestureView)
-        self.courtMap.addGestureRecognizer(gestureMaps)
+        self.getDirection.addGestureRecognizer(gestureMaps)
     }
     
     @objc func addressTapped(){
@@ -88,6 +86,12 @@ class CourtDetailsViewController: UIViewController {
         vc.sportCenterName = self.courtDetails.sportCenterName
         self.navigationController?.pushViewController(vc, animated: true)
         print("testing button")
+    }
+    
+    @IBAction func phoneCallButton(_ sender: Any) {
+        if let phoneURL = NSURL(string: ("tel://" + courtDetails.sportCenterPhone)) {
+            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
