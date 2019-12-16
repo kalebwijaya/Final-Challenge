@@ -15,7 +15,6 @@ class OrdersViewController: UIViewController {
     var history = [History]()
     let orderModel = OrderModel()
     let url = "\(BaseURL.baseURL)api/book/list/"
-    let userID = "1423556093315144139"
     
     let cellIdentifier = "OrdersCollectionViewCell"
     var collectionViewFlowLayout : UICollectionViewFlowLayout!
@@ -47,6 +46,8 @@ class OrdersViewController: UIViewController {
     }
     
     func getData(){
+        let userID = UserDefaults.standard.string(forKey: "id")!
+        print("ID : " + userID + " From Order List")
         guard let jsonUrl = URL(string: url+userID) else {return}
         
         orderModel.sendOrderRequest(url: jsonUrl){ (result, error) in
