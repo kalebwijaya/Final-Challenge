@@ -144,9 +144,9 @@ class CourtDetailsViewController: UIViewController {
         
         courtStatus.text = courtDetails.sportCenterStatus.capitalizingFirstLetter()
         if(courtDetails.sportCenterStatus == "open"){
-            courtStatus.textColor = UIColor(red: 0, green: 0.77, blue: 0.55, alpha: 1)
+            courtStatus.textColor = UIColor(cgColor: #colorLiteral(red: 0.1725490196, green: 0.4666666667, blue: 0, alpha: 1))
         }else{
-            courtStatus.textColor = UIColor(red: 0.98, green: 0.48, blue: 0.42, alpha: 1)
+            courtStatus.textColor = UIColor(cgColor: #colorLiteral(red: 0.5490196078, green: 0.01960784314, blue: 0.01960784314, alpha: 1))
         }
         courtOpenTime.text = courtDetails.sportCenterOpenTime + " - " + courtDetails.sportCenterCloseTime
         
