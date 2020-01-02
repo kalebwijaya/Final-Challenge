@@ -21,13 +21,39 @@ class OrdersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let sudahLogin = UserDefaults.standard.bool(forKey: "sudahLogin")
+        if sudahLogin == false
+        {
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            
+            let vc = storyBoard.instantiateViewController(identifier: "login") as! LoginViewController
+            let navController = UINavigationController(rootViewController: vc)
+            
+            self.navigationController?.present(navController, animated: true, completion: nil)
+        }
+        else{
         getData()
         collectionViewSetup()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+       let sudahLogin = UserDefaults.standard.bool(forKey: "sudahLogin")
+        if sudahLogin == false
+        {
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            
+            let vc = storyBoard.instantiateViewController(identifier: "login") as! LoginViewController
+            let navController = UINavigationController(rootViewController: vc)
+            
+            self.navigationController?.present(navController, animated: true, completion: nil)
+        }
+            
+        else
+        {
         getData()
         collectionViewSetup()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -46,9 +72,8 @@ class OrdersViewController: UIViewController {
     }
     
     func getData(){
-        let userID = UserDefaults.standard.string(forKey: "id")!
-        print("ID : " + userID + " From Order List")
-        guard let jsonUrl = URL(string: url+userID) else {return}
+        let userID = UserDefaults.standard.string(forKey: "id")
+        guard let jsonUrl = URL(string: url+userID!) else {return}
         
         orderModel.sendOrderRequest(url: jsonUrl){ (result, error) in
             if let result = result{

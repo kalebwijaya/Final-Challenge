@@ -108,6 +108,7 @@
 		B0FA6B862382CDEC00D82B59 /* CourtList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */; };
 		B0FA6B8A2382DCFC00D82B59 /* CourtListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B892382DCFC00D82B59 /* CourtListData.swift */; };
 		B0FA6B8C2382DD3F00D82B59 /* CourtListParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */; };
+		B1717DB723BE2BA700C46E35 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DB623BE2BA700C46E35 /* TabBarController.swift */; };
 		B1C602392396745600ABAD9B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C602382396745600ABAD9B /* Login.storyboard */; };
 		B1C6025323967F7E00ABAD9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C6025223967F7E00ABAD9B /* LoginViewController.swift */; };
 		B1C602592397954D00ABAD9B /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C602582397954D00ABAD9B /* Register.storyboard */; };
@@ -248,6 +249,7 @@
 		B0FA6B852382CDEC00D82B59 /* CourtList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourtList.storyboard; sourceTree = "<group>"; };
 		B0FA6B892382DCFC00D82B59 /* CourtListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListData.swift; sourceTree = "<group>"; };
 		B0FA6B8B2382DD3F00D82B59 /* CourtListParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtListParam.swift; sourceTree = "<group>"; };
+		B1717DB623BE2BA700C46E35 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B1C602382396745600ABAD9B /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B1C6025223967F7E00ABAD9B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B1C602582397954D00ABAD9B /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				B1C602342396742900ABAD9B /* Login */,
 				51D9B20D239141A9009414A8 /* OnBoarding */,
 				51CD07F6237E9EEA00F251D9 /* Main.storyboard */,
+				B1717DB623BE2BA700C46E35 /* TabBarController.swift */,
 				B0493D4423826131008FE79F /* Browse */,
 				51D39E302387C34200B3BB24 /* Booking */,
 				51275CD3238530BA00927DB7 /* Orders */,
@@ -1040,6 +1043,7 @@
 				B1C60269239E2C3200ABAD9B /* LoginResponses.swift in Sources */,
 				B0FA6B7723828FFC00D82B59 /* BrowseData.swift in Sources */,
 				B0A04EAE238BF2C60063BA1D /* BookingDataDetails.swift in Sources */,
+				B1717DB723BE2BA700C46E35 /* TabBarController.swift in Sources */,
 				B0FA6B7523828FF200D82B59 /* BrowseResponses.swift in Sources */,
 				5114A05C238189280056121B /* Orders.swift in Sources */,
 				B0A04EAC238BF2BE0063BA1D /* BookingData.swift in Sources */,
