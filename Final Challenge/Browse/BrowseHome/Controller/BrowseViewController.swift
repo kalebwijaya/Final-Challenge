@@ -30,7 +30,7 @@ class BrowseViewController: UIViewController {
 //        self.title = "Court Category"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
-        let profileButton = CircularBarButton(image: UIImage(named: "court_category"))
+        let profileButton = CircularBarButton(image: UIImage(named: "profileIcon"))
         profileButton.button.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
         navigationItem.rightBarButtonItems = [profileButton.load()]
             navigationItem.hidesBackButton = true
