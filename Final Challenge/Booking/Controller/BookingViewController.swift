@@ -24,7 +24,7 @@ class BookingViewController: UIViewController {
     var totalPricePerCourt = [Int:Int]()
     var dateString = ""
     var sportCenterName = ""
-    let userID = "1423556093315144139"
+    var userID = ""
     var bookingCourt:BookingCourt?
     var bookingModel = BookingModel()
     let cellIdentifier = "CourtTableViewCell"
@@ -38,6 +38,9 @@ class BookingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
+        
+        userID = UserDefaults.standard.string(forKey: "id")!
+        print("ID : " + userID + " From Booking")
         
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
@@ -160,8 +163,6 @@ class BookingViewController: UIViewController {
                             vc?.modalPresentationStyle = .fullScreen
                             self.present(vc!,animated: false)
                         }
-                        
-                        
                         
                     }else if(result.errorCode == "400"){
                         print(result.errorMessage)

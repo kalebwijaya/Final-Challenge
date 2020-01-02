@@ -32,7 +32,7 @@ extension RegisterViewController{
                     DispatchQueue.main.async {
                         self.passwordErrorLabel.text = "User successfully registered"
                         self.passwordErrorLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-                        self.performSegue(withIdentifier: "regisToMain", sender: nil)
+                        self.performSegue(withIdentifier: "toMain", sender: nil)
                     }
                 }else if(result.errorCode == "400"){
                     DispatchQueue.main.async {
