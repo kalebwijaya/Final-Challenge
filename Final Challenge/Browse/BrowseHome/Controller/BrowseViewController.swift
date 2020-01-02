@@ -37,6 +37,19 @@ class BrowseViewController: UIViewController {
     }
     
     @objc func showProfile(){
+        if UserDefaults.standard.bool(forKey: "sudahLogin") == false
+        {
+           let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            
+            let vc = storyBoard.instantiateViewController(identifier: "login") as! LoginViewController
+            let navController = UINavigationController(rootViewController: vc)
+            
+            self.navigationController?.present(navController, animated: true, completion: nil)
+        }
+        
+        else
+        
+        {
         let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
         
         let vc = storyBoard.instantiateViewController(identifier: "profile") as! ProfileViewController
@@ -45,6 +58,7 @@ class BrowseViewController: UIViewController {
         self.navigationController?.present(navController, animated: true, completion: nil)
         //self.present(vc,animated: true,completion: nil)
 //        self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

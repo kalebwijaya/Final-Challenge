@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var storyboard  = UIStoryboard(name: (!pernahbuka) ? "OnBoarding" : "Main", bundle:nil)
         
         if(pernahbuka == true)
-        {
+        { 
             storyboard  = UIStoryboard(name: (!sudahLogin ) ? "Main" : "Main", bundle:nil)
         }
         
