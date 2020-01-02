@@ -20,11 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         let pernahbuka: Bool = UserDefaults.standard.bool(forKey: "pernahbuka")
         let sudahLogin: Bool = UserDefaults.standard.bool(forKey: "sudahLogin")
-        var storyboard  = UIStoryboard(name: (!pernahbuka) ? "OnBoarding" : "Login", bundle:nil)
+        var storyboard  = UIStoryboard(name: (!pernahbuka) ? "OnBoarding" : "Main", bundle:nil)
         
         if(pernahbuka == true)
         {
-            storyboard  = UIStoryboard(name: (!sudahLogin ) ? "Login" : "Main", bundle:nil)
+            storyboard  = UIStoryboard(name: (!sudahLogin ) ? "Main" : "Main", bundle:nil)
         }
         
         window?.makeKeyAndVisible()

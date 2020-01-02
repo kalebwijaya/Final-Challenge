@@ -71,17 +71,17 @@
                         <outlet property="nextButton" destination="P3C-mc-Q9h" id="sy1-7h-EOE"/>
                         <outlet property="pageControl" destination="1U2-wY-GjR" id="DTr-oH-Hd1"/>
                         <outlet property="scrollView" destination="lrS-ET-GiW" id="jkA-hE-Ejy"/>
-                        <segue destination="5hk-Zw-mao" kind="presentation" identifier="showLogin" modalPresentationStyle="fullScreen" id="COZ-fJ-xSH"/>
+                        <segue destination="5hk-Zw-mao" kind="presentation" identifier="OnboardingToMain" modalPresentationStyle="fullScreen" id="COZ-fJ-xSH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG5-Dj-nLa" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1421.5999999999999" y="144.08866995073893"/>
         </scene>
-        <!--Login-->
+        <!--Main-->
         <scene sceneID="82Q-5v-gdQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="5hk-Zw-mao" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="5hk-Zw-mao" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB9-1A-f1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2369" y="92"/>
