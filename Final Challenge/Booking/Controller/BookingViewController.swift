@@ -38,10 +38,15 @@ class BookingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.778283298, blue: 0.4615219235, alpha: 1)
-        
+        if(UserDefaults.standard.bool(forKey: "sudahLogin") == false)
+        {
+            
+        }
+        else
+        {
         userID = UserDefaults.standard.string(forKey: "id")!
         print("ID : " + userID + " From Booking")
-        
+        }
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.groupingSeparator = "."
         currencyFormatter.numberStyle = .decimal
@@ -136,6 +141,8 @@ class BookingViewController: UIViewController {
     
     
     @IBAction func bookNowBtn(_ sender: Any) {
+        
+        if(UserDefaults.standard.bool(forKey: "sudahLogin") == true){
         if(totalPrice != 0){
             guard let jsonUrl = urlBook, let sportCenterID = getSportCenterID else {return}
             
@@ -171,6 +178,32 @@ class BookingViewController: UIViewController {
                     print(error)
                 }
             }
+            }
+            
+        }
+        
+        else
+        {
+            let alertController = UIAlertController(title: "Log In to book court", message: "You need to log in first to book the court.", preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "Login", style: UIAlertAction.Style.default) {
+                    UIAlertAction in
+                self.performSegue(withIdentifier: "bookToLogin", sender: self)
+                
+            }
+                  
+                 
+              let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                     UIAlertAction in
+                     NSLog("Cancel Pressed")
+                  
+                 }
+
+                 // Add the actions
+                 alertController.addAction(okAction)
+                 alertController.addAction(cancelAction)
+                
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
