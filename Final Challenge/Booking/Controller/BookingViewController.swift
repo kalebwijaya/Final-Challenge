@@ -117,7 +117,7 @@ class BookingViewController: UIViewController {
         guard let jsonUrl = url, let sportTypeID = getSportTypeID, let sportCenterID = getSportCenterID else {return}
         let getParam = BookingViewParam(sportTypeID: sportTypeID, sportCenterID: sportCenterID, date: dateString)
         bookingModel.getBookingView(url: jsonUrl, setBodyParam: getParam) { (result, error) in
-            if let result = result{
+            if let result = result {
                 if(result.errorCode == "200"){
                     self.bookingCourt = result.data
                     DispatchQueue.main.async {
@@ -129,6 +129,7 @@ class BookingViewController: UIViewController {
             }else if let error = error {
                 print(error)
             }
+            
         }
     }
     

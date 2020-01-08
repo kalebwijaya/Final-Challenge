@@ -55,7 +55,6 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        labelWrong.isHidden = true
     }
     
     
